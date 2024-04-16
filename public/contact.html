@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dungeon Crafter's Guide</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <header id="main-header">
+            <div id="top-right" class="flex-box">
+                <p id="sign-in">Sign In &nbsp; <img src="images/signin.png"></p>
+            </div>
+            <h1>Dungeon Crafter's Guide</h1>
+            <div id="selction-bar" class="flex-box"> 
+
+                <section id="section" class="coll1of6">
+                    <h6><a href="index.html"> <img src="images/home.png"> Home </a></h6>
+                </section>
+
+                <section id="section" class="coll1of6">
+                    <h6><a href="character-crafter.html"> <img src="images/charcater.png"> Character Crafter </a></h6>
+                </section>
+
+                <section id="section" class="coll1of6">
+                    <h6><a href="item-shop.html"> <img src="images/item.png"> Item Shop </a></h6>
+                </section>
+
+                <section id="section" class="coll1of6">
+                    <h6><a href="dungeon.html"> <img src="images/dungeon.png"> Dungeon </a></h6>
+                </section>
+
+                <section id="section" class="coll1of6">
+                    <h6><a href="notes.html"> <img src="images/notes.png"> Notes </a></h6>
+                </section>
+
+                <section id="section" class="coll1of6">
+                    <h6><a href="contact.html"> <img src="images/about.png"> About Us </a></h6>
+                </section>
+            </div>
+
+        </header>
+
+        <main id="main-main-contact">
+
+            <h1> About Us </h1>
+            <div id="us">
+                <p id="about">
+                    Hi Im the creator of Dungeon Crafters Guide, Tristan Hudak. 
+                    This site spawned from my love for Dungeon & Dragons, Im a DM and player. 
+                    I wanted to make to make this site so it could be easier for me to track and manage my notes and characters for D&D.
+                    Upon starting this process I bit off a lot more than I could chew leading to me being behind on many deadlines.
+                    This site is still in development and I will be continuing to work on it till i am satisfied with the outcome.
+                    I sincerely hope you enjoy the site and use it in your own endevors.
+                </p>
+
+                <div id="bb">
+
+                    <form
+                    id="contact-form"
+                    action="https://api.web3forms.com/submit"
+                    method="POST"
+                >
+
+                    <input
+                        type="hidden"
+                        name="access_key"
+                        value="7adf455e-b8e4-4a08-96b1-b91b25cf7221"
+                    />
+
+                    <h2 id="suae"> Send us an Email </h2>
+
+                    <div class="flex-box">
+                        <div class="coll1of2">
+                            <p>
+                                <label class="tab" for="name">Name:</label>
+                                <input
+                                    class="long"
+                                    id="name"
+                                    type="text"
+                                    placeholder="first and last"
+                                    name="name"
+                                    required
+                                />
+                            </p>
+                        </div>
+                        <div class="coll1of2">
+                            <p>
+                                <label class="tab" for="email">Email:</label>
+                                <input 
+                                    class="long" 
+                                    id="email" 
+                                    type="email" 
+                                    name="email"
+                                    placeholder="DungeonCrafterGuide@gmail.com" 
+                                    required 
+                                />
+                            </p>
+                        </div>
+                    </div>
+
+                    <p>
+                        <label class="tab" for="message">Message:</label>
+                    </p>
+                    <p>
+                        <textarea class="long" id="message" name="message" required></textarea>
+                    </p>
+                    <input
+                        type="hidden"
+                        name="redirect"
+                        value="https://web3forms.com/success"
+                    />
+                    <input
+                        type="hidden"
+                        name="subject"
+                        value="Contact from Jaspers Website"
+                    />
+                    <input type="hidden" name="from_name" value="My Website" />
+
+                    <p>
+                        <button type="submit">Submit Form</button>
+                    </p>
+
+                    <p id="result"></p>
+
+                </form>
+
+                </div>
+
+                <div class="flex-box">
+
+                    <section class="coll1of2 small-box" id="phone" >
+                        <p> Phone : +1 234-567-8910 </p>
+                    </section>
+
+                    <section class="coll1of2 small-box" id="email" >
+                        <p> Email : DungeonCrafterGuide@gmail.com </p>
+                    </section>
+    
+    
+                </div>
+            </div>
+            
+
+            
+            
+
+        </main>
+
+        <footer>
+            <p id="copy"> @DungeonCraftersGuide.com</p>
+        </footer>
+
+        <script src="script.js"></script>
+        <script src="script-contact.js"></script>
+    </body>
+</html>

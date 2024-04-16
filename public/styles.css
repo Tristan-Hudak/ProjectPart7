@@ -1,0 +1,1120 @@
+:root {
+
+    --text-color: black;
+    --text-color2: #1b1b1b;
+    --background-color: gray;
+    --background-color-2: white;
+    --background-color-3: lightgrey;
+    --color-grade: #567C44;
+    --color-grade2: #447C4D;
+    --color-grade3: #737C44;
+    --color-comp: #44567C;
+    --color-comp2: #7C4456;
+    --color-comp3:#5673b4;
+    --color-comp4: #a54060;
+
+
+
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+
+}
+
+/* Index */
+
+
+/* Header of home page */
+
+
+#main-header {
+    background-image: linear-gradient(var(--color-grade2) 40%,var(--color-grade) 60%, var(--color-grade3) ) ;
+    padding: 20px;
+    
+}
+
+#top-right {
+    
+    justify-content: right;
+    
+}
+
+#sign-in {
+    
+    padding: 5px 10px 5px 10px;
+    margin: 10px 10px 0px 10px;
+    border: 1px solid var(--text-color);
+    border-radius: 25px;
+    background-color: var(--color-comp);
+    
+}
+
+#main-header h1 {
+    margin-bottom: 0;
+    font-size: 270%;
+}
+
+#selction-bar {
+    padding: 5px;
+    margin-left: 20px;
+    text-align: center;
+    
+}
+
+#section {
+    padding: 5px 5px 5px 5px;
+    border: 1px solid var(--text-color);
+    background-color: var(--background-color-2);
+}
+
+/* Main of home page*/
+
+#main-main {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#img-container{
+    margin-top: 20px;
+        
+    
+}
+
+#big-img {
+    border-radius: 25px;
+    width: 420px;
+    height: 170px;
+    border-bottom: 1px solid var(--text-color);
+    border-top: 1px solid var(--text-color);
+    
+    
+        
+}
+
+#box-with-text {
+    border: 1px solid var(--background-color-3);
+    border-radius: 0 25px 25px 0 ;
+    width: 300px;
+    height: min-content;
+    margin-top: 0;
+    padding: 10px;
+    background-image: linear-gradient(var(--color-comp) 60%, var(--color-comp3));
+    margin-left: -25px;
+}
+
+#line {
+    display: none;
+}
+#line2 {
+    width: 90%;
+    height: 10px;
+    background-color: var(--text-color);
+    border-color: var(--text-color);
+}
+
+#notes-box {
+    background-color: var(--background-color);
+    margin-left: -25px;
+}
+
+#move-down {
+  margin-left: 50%;
+  margin-right: 50%;
+}
+
+#video {
+    width:100%;
+    height: 50%;
+}
+
+    
+
+/* footer of home page*/
+
+footer {
+    justify-content: right;
+}
+
+
+/* Flex */
+
+#top-right {
+    display: flex;
+}
+
+
+/*Typography for index*/
+
+#selction-bar h6{
+    margin: 0;
+}
+
+#selction-bar h6 a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+#box-with-text #inside-text{
+    padding: 10px;
+    background-color: var(--background-color-2);
+}
+
+#copy{
+    text-align: right;
+    padding-right: 20px;
+}
+
+
+#notes-box h4{
+    font-size: 150%;
+    
+}
+
+#notes-box p{
+    line-height: 120%;
+    margin-right: 40px;
+}
+
+#notes-box h4, #notes-box p{
+    margin-left: 40px;
+    
+}
+
+
+
+
+
+
+
+/*--------------------------------------------------------*/
+
+
+
+
+/*Character creator*/
+
+#main-main-cc {
+
+}
+
+#control-section {
+    padding: 10px 10px 0 10px;
+    background-color: var(--background-color-3);
+    
+}
+
+#player {
+    padding: 5px;  
+}
+
+#file, #delete, #rest, #level-up {
+    text-align: center; 
+    padding: 5px;   
+}
+
+#file p, #delete p, #rest p, #level-up p{
+    margin: 0;
+}
+
+
+#name-lvl #name, #name-lvl #level {
+    border: 3px solid var(--color-comp);
+    background-color: var(--color-comp3);
+    border-radius: 10px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+#name-lvl h3 {
+    text-align: center;
+    margin: 2px 0 2px 0;
+}
+
+#i-hp-s {
+    text-align: center;
+    padding: 2px 25px 2px 25px;
+}
+
+#i-hp-s #health {
+    border: 3px solid var(--color-comp4);
+    border-radius: 40px;
+    margin: 10px 10px 0 10px;
+
+}
+
+#i-hp-s #health h1{
+    font-size: 300%;
+    margin: 0;
+}
+
+#i-hp-s #initiative, #i-hp-s #speed {
+    border: 3px solid var(--color-grade);
+    margin-top: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#i-hp-s #initiative p, #i-hp-s #speed p{
+    
+}
+
+#i-hp-s #initiative h1, #i-hp-s #speed h1{
+    font-size: 300%;
+    margin: 0;
+}
+
+
+#hd-ac-p {
+    margin:  0 9px 0 9px;
+    text-align: center;
+    background-color: var(--color-comp3);
+    border: 3px solid var(--color-comp);
+    border-radius: 20px;
+}
+
+#hd-ac-p #hd, #hd-ac-p #ac, #hd-ac-p #prof{
+    background-color: var(--background-color-3);
+    border: 3px solid var(--color-comp);
+    border-radius: 30px;
+    margin: 5px 8px 5px 8px;
+}
+
+#sdciwc {
+    text-align: center;
+    border: 3px solid var(--color-grade);
+    border-radius: 15px;
+    background-color: var(--background-color);
+    padding: 2px;
+    margin: 2px;
+
+}
+
+#str, #dex, #con, #int, #wis, #cha {
+    border: 3px solid var(--color-grade);
+    border-radius: 15px;
+    background-color: var(--background-color-2);
+    margin: 2px;
+}
+
+#str h3, #dex h3, #con h3, #int h3, #wis h3, #cha h3 {
+    margin-top: 2px;
+    margin-bottom: 0;
+}
+
+#str p, #dex p, #con p, #int p, #wis p, #cha p {
+    font-style: italic;
+    color: var(--text-color2);
+    margin-top: 2px;
+    margin-bottom: 0;
+}
+
+#str h1, #dex h1, #con h1, #int h1, #wis h1, #cha h1 {
+    margin-top: 2px;
+    margin-bottom: 0;
+}
+
+#skills{
+    text-align: center;
+
+}
+
+#skills h3, #skills p {
+    margin: 0;
+}
+#skills p {
+    padding: 3px 0 3px 0;
+}
+
+#s-str, #s-dex, #s-int, #s-wis, #s-cha {
+    border: 3px solid var(--color-grade2);
+    border-radius: 15px;
+    padding: 2px;
+    margin: 2px;
+    height: fit-content;
+    
+}
+
+#s-name {
+    text-align: start;
+    padding-left: 10px;
+}
+
+
+#s-num {
+    text-align: end;
+    padding-right: 10px;
+}
+
+.skill-name {
+    border: 2px solid var(--color-comp);
+    border-radius: 25px;
+    margin: 2px;
+}
+
+
+
+
+/* Flex */
+
+#control-section, #name-lvl, #i-hp-s, #hd-ac-p, #sms, #sdciwc, #skill-stat {
+    display: flex;
+}
+
+#s-a, #s-ass, #s-ahinr, #s-ahimps, #s-dipp {
+    flex-direction: column;
+}
+
+#iwc, #sdc {
+    display: flex;
+    flex-direction: column;
+}
+
+#main-main-cc .coll1of5, #main-main-cc .coll1of3, #main-main-cc .coll1of2 {
+    flex: 1;
+} 
+    
+#main-main-cc .coll3of5 {
+    flex: 3;
+}
+
+#main-main-cc .coll2of3 {
+    flex: 2;
+}
+
+
+
+
+
+/* Main of Character page*/
+
+
+/* This was for old
+#main-main-cc {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#main-stats {
+    border: 3px solid var(--text-color);
+    border-radius: 20px;
+    margin: 10px 10px 0 5px;
+    text-align: center;
+
+
+}
+
+#main-stats p , #main-stats h5{
+    margin-bottom: 2px;
+}
+#main-stats p {
+    margin-top: 2px;
+}
+#main-stats h5{
+    margin-top: 5px;
+}
+
+#stat {
+    width: 150px;
+    border: 2px solid var(--text-color);
+    margin: 4px;
+}
+
+#main-stats input {
+    width: 30px;
+    text-align: center;
+}
+
+
+
+#ac-i-s {
+    border: 3px solid var(--text-color);
+    text-align: center;
+    margin: 5px 5px 0 5px;
+    height: min-content;
+}
+
+#ac-i-s input{
+    width: 25px
+}
+
+#ac, #initiative, #speed {
+    border: 1px solid var(--text-color);
+    padding: 2px;
+    border-radius: 15px;
+    margin: 5px;
+}
+
+
+
+#health {
+    padding: 2px;
+    margin: 5px 5px 0 5px;
+    padding: 3px;
+    border: 2px solid var(--text-color);
+    height: min-content;
+}
+
+
+
+#health input{
+    width: 25px ; 
+}
+#bigger-input {
+    width: 80px !important;
+}
+
+#hp, #thp, #hd{
+    padding: 3px;
+    border: 2px solid var(--text-color);
+    border-radius: 30px;
+    font-size: 70%;
+}
+
+
+
+#st-box {
+    padding: 5px;
+    border: 2px solid var(--text-color);
+    width: fit-content;
+}
+
+#saving-throw, #skills {
+    margin: 6px 6px 0px 6px;
+}
+
+#saving-throw h3, #skills h3 {
+    border: 2px solid var(--text-color);
+    width: min-content;
+    height: min-content;
+
+    
+}
+
+#saving-throw input{
+    width: 20px;
+}
+
+#skills {
+    border: 2px solid var(--text-color);
+}
+
+#top-skill{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.skill {
+    border: 2px solid var(--text-color);
+    padding: 3px;
+    margin: 4px;
+    font-size: 80%;
+    width: fit-content;
+}
+
+.skill input {
+    width: 20px;
+}
+.skill li {
+    border: 1px solid var(--text-color);
+    padding: 3px 0 3px 0;
+}
+
+#p2-skill, #wis, #cha {
+    margin-bottom: 0;
+}
+
+#death hr {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+#death {
+    margin-top: 5px;
+    font-size: 70%;
+    border: 2px solid var(--text-color);
+    text-align: center;
+}
+#death h4 {
+    border: 1px solid var(--background-color-3);
+    border-radius: 15px;
+}
+
+
+/* Flex */
+
+/*
+
+#section1 {
+    display: flex;
+
+}
+
+#section2, #skills {
+    display: flex;
+
+}
+
+#main-atribute{
+    display: flex;
+
+
+}
+
+#main-main-cc .coll1of2, #main-main-cc .coll1of3, #main-main-cc .coll1of6 {
+    flex: 1;
+}
+
+#skills {
+    display: flex;
+    flex-direction: column;
+}
+
+#p1-skills, #p2-skills {
+    display: flex;
+    flex-direction: row;
+}
+
+*/
+
+
+
+/* Footer of Character page*/
+
+
+
+
+
+/*--------------------------------------------------------*/
+
+
+
+
+
+
+/* Item Shop */
+
+
+
+/* main of Item shop*/
+
+
+#main-main-item {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#left-box, #right-box {
+    text-align: center;
+}
+
+
+#bot-left-box, #bot-right-box, #up-left-box, #up-right-box {
+    border: 2px solid var(--text-color);
+    background-color: var(--color-grade2);
+    margin: 5px 2px 5px 2px;
+}
+
+#mid-box {
+    border: 2px solid var(--text-color);
+    margin-top: 10px;
+    height: fit-content;
+}
+
+#mid-box h3 {
+    border: 2px solid var(--text-color);
+    background-color: var(--color-comp2);
+    color: var(--background-color-2);
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.item-box {
+    margin: 0 5px 2px 5px;
+    padding: 5px;
+    background-color: var(--background-color-2);
+    border: 1px solid var(--text-color);
+    border-radius: 25px;
+}
+
+.item-box p {
+    margin: 0;
+    padding: 1px;
+}
+
+#create-item {
+    text-align: center;
+}
+
+#hmd {
+    width: 80%;
+    height: 15px;
+    font-size: 60%;
+}
+
+.bolden {
+    font-weight: bold;
+}
+
+#yccm {
+    margin:0;
+    font-size: 70%;
+}
+
+#cat, #dmg, #nm {
+    padding-bottom: 20px;
+}
+
+#nameit {
+    width: 80%;
+}
+
+.fit-con {
+    height: 150px;
+}
+
+.pad {
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid var(--text-color);
+    border-radius: 15px;
+}
+
+#description {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 90%;
+    resize: none;
+    width: 350px;
+    height: 100px;
+}
+
+#item-image {
+    position: relative;
+    top: -15px;
+    width: 20%;
+    height: auto;
+}
+
+
+
+
+
+.arrow {
+    border: solid var(--text-color);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    margin-bottom: 0;
+    margin-left: 5px;
+    width: 1px;
+  }
+
+.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+  
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.hide-small {
+    display: none;
+}
+
+
+
+
+
+/* Flex */
+
+
+#left-box, #right-box {
+    display: flex;
+    
+    flex: 1;
+}
+
+.collflex {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+}
+
+#mid-box {
+    display: none;
+}
+
+
+
+
+/*--------------------------------------------------------*/
+
+
+
+/* Dungeon page */
+
+#main-main-dun {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#main-main-dun #notes {
+
+    background-color: var(--color-grade2);
+    border-radius: 15px 15px 0 0;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+#main-main-dun #notes h4 {
+    background-color: var(--color-comp);
+    padding: 5px;
+    border-radius: 25px 25px 25px 25px;
+    
+}
+#main-main-dun #notes h4 a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+#main-main-dun #notes h4 a:hover{
+    color: var(--background-color-2);
+}
+
+#main-main-dun #notes input {
+    width: 80%;
+    height: 100px;
+}
+
+#main-main-dun #char-section h3 {
+    margin-bottom: 0;
+}
+
+#char-box {
+    border: 1px solid var(--text-color);
+}
+
+#add-play {
+    border: 2px solid var(--text-color);
+    margin-top: 10px;
+    padding: 5px;
+}
+
+
+.circle {
+    border-radius: 50px;
+}
+
+#plus {
+    rotate: 45deg;
+}
+
+
+
+
+
+
+
+
+
+
+/* Arrow */
+
+.arrow {
+    border: solid var(--text-color);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    margin-bottom: 0;
+    margin-left: 5px;
+    width: 1px;
+  }
+
+.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+  
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.hide-small {
+    display: none;
+}
+
+
+
+
+
+/*--------------------------------------------------------*/
+
+
+
+
+/* Main of notes */
+
+
+#chn, #in, #cn {
+    text-align: center;
+    border: 5px solid var(--color-comp);
+    padding-bottom: 5px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#chn input, #in input, #cn input{
+    width: 80%;
+    text-align: center;
+}
+
+#notes-done p {
+    border: 1px solid var(--background-color);
+    background-color: var(--background-color-3);
+    text-align: center;
+}
+
+#how-play, #how-dm {
+    margin: 20px;
+    padding: 8px;
+    border: 2px solid var(--background-color);
+    background-color: var(--color-grade2);
+    border-radius: 15px;
+}
+
+#how-play p, #how-dm p{
+    background-color: var(--color-grade);
+    padding: 5px;
+    border: 1px solid var(--color-comp);
+
+}
+#how-play h3, #how-dm h3{
+    color: var(--background-color-2);
+    
+
+}
+
+
+
+
+
+
+
+
+/* Flex */
+
+#main-main-notes .flex-box {
+    display:flex;
+    flex-wrap: wrap;
+}
+
+#main-main-notes .coll1of3 {
+    flex: 1;
+}
+
+
+/*--------------------------------------------------------*/
+
+
+
+
+/* Main of about us */
+
+
+#main-main-contact {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#main-main-contact h1 {
+    color: var(--color-comp);
+}
+
+#us {
+    border: 4px solid var(--text-color);
+    background-image: linear-gradient(var(--color-grade) 60%, var(--color-grade2) );
+    border-radius: 5px;
+    padding: 12px;
+}
+
+#about {
+    border: 2px solid var(--text-color);
+    background-color: var(--background-color-2);
+    border-radius: 10px;
+    padding: 8px;
+}
+
+.small-box {
+    border: 1px solid var(--text-color);
+    border-radius: 15px;
+    padding: 2px;
+    background-color: var(--background-color-2);
+    margin: 4px 0 4px 0;
+}
+
+.small-box p {
+    margin: 2px;
+}
+
+#main-main-contact .long {
+    width: 80%;
+}
+
+
+#bb {
+    border: 5px solid var(--text-color);
+    border-radius: 25px;
+    background-image: linear-gradient(var(--color-grade2) 60%, var(--color-grade3) );
+    margin-bottom: 10px;
+    
+}
+
+#suae {
+    border: 2px solid var(--text-color);
+    border-radius: 25px;
+    background-color: var(--background-color-2);
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    
+}
+
+.tab {
+    border: 2px solid var(--text-color);
+    border-radius: 25px;
+    background-color: var(--background-color-2);
+    padding: 8px;
+}
+
+
+/*--------------------------------------------------------*/
+
+
+/* main sign in */
+
+#main-main-si {
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 900px){
+
+    .flex-box {
+        display: flex;
+    }
+
+
+    .coll1of6, .coll1of2, .coll1of3 {
+        flex: 1;
+    }
+
+    .coll2of3 {
+        flex: 2;
+    }
+
+    #selction-bar {
+        width: 50%;
+
+    }
+
+    #box-with-text {
+        border: 1px solid var(--background-color-3);
+        border-radius: 0 0 25px 25px ;
+        width: 450px;
+        height: 400px;
+        margin-left: 60px;
+        margin-top: 0;
+        padding: 10px;
+        background-color: var(--background-color-3);
+    }
+
+    #big-img {
+        border-bottom: 1px solid var(--text-color);
+        border-top: 1px solid var(--text-color);
+        border-radius: 25px;
+        width: 100%;
+        height: 100%;
+    }
+
+    #line {
+        display: block;
+        width: 90%;
+        height: 10px;
+        background-color: var(--background-color);
+    }
+
+    #notes-box {
+        background-color: var(--background-color);
+        margin: 20px;
+        padding: 10px;
+        height: min-content;
+    }
+
+    #line2 {
+        display: block;
+        width: 90%;
+        height: 10px;
+        background-color: var(--text-color);
+        border-color: var(--text-color);
+    }
+
+
+
+    /* Character creator */
+
+
+    /* Item Shop */
+
+    .collflex {
+        flex-direction: column;
+    }
+
+    #mid-box {
+        text-align: center;
+    }
+
+    #mid-box {
+        display: block;
+        
+    }
+
+
+}

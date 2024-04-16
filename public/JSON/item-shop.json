@@ -1,0 +1,139 @@
+[
+    {
+        "category": "Weapon",
+        "name": "Short Sword",
+        "image": "images/charcater.png",
+        "values": [
+            {
+                "amount": "1",
+                "dice": "d6",
+                "type": "Piercing Damage",
+                "properties": [
+                    "Finesse",
+                    "light",
+                    "5ft reach"
+                ]
+            }
+        ]
+    },
+    {
+        "category": "Weapon",
+        "name": "Great Sword",
+        "image": "images/charcater.png",
+        "values": [
+            {
+                "amount": "2",
+                "dice": "d6",
+                "type": "Slashing Damage",
+                "properties": [
+                    "Heavy",
+                    "Two-Handed",
+                    "5ft reach"
+                ]
+            }
+        ]
+    },
+    {
+        "category": "Spell",
+        "name": "Fire Bolt",
+        "image": "images/item.png",
+        "values": [
+            {
+                "amount": "1",
+                "dice": "d10",
+                "type": "Fire Damage",
+                "properties": [
+                    "Single Target",
+                    "cantrip",
+                    "120ft reach"
+                ]
+            }
+        ]
+    },
+    {
+        "category": "Spell",
+        "name": "Sacred Flame",
+        "image": "images/item.png",
+        "values": [
+            {
+                "amount": "1",
+                "dice": "d8",
+                "type": "Radiant Damage",
+                "properties": [
+                    "Single Target",
+                    "cantrip",
+                    "60ft reach"
+                ]
+            }
+        ]
+    },
+    {
+        "category": "Wonder",
+        "name": "Ring of Wishes",
+        "image": "images/about.png",
+        "values": [
+            {
+                "amount": "3",
+                "dice": "",
+                "type": "Charages",
+                "properties": [
+                    "You can use the Wish spell when you expend a charge"
+            
+                ]
+            }
+        ]
+    },
+    {
+        "category": "Wonder",
+        "name": "Acheron Blade",
+        "image": "images/about.png",
+        "values": [
+            {
+                "amount": "1",
+                "dice": "per Dusk",
+                "type": "Any Sword",
+                "properties": [
+                    "+1 to attacks and damage rolls",
+                    "you are immune to effects that turn undead",
+                    "While holding use action to give 1d4 + 4 temp Health",
+                    "When you hit an attack on a creature they have disadvantage on their next saving throw (ignored if creture resists frightened)"
+            
+                ]
+            }
+        ]
+    },
+    {
+        "category": "Equipment",
+        "name": "Paper",
+        "image": "images/notes.png",
+        "values": [
+            {
+                "amount": "1 pc =",
+                "dice": "2sp",
+                "type": "weight: none",
+                "properties": [
+                    "can be used for scribing spells into a spell book"
+            
+                ]
+            }
+        ]
+    },
+    {
+        "category": "Equipment",
+        "name": "Spellbook",
+        "image": "images/notes.png",
+        "values": [
+            {
+                "amount": "1 =",
+                "dice": "50gp",
+                "type": "weight: 3lb.",
+                "properties": [
+                    "Essential for wizards", 
+                    "a spellbook is a leather-bound tome with 100 blank vellum pages suitable for recording spells"
+            
+                ]
+            }
+        ]
+    }
+
+]

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dungeon Crafter's Guide</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <header id="main-header">
+            <div id="top-right" class="flex-box">
+                <p id="sign-in">Sign In &nbsp; <img src="images/signin.png"></p>
+            </div>
+            <h1>Dungeon Crafter's Guide</h1>
+            <div id="selction-bar" class="flex-box"> 
+
+                <section id="section" class="coll1of6">
+                    <h6><a href="index.html"> <img src="images/home.png"> Home </a></h6>
+                </section>
+
+                <section id="section" class="coll1of6">
+                    <h6><a href="character-crafter.html"> <img src="images/charcater.png"> Character Crafter </a></h6>
+                </section>
+
+                <section id="section" class="coll1of6">
+                    <h6><a href="item-shop.html"> <img src="images/item.png"> Item Shop </a></h6>
+                </section>
+
+                <section id="section" class="coll1of6">
+                    <h6><a href="dungeon.html"> <img src="images/dungeon.png"> Dungeon </a></h6>
+                </section>
+
+                <section id="section" class="coll1of6">
+                    <h6><a href="notes.html"> <img src="images/notes.png"> Notes </a></h6>
+                </section>
+
+                <section id="section" class="coll1of6">
+                    <h6><a href="contact.html"> <img src="images/about.png"> About Us </a></h6>
+                </section>
+            </div>
+
+        </header>
+
+        <main id="main-main-item">
+            <div class="flex-box">
+
+                <section id="left-box" class="collflex" class="coll1of3">
+
+                    <div class="flex-box">
+                        <section id="up-left-box" class="collflex" class="coll1of2">
+                            <h5>Weapons <span id="pointer1" class="arrow up"></span></h5>
+
+                            <div id="nav-items-w" class="hide-small">
+                               <!-- <div class="item-box"> 
+                                    <p>This</p>
+                                </div>
+                                <div class="item-box"> 
+                                    <p>Is</p>
+                                </div>
+                                <div class="item-box"> 
+                                    <p>Test</p>
+                                </div>-->
+                                
+                            </div>
+                            
+                        </section>
+                    </div>
+
+                    <div class="flex-box">
+                        <section id="bot-left-box" class="collflex" class="coll1of2">
+                            <h5>Spells <span id="pointer2" class="arrow up"></span> </h5>
+
+                            <div id="nav-items-s" class="hide-small">
+                                
+                            </div>
+
+                        </section>
+                    </div>
+
+                </section>
+
+                <section id="mid-box" class="coll1of3">
+                    <h3>The Item Shop</h3>
+                    <p> 
+                        This is a place where you can add items from official Dungeon and Dragons content to your characters. 
+                        This content ranges from spells, weapons, magic items, and equipment. 
+                        For custom items ask your dungeon master to add them through the Dungeon page or create some here. 
+                    </p>
+
+                    <hr>
+
+                    <h3>Create an Item</h3>
+
+                    <form id="form-created-item">
+                        <div id="cat">
+                            <label class="bolden" for="Item">Item Category</label>
+                            <select name="item-category" required>
+                                <option value="">-Choose a Category-</option>
+                                <option value="Weapon">Weapons</option>
+                                <option value="Spell">Spells</option>
+                                <option value="Wonder">Wonderous Items</option>
+                                <option value="Equipment">Equipment</option>
+                            </select>
+                        </div>
+    
+                        <p id="nm">
+                            <label class="bolden" for="name">Name</label>
+                            <input id="nameit" name="item-name" maxlength="50" placeholder="What would you like to name it?">
+                        </p>
+    
+                        <p id="dmg">
+                            <label class="bolden" for="damage">Damage Type</label>
+                            <select name="item-damage-type" required>
+                                <option value="">-Choose a Damage Type-</option>
+                                <option value="Acid">Acid</option>
+                                <option value="Bludgeoning">Bludgeoning</option>
+                                <option value="Cold">Cold</option>
+                                <option value="Fire">Fire</option>
+                                <option value="Force">Force</option>
+                                <option value="Lightning">Lightning</option>
+                                <option value="Necrotic">Necrotic</option>
+                                <option value="Piercing">Piercing</option>
+                                <option value="Poision">Poision</option>
+                                <option value="Psychic">Psychic</option>
+                                <option value="Radiant">Radiant</option>
+                                <option value="Slashing">Slashing</option>
+                                <option value="Thunder">Thunder</option>
+                            </select>
+                        </p>
+    
+                        <div id="create-item" class="flex-box">
+    
+                            <div class="coll1of3 pad">
+                                <label class="bolden" for="properties">Properties </label>
+                                <p id="yccm">ctrl/command click to select multiple</p>
+                                <p>
+                                    <select id="item-properties" class="fit-con" name="item-properties" multiple>
+                                        <option value="ammo">Ammunition</option>
+                                        <option value="finesse">Finesse</option>
+                                        <option value="heavy">Heavy</option>
+                                        <option value="light">Light</option>
+                                        <option value="loading">Loading</option>
+                                        <option value="range">Range</option>
+                                        <option value="reach">Reach</option>
+                                        <option value="special">Special</option>
+                                        <option value="thrown">Thrown</option>
+                                        <option value="two-handed">Two-Handed</option>
+                                        <option value="versatile">Versatile</option>
+                                        <option value="improvised">Improvised Weapon</option>
+                                        <option value="silvered">Silvered Weapon</option>
+                                      </select>
+                                </p>
+                                
+    
+                            </div>
+    
+                            <div class="coll1of3 pad">
+                                <label class="bolden" for="conditions">Conditions</label>
+                                <p id="yccm">ctrl/command click to select multiple</p>
+                                <p>
+    
+                                    <select id="item-conditions" class="fit-con" name="item-conditions" multiple>
+                                        <option value="blind">Blind</option>
+                                        <option value="charmed">Charmed</option>
+                                        <option value="deafened">Deafened</option>
+                                        <option value="frightened">Frightened</option>
+                                        <option value="grappled">Grappled</option>
+                                        <option value="incapacitated">Incapacitated</option>
+                                        <option value="invisable">Invisable</option>
+                                        <option value="paralyzed">Paralyzed</option>
+                                        <option value="petrified">Petrified</option>
+                                        <option value="poisoned">Poisoned</option>
+                                        <option value="prone">Prone</option>
+                                        <option value="restrained">Restrained</option>
+                                        <option value="stunned">Stunned</option>
+                                        <option value="unconscious">Unconscious</option>
+                                        <option value="exhaustion">Exhaustion</option>
+                                      </select>
+                                </p>
+    
+                            </div>
+    
+                            <div class="coll1of3 pad">
+                                <label class="bolden" for="dice">Dice Value</label>
+                                <p>
+                                    <input id="hmd" name="item-dice-amount" type="number" min="1" max="30" placeholder="The amount of Dice">
+    
+                                    <select name="item-dice-type" required>
+                                        <option value="">-Choose a Dice Type-</option>
+                                        <option value="d4">D4</option>
+                                        <option value="d6">D6</option>
+                                        <option value="d8">D8</option>
+                                        <option value="d10">D10</option>
+                                        <option value="d12">D12</option>
+                                        <option value="d20">D20</option>
+                                      </select>
+                                </p>
+    
+                            </div>
+    
+                        </div>
+    
+                        <p>
+                            <label class="bolden" for="desc">Item Description</label>
+                        </p>
+                        <p>
+                            <textarea id="description" name="item-desc" maxlength="450" placeholder="Add any other infromation you believe the item would need."></textarea>
+                        </p>
+                        
+                        <p>
+                            <button type="submit">Submit</button>
+                        </p>
+                    </form>
+
+                </section>
+
+                <section id="right-box" class="collflex" class="coll1of3">
+                    <div class="flex-box">
+                        <section id="up-right-box" class="collflex" class="coll1of2">
+                            <h5>Wonderous Items <span id="pointer3" class="arrow up"></span></h5>
+
+                            <div id="nav-items-m" class="hide-small">
+                                
+                            </div>
+
+                        </section>
+                    </div>
+
+                    <div class="flex-box">
+                        <section id="bot-right-box" class="collflex" class="coll1of2">
+                            <h5>Equipment <span id="pointer4" class="arrow up"></span></h5>
+
+                            <div id="nav-items-e" class="hide-small">
+                                
+                            </div>
+
+                        </section>
+                    </div>
+                </section>
+
+
+
+            </div>
+
+        </main>
+
+        <footer>
+            <p id="copy"> @DungeonCraftersGuide.com</p>
+        </footer>
+
+        <script src="script.js"></script>
+        <script src="script-item.js"></script>
+    </body>
+</html>
