@@ -19,7 +19,7 @@ const createItems = async() => {
         console.log(item.item_category, item.category);
 
         const category = document.getElementById(whichIsWhich(item.item_category));
-        console.log(category);
+        //console.log(category);
 
         const div = document.createElement("div");
         div.classList.add("item-box")
@@ -42,6 +42,7 @@ const createItems = async() => {
         const eLink = document.createElement("a");
         eLink.innerHTML = "&#9998;";
         eLink.id = "edit-item";
+        eLink.onclick = showItemInForm;
 
         const flexDiv = document.createElement("div");
         flexDiv.classList.add("flex-box")
@@ -88,12 +89,24 @@ const createItems = async() => {
         div.append(cond_prop);
         div.append(descrip);
 
-        console.log(div);
-        eLink.onclick = showItemInForm(item);
+        //console.log(div);
+        
 
         category.append(div);
 
     });
+
+    const containerLeft = document.querySelector("#left-box");
+
+    const editMatches = containerLeft.querySelectorAll(`a[id^="edit-item"]`);
+
+
+    editMatches.forEach((span)=>{
+        a.onclick = showItemInForm;
+        //console.log(span.getAttribute("name"))
+    })
+
+
 
 }
 
@@ -106,7 +119,7 @@ const submitCreateItemForm = async (e) => {
     
     const con = formData.getAll("item_conditions");
     const prop = formData.getAll("item_properties")
-    console.log(con , prop, form._id);
+    //console.log(con , prop, form._id);
     formData.delete("item_conditions");
     formData.delete("item_properties");
     formData.append("item_conditions", con);
@@ -136,6 +149,10 @@ const submitCreateItemForm = async (e) => {
 
     await response.json();
     resetForm();
+    document.getElementById("nav-items-w").innerHTML = "";
+    document.getElementById("nav-items-s").innerHTML = "";
+    document.getElementById("nav-items-m").innerHTML = "";
+    document.getElementById("nav-items-e").innerHTML = "";
     createItems();
 }
 
