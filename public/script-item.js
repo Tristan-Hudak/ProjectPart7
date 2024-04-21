@@ -89,13 +89,11 @@ const createItems = async() => {
         div.append(descrip);
 
         console.log(div);
+        eLink.onclick = showItemInForm();
 
         category.append(div);
 
     });
-
-    eLink.onclick = showItemInForm();
-
 
 }
 
