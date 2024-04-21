@@ -218,7 +218,7 @@ popDiceT = (diceT) => {
 }
 popImg = (img) => {
     console.log(img);
-    const selector = document.getElementById("item-image");
+    const selector = document.getElementById("item-img");
     console.log(selector)
     selector.value = img;
 }
