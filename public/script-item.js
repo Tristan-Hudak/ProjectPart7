@@ -89,7 +89,7 @@ const createItems = async() => {
         div.append(descrip);
 
         console.log(div);
-        eLink.onclick = showItemInForm();
+        eLink.onclick = showItemInForm;
 
         category.append(div);
 
@@ -139,7 +139,7 @@ const submitCreateItemForm = async (e) => {
     createItems();
 }
 
-const showItemInForm = (e) => {
+const showItemInForm = async(e) => {
     e.preventDefault();
     console.log("hello");
     console.log(e.target.value);
