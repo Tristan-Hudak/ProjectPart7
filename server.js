@@ -66,14 +66,14 @@ app.post("/api/items", upload.single("img"), async (req, res) => {
     }
   
     const item = new Item({
-      item_name:req.body.name,
-      item_category:req.body.category,
-      item_dice_amount: req.body.category,
-      item_dice_type:req.body.dice,
-      item_damage_type:req.body.type,
-      item_desc:req.body.description,
-      item_properties:req.body.properties.split(","),
-      item_conditions:req.body.conditions.split(",")
+      item_name:req.body.item_name,
+      item_category:req.body.item_category,
+      item_dice_amount: req.body.item_dice_amount,
+      item_dice_type:req.body.item_dice_type,
+      item_damage_type:req.body.item_damage_type,
+      item_desc:req.body.item_desc,
+      item_properties:req.body.item_properties.split(","),
+      item_conditions:req.body.item_conditions.split(",")
     });
   
     if(req.file){
@@ -93,14 +93,14 @@ app.put("/api/items/:id", upload.single("img"), async (req, res) => {
     }
   
     let fieldsToUpdate = {
-        item_name:req.body.name,
-        item_category:req.body.category,
-        item_dice_amount: req.body.category,
-        item_dice_type:req.body.dice,
-        item_damage_type:req.body.type,
-        item_desc:req.body.description,
-        item_properties:req.body.properties.split(","),
-        item_conditions:req.body.conditions.split(",")
+      item_name:req.body.item_name,
+      item_category:req.body.item_category,
+      item_dice_amount: req.body.item_dice_amount,
+      item_dice_type:req.body.item_dice_type,
+      item_damage_type:req.body.item_damage_type,
+      item_desc:req.body.item_desc,
+      item_properties:req.body.item_properties.split(","),
+      item_conditions:req.body.item_conditions.split(",")
     };
   
     if(req.file){
