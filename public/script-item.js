@@ -183,36 +183,43 @@ const showItemInForm = async(e) => {
 const popCat = (cat) => {
     console.log(cat);
     const selector = document.getElementById("item-cat");
+    console.log(selector)
     selector.value = cat;
 }
 popDT = (DT) => {
     console.log(DT);
     const selector = document.getElementById("damage-type");
+    console.log(selector)
     selector.value = DT;
 }
 popProp = (prop) => {
     console.log(prop);
     const selector = document.getElementById("item-properties");
+    console.log(selector)
     selector.value = prop;
 }
 popCon = (con) => {
     console.log(con);
     const selector = document.getElementById("item-conditions");
+    console.log(selector)
     selector.value = con;
 }
 popDiceA = (diceA) => {
     console.log(diceA);
     const selector = document.getElementById("dice-amount");
+    console.log(selector)
     selector.value = diceA;
 }
 popDiceT = (diceT) => {
     console.log(diceT);
     const selector = document.getElementById("dice-type");
+    console.log(selector)
     selector.value = diceT;
 }
 popImg = (img) => {
     console.log(img);
     const selector = document.getElementById("item-image");
+    console.log(selector)
     selector.value = img;
 }
 
