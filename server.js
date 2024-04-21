@@ -29,15 +29,15 @@ mongoose
     console.log("couldn't connect to mongodb", error);
   });
 const itemSchema = new mongoose.Schema({
-    category: String,
-    name: String,
+    item_categorycategory: String,
+    item_name: String,
     image: String,
-    amount: String,
-    dice: String,
-    type: String,
-    description: String,
-    properties: [String],
-    conditions: [String]
+    item_dice_amount: String,
+    item_dice_type: String,
+    item_damage_type: String,
+    item_desc: String,
+    item_properties: [String],
+    item_conditions: [String]
 });
 
 const Item = mongoose.model("Item", itemSchema);
@@ -104,7 +104,7 @@ app.put("/api/items/:id", upload.single("img"), async (req, res) => {
     };
   
     if(req.file){
-      fieldsToUpdate.img = "images/" + req.file.filename;
+      fieldsToUpdate.image = "images/" + req.file.filename;
     }
   
     const id = req.params.id;
