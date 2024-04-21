@@ -16,9 +16,9 @@ const createItems = async() => {
     let Items = await getItems();
 
     Items.forEach((item)=>{
-        console.log(item);
+        console.log(item.item_category, item.category);
 
-        const category = document.getElementById(whichIsWhich(item.category));
+        const category = document.getElementById(whichIsWhich(item.item_category));
         console.log(category);
 
         const div = document.createElement("div");
@@ -42,7 +42,7 @@ const createItems = async() => {
         flexDiv.classList.add("flex-box")
 
         section01.append(img);
-        section02.append(item.category + " Name: " + item.name);
+        section02.append(item.item_category + " Name: " + item.item_name);
 
         flexDiv.append(section01);
         flexDiv.append(section02);
@@ -60,8 +60,8 @@ const createItems = async() => {
         section12.classList.add("coll1of3");
 
 
-        section11.append(item.amount + item.dice);
-        section12.append(item.type + " Damage");
+        section11.append(item.item_dice_amount + item.item_dice_type);
+        section12.append(item.item_damage_type + " Damage");
 
         flexDiv2.append(section11);
         flexDiv2.append(section12);
@@ -71,8 +71,8 @@ const createItems = async() => {
         const cond_prop =  document.createElement("p");
         const descrip =  document.createElement("p");
 
-        cond_prop.innerHTML ="Properties: " + item.properties + " Conditions: " + item.condition;
-        descrip.innerHTML = "Description: " + item.description;
+        cond_prop.innerHTML ="Properties: " + item.item_properties + " Conditions: " + item.item_conditions;
+        descrip.innerHTML = "Description: " + item.item_desc;
 
 
 
@@ -80,6 +80,8 @@ const createItems = async() => {
         div.append(flexDiv2);
         div.append(cond_prop);
         div.append(descrip);
+
+        console.log(div);
 
         category.append(div);
 
