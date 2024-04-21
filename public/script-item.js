@@ -161,7 +161,7 @@ const showItemInForm = async(e) => {
     console.log("hello");
     let items = await getItems();
 
-    Items.forEach((item) => {
+    items.forEach((item) => {
         if (e.target.getAttribute("name") == item._id){
             const form = document.getElementById("form-created-item");
 
