@@ -29,6 +29,7 @@ const createItems = async() => {
 
         const section01 = document.createElement("section");
         const section02 = document.createElement("section");
+        const section03 = document.createElement("section");
         const img =  document.createElement("img");
 
         section01.classList.add("coll1of2");
@@ -45,12 +46,13 @@ const createItems = async() => {
         const flexDiv = document.createElement("div");
         flexDiv.classList.add("flex-box")
 
-        section01.append(eLink);
         section01.append(img);
         section02.append(item.item_category + " Name: " + item.item_name);
+        section03.append(eLink);
 
         flexDiv.append(section01);
         flexDiv.append(section02);
+        flexDiv.append(section03);
 
 
         //middle flexbox
@@ -136,6 +138,8 @@ const submitCreateItemForm = async (e) => {
 }
 
 const showItemInForm = async(e) => {
+    e.preventDefault();
+    console.log("hello");
     console.log(e.target.value);
 }
 
