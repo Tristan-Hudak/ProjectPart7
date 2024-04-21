@@ -39,7 +39,7 @@ const createItems = async() => {
 
         img.src = item.item_image;
 
-        const eLink = document.createElement("a");
+        const eLink = document.createElement("span");
         eLink.innerHTML = "&#9998;";
         eLink.id = "edit-item";
         eLink.onclick = showItemInForm;
@@ -102,7 +102,7 @@ const createItems = async() => {
 
 
     editMatches.forEach((span)=>{
-        a.onclick = showItemInForm;
+        span.onclick = showItemInForm;
         //console.log(span.getAttribute("name"))
     })
 
