@@ -66,14 +66,14 @@ app.post("/api/items", upload.single("img"), async (req, res) => {
     }
   
     const item = new Item({
-      name:req.body.name,
-      category:req.body.category,
-      amount: req.body.amount,
-      dice:req.body.dice,
-      type:req.body.type,
-      description:req.body.description,
-      properties:req.body.properties.split(","),
-      conditions:req.body.conditions.split(",")
+      item_name:req.body.name,
+      item_category:req.body.category,
+      item_dice_amount: req.body.category,
+      item_dice_type:req.body.dice,
+      item_damage_type:req.body.type,
+      item_desc:req.body.description,
+      item_properties:req.body.properties.split(","),
+      item_conditions:req.body.conditions.split(",")
     });
   
     if(req.file){
@@ -93,14 +93,14 @@ app.put("/api/items/:id", upload.single("img"), async (req, res) => {
     }
   
     let fieldsToUpdate = {
-        name:req.body.name,
-        category:req.body.category,
-        amount: req.body.category,
-        dice:req.body.dice,
-        type:req.body.type,
-        description:req.body.description,
-        properties:req.body.properties.split(","),
-        conditions:req.body.conditions.split(",")
+        item_name:req.body.name,
+        item_category:req.body.category,
+        item_dice_amount: req.body.category,
+        item_dice_type:req.body.dice,
+        item_damage_type:req.body.type,
+        item_desc:req.body.description,
+        item_properties:req.body.properties.split(","),
+        item_conditions:req.body.conditions.split(",")
     };
   
     if(req.file){
@@ -120,14 +120,14 @@ app.delete("/api/recipes/:id", async (req, res) => {
 
 function validateItem(item) {
     const schema = Joi.object({
-      name: Joi.string().min(3).required(),
-      category: Joi.string().valid("Weapon", "Spell", "Wonder", "Equipment").required(),
-      amount: Joi.string().required(),
-      dice: Joi.string().valid().required(),
-      type: Joi.string().valid("Acid", "Bludgeoning", "Cold", "Fire", "Force", "Lightning", "Necrotic", "Piercing", "Poision", "Psychic", "Radiant", "Slashing", "Thunder").required(),
-      description: Joi.string().min(3).required(),
-      properties: Joi.allow(""),
-      conditions: Joi.allow(""),
+      item_name: Joi.string().min(3).required(),
+      item_category: Joi.string().valid("Weapon", "Spell", "Wonder", "Equipment").required(),
+      item_dice_amount: Joi.string().required(),
+      item_dice_type: Joi.string().valid().required(),
+      item_damage_type: Joi.string().valid("Acid", "Bludgeoning", "Cold", "Fire", "Force", "Lightning", "Necrotic", "Piercing", "Poision", "Psychic", "Radiant", "Slashing", "Thunder").required(),
+      item_desc: Joi.string().min(3).required(),
+      item_properties: Joi.allow(""),
+      item_conditions: Joi.allow(""),
       _id: Joi.allow(""),
     });
   
