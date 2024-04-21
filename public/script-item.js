@@ -93,6 +93,10 @@ const createItems = async() => {
         category.append(div);
 
     });
+
+    eLink.onclick = showItemInForm();
+
+
 }
 
 const submitCreateItemForm = async (e) => {
@@ -137,7 +141,7 @@ const submitCreateItemForm = async (e) => {
     createItems();
 }
 
-const showItemInForm = (e) => {
+const showItemInForm = () => {
     //e.preventDefault();
     console.log("hello");
     //console.log(e.target.value);
@@ -209,7 +213,6 @@ document.getElementById("up-left-box").onclick = showHideNavWepon;
 document.getElementById("bot-left-box").onclick = showHideNavSpell;
 document.getElementById("up-right-box").onclick = showHideNavWItems;
 document.getElementById("bot-right-box").onclick = showHideNavEquipment;
-document.getElementById("edit-item").onclick = showItemInForm;
 
 //JSON stuff
 window.onload = () => {
