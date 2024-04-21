@@ -42,6 +42,7 @@ const createItems = async() => {
         const eLink = document.createElement("span");
         eLink.innerHTML = "&#9998;";
         eLink.id = "edit-item";
+        eLink.setAttribute("name", item._id);
         eLink.onclick = showItemInForm;
 
         const flexDiv = document.createElement("div");
@@ -156,9 +157,31 @@ const submitCreateItemForm = async (e) => {
     createItems();
 }
 
-const showItemInForm = async(item) => {
+const showItemInForm = async(e) => {
     console.log("hello");
-    console.log(item);
+    let items = await getItems();
+
+    Items.forEach((item) => {
+        if (e.target.getAttribute("name") == item._id){
+            const form = document.getElementById("form-created-item");
+
+            form._id.value = item._id;
+            form.item_category = item.item_category;
+            form.item_name.value = item.item_name;
+            form.item_damage_type = item.item_damage_type;
+            form.item_properties = item.item_properties;
+            form.item_conditions = item.item_conditions;
+            form.item_dice_amount = item.item_dice_amount;
+            form.item_dice_type = item.item_dice_type
+            form.item_image = item.item_image;
+            form.item_desc.value = item.item_desc;
+            
+        }
+    })
+
+    
+
+
 }
 
 
