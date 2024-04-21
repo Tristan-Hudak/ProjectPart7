@@ -38,9 +38,14 @@ const createItems = async() => {
 
         img.src = item.item_image;
 
+        const eLink = document.createElement("a");
+        eLink.innerHTML = "&#9998;";
+        eLink.id = "edit-item";
+
         const flexDiv = document.createElement("div");
         flexDiv.classList.add("flex-box")
 
+        section01.append(eLink);
         section01.append(img);
         section02.append(item.item_category + " Name: " + item.item_name);
 
@@ -130,6 +135,10 @@ const submitCreateItemForm = async (e) => {
     createItems();
 }
 
+const showItemInForm = async(e) => {
+    console.log(e.target.value);
+}
+
 
 const resetForm = () => {
     const form = document.getElementById("form-created-item");
@@ -196,6 +205,7 @@ document.getElementById("up-left-box").onclick = showHideNavWepon;
 document.getElementById("bot-left-box").onclick = showHideNavSpell;
 document.getElementById("up-right-box").onclick = showHideNavWItems;
 document.getElementById("bot-right-box").onclick = showHideNavEquipment;
+document.getElementById("edit-item").onclick = showItemInForm;
 
 //JSON stuff
 window.onload = () => {
