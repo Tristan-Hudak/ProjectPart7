@@ -297,6 +297,7 @@ const submitCreateItemForm = async (e) => {
     const prop = formData.getAll("item-properties")
     console.log(con , prop, form._id);
     formData.delete("item-conditions");
+    formData.delete("item-properties");
     formData.append("item-conditions", con);
     formData.append("item-properties", prop);
 
