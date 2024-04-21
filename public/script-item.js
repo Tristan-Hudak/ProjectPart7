@@ -139,10 +139,10 @@ const submitCreateItemForm = async (e) => {
     createItems();
 }
 
-const showItemInForm = () => {
-    //e.preventDefault();
+const showItemInForm = (e) => {
+    e.preventDefault();
     console.log("hello");
-    //console.log(e.target.value);
+    console.log(e.target.value);
 }
 
 
