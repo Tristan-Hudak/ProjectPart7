@@ -327,41 +327,6 @@ const submitCreateItemForm = async (e) => {
     resetForm();
 }
 
-/*const submitCreateItemForm = (e) => {
-    e.preventDefault();
-    //console.log("hi")
-    
-    const form = e.target;
-    const itemCategory = form.elements["item-category"].value;
-    const itemName = form.elements["item-name"].value;
-    const itemDamageType = form.elements["item-damage-type"].value;
-    const itemProperties = getPropertyConditionValue("item-properties");
-    const itemConditions = getPropertyConditionValue("item-conditions");
-    const itemDiceAmount = form.elements["item-dice-amount"].value;
-    const itemDiceType = form.elements["item-dice-type"].value;
-    const itemDescription = form.elements["item-desc"].value;
-    const imageSRC = "images/signin.png";
-
-    console.log(
-        "Category " + itemCategory + 
-        " Name " + itemName + 
-        " damage type " + itemDamageType + 
-        " properties " + itemProperties.innerHTML +
-        " condoitions " + itemConditions.innerHTML +
-        " dice amount " + itemDiceAmount + 
-        " dice type D" + itemDiceType + 
-        " descrip " + itemDescription
-    );
-
-    console.log(whichIsWhich(itemCategory))
-
-
-    //const item = new Item(`${itemCategory}`, `${itemName}`, `${itemDamageType}`, `${itemProperties.innerHTML}`, `${itemConditions.innerHTML}`, `${itemDiceAmount}`, `${itemDiceType}`, `${itemDescription}`, imageSRC )
-    //console.log(item)
-    console.log(whichIsWhich(itemCategory))
-    document.getElementById(whichIsWhich(itemCategory)).append(item.createItem);
-    resetForm();
-}*/
 
 const resetForm = () => {
     const form = document.getElementById("form-created-item");
@@ -394,29 +359,6 @@ const whichIsWhich = (cat) => {
     return theRightOne;
 
 };
-
-const getPropertyConditionValue = (thingy) => {
-
-    // attributed code : https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/storing-values-from-multiple-select-into/td-p/1252385
-    const optionsTest = document.getElementById(thingy).selectedOptions;
-    const values = Array.from(optionsTest).map(({value}) => " " + value );
-
-    const p = document.createElement("p")
-
-    for(let i in values) {
-        //console.log(values);
-        const splicedThing = values.splice(0)
-        p.append(splicedThing);
-        //console.log(p)
-
-    };
-
-    //console.log(p)
-    
-    return p;
-
-}
-
 
 
 document.getElementById("form-created-item").onsubmit = submitCreateItemForm;
@@ -454,7 +396,7 @@ document.getElementById("bot-right-box").onclick = showHideNavEquipment;
 
 //JSON stuff
 window.onload = () => {
-    //showItems();
+    createItems();
 
 
 
