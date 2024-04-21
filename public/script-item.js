@@ -293,13 +293,13 @@ const submitCreateItemForm = async (e) => {
     const formData = new FormData(form);
     let response;
     
-    const con = formData.getAll("item-conditions");
-    const prop = formData.getAll("item-properties")
-    console.log(con , prop, form._id);
+    const con = formData.getAll("item_conditions");
+    const prop = formData.getAll("item_properties")
+    console.log(con , prop, form._id);/*
     formData.delete("item_conditions");
     formData.delete("item_properties");
     formData.append("item_conditions", con);
-    formData.append("item_properties", prop);
+    formData.append("item_properties", prop);*/
 
     console.log(...formData);
 
