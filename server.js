@@ -31,7 +31,7 @@ mongoose
 const itemSchema = new mongoose.Schema({
     item_category: String,
     item_name: String,
-    image: String,
+    item_image: String,
     item_dice_amount: String,
     item_dice_type: String,
     item_damage_type: String,
@@ -101,9 +101,9 @@ app.put("/api/items/:id", upload.single("img"), async (req, res) => {
       item_conditions:req.body.item_conditions.split(",")
     };
   
-    if(req.file){
+    /*if(req.file){
       fieldsToUpdate.image = "images/" + req.file.filename;
-    }
+    }*/
   
     const id = req.params.id;
   
