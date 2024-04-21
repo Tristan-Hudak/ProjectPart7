@@ -166,23 +166,57 @@ const showItemInForm = async(e) => {
             const form = document.getElementById("form-created-item");
 
             form._id.value = item._id;
-            form.item_category = item.item_category;
+            form.item_category = popCat(item.item_category);
             form.item_name.value = item.item_name;
-            form.item_damage_type = item.item_damage_type;
-            form.item_properties = item.item_properties;
-            form.item_conditions = item.item_conditions;
-            form.item_dice_amount = item.item_dice_amount;
-            form.item_dice_type = item.item_dice_type
-            form.item_image = item.item_image;
+            form.item_damage_type = popDT(item.item_damage_type);
+            form.item_properties = popProp(item.item_properties);
+            form.item_conditions = popCon(item.item_conditions);
+            form.item_dice_amount = popDiceA(item.item_dice_amount);
+            form.item_dice_type = popDiceT(item.item_dice_type);
+            form.item_image = popImg(item.item_image);
             form.item_desc.value = item.item_desc;
             
         }
     })
-
-    
-
-
 }
+
+const popCat = (cat) => {
+    console.log(cat);
+    const selector = document.getElementById("item-cat");
+    selector.value = cat;
+}
+popDT = (DT) => {
+    console.log(DT);
+    const selector = document.getElementById("damage-type");
+    selector.value = DT;
+}
+popProp = (prop) => {
+    console.log(prop);
+    const selector = document.getElementById("item-properties");
+    selector.value = prop;
+}
+popCon = (con) => {
+    console.log(con);
+    const selector = document.getElementById("item-conditions");
+    selector.value = con;
+}
+popDiceA = (diceA) => {
+    console.log(diceA);
+    const selector = document.getElementById("dice-amount");
+    selector.value = diceA;
+}
+popDiceT = (diceT) => {
+    console.log(diceT);
+    const selector = document.getElementById("dice-type");
+    selector.value = diceT;
+}
+popImg = (img) => {
+    console.log(img);
+    const selector = document.getElementById("item-image");
+    selector.value = img;
+}
+
+
 
 
 const resetForm = () => {
