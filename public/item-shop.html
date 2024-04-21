@@ -90,7 +90,7 @@
                         <input type="hidden" id="_id" name="_id">
                         <div id="cat">
                             <label class="bolden" for="item_category">Item Category</label>
-                            <select name="item_category" required>
+                            <select id="item-cat" name="item_category" required>
                                 <option value="">-Choose a Category-</option>
                                 <option value="Weapon">Weapons</option>
                                 <option value="Spell">Spells</option>
@@ -106,7 +106,7 @@
     
                         <p id="dmg">
                             <label class="bolden" for="item_damage_type">Damage Type</label>
-                            <select name="item_damage_type" required>
+                            <select id="damage-type" name="item_damage_type" required>
                                 <option value="">-Choose a Damage Type-</option>
                                 <option value="Acid">Acid</option>
                                 <option value="Bludgeoning">Bludgeoning</option>
@@ -179,9 +179,9 @@
                             <div class="coll1of3 pad">
                                 <label class="bolden" for="item_dice_amount">Dice Value</label>
                                 <p>
-                                    <input id="hmd" name="item_dice_amount" type="number" min="1" max="30" placeholder="The amount of Dice">
+                                    <input id="hmd dice-amount" name="item_dice_amount" type="number" min="1" max="30" placeholder="The amount of Dice">
     
-                                    <select name="item_dice_type" required>
+                                    <select id="dice-type" name="item_dice_type" required>
                                         <option value="">-Choose a Dice Type-</option>
                                         <option value="d4">D4</option>
                                         <option value="d6">D6</option>
@@ -194,7 +194,7 @@
 
                                 <label class="bolden" for="item_image">Select a Display Image</label>
                                 <p>
-                                    <select name="item_image" required>
+                                    <select id="item-image" name="item_image" required>
                                         <option value="">-Choose an Image-</option>
                                         <option value="images/item.png">Potion</option>
                                         <option value="images/charcater.png">Sword</option>
