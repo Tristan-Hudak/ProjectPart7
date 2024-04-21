@@ -753,7 +753,8 @@ footer {
 }
 
 #mid-box {
-    display: none;
+    /*display: none;*/
+    text-align: center;
 }
 
 

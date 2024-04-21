@@ -129,6 +129,7 @@ const getPropertiesFromJson = (properties) => {
 }*/
 
 // Creating an item
+/*
 
 class Item {
 
@@ -209,12 +210,125 @@ class Item {
         return div;
         
     }
+}*/
+
+const createItems = async() => {
+
+    let Items = await getItems();
+
+    Items.forEach((item)=>{
+        console.log(item);
+
+        const category = document.getElementById(whichIsWhich(item.category));
+
+        const div = document.createElement("div");
+        div.classList.add("item-box")
+
+
+        //top flexbox
+
+        const section01 = document.createElement("section");
+        const section02 = document.createElement("section");
+        const img =  document.createElement("img");
+
+        section01.classList.add("coll1of2");
+        section02.classList.add("coll1of2");
+
+        img.setAttribute('id',"item-image");
+
+        img.src = item.image;
+
+        const flexDiv = document.createElement("div");
+        flexDiv.classList.add("flex-box")
+
+        section01.append(img);
+        section02.append(item.category + " Name: " + item.name);
+
+        flexDiv.append(section01);
+        flexDiv.append(section02);
+
+
+        //middle flexbox
+        const flexDiv2 = document.createElement("div");
+        flexDiv2.classList.add("flex-box");
+
+        const section11 = document.createElement("section");
+        const section12 = document.createElement("section");
+
+
+        section11.classList.add("coll1of3");
+        section12.classList.add("coll1of3");
+
+
+        section11.append(item.amount + item.dice);
+        section12.append(item.type + " Damage");
+
+        flexDiv2.append(section11);
+        flexDiv2.append(section12);
+
+
+        //third row
+        const cond_prop =  document.createElement("p");
+        const descrip =  document.createElement("p");
+
+        cond_prop.innerHTML ="Properties: " + item.properties + " Conditions: " + item.condition;
+        descrip.innerHTML = "Description: " + item.description;
+
+
+
+        div.append(flexDiv);
+        div.append(flexDiv2);
+        div.append(cond_prop);
+        div.append(descrip);
+
+        category.append(div);
+
+    });
 }
 
-const submitCreateItemForm = (e) => {
+const submitCreateItemForm = async (e) => {
+    e.preventDefault();
+    const form = document.getElementById("form-created-item");
+    
+    const formData = new FormData(form);
+    let response;
+    
+    const con = formData.getAll("item-conditions");
+    const prop = formData.getAll("item-properties")
+    console.log(con , prop, form._id);
+    formData.append("item-conditions", con);
+    formData.append("item-properties", prop);
+
+    console.log(...formData);
+
+    //add request
+    if (form._id.value.trim() == "") {
+        console.log("in post");
+        response = await fetch("/api/items", {
+            method: "POST",
+            body: formData,
+        });
+    } else {
+        //put request
+        console.log("in put");
+        response = await fetch(`/api/items/${form._id.value}`,{
+            method:"PUT",
+            body:formData
+        });
+    }
+    //successfully got data from server
+    if (response.status != 200) {
+        console.log("Error adding / editing data");
+    }
+
+    await response.json();
+    resetForm();
+}
+
+/*const submitCreateItemForm = (e) => {
     e.preventDefault();
     //console.log("hi")
-
+    
     const form = e.target;
     const itemCategory = form.elements["item-category"].value;
     const itemName = form.elements["item-name"].value;
@@ -240,20 +354,17 @@ const submitCreateItemForm = (e) => {
     console.log(whichIsWhich(itemCategory))
 
 
-    const item = new Item(`${itemCategory}`, `${itemName}`, `${itemDamageType}`, `${itemProperties.innerHTML}`, `${itemConditions.innerHTML}`, `${itemDiceAmount}`, `${itemDiceType}`, `${itemDescription}`, imageSRC )
-    console.log(item)
+    //const item = new Item(`${itemCategory}`, `${itemName}`, `${itemDamageType}`, `${itemProperties.innerHTML}`, `${itemConditions.innerHTML}`, `${itemDiceAmount}`, `${itemDiceType}`, `${itemDescription}`, imageSRC )
+    //console.log(item)
     console.log(whichIsWhich(itemCategory))
     document.getElementById(whichIsWhich(itemCategory)).append(item.createItem);
+    resetForm();
+}*/
 
-
-    /*const items = [];
-    items.push(new Item(`${itemCategory}`, `${itemName}`, `${itemDamageType}`, `${itemProperties.innerHTML}`, `${itemConditions.innerHTML}`, `${itemDiceAmount}`, `${itemDiceType}`, `${itemDescription}`, imageSRC ))
-
-    items.forEach((item) => {
-        console.log(item);
-        document.getElementById(whichIsWhich(itemCategory)).append(item.createItem);
-    });*/
-}
+const resetForm = () => {
+    const form = document.getElementById("form-created-item");
+    form.reset();
+};
 
 const whichIsWhich = (cat) => {
 
@@ -341,7 +452,7 @@ document.getElementById("bot-right-box").onclick = showHideNavEquipment;
 
 //JSON stuff
 window.onload = () => {
-    showItems();
+    //showItems();
 
 
 

@@ -35,7 +35,9 @@ const itemSchema = new mongoose.Schema({
     amount: String,
     dice: String,
     type: String,
-    properties: [String]
+    description: String,
+    properties: [String],
+    conditions: [String]
 });
 
 const Item = mongoose.model("Item", itemSchema);
@@ -69,11 +71,13 @@ app.post("/api/items", upload.single("img"), async (req, res) => {
       amount: req.body.amount,
       dice:req.body.dice,
       type:req.body.type,
-      properties:req.body.properties.split(",")
+      description:req.body.description,
+      properties:req.body.properties.split(","),
+      conditions:req.body.conditions.split(",")
     });
   
     if(req.file){
-      recipe.img = "images/" + req.file.filename;
+      item.image = "images/" + req.file.filename;
     }
   
     const saveResult = await item.save();
@@ -94,7 +98,9 @@ app.put("/api/items/:id", upload.single("img"), async (req, res) => {
         amount: req.body.category,
         dice:req.body.dice,
         type:req.body.type,
-        properties:req.body.properties.split(",")
+        description:req.body.description,
+        properties:req.body.properties.split(","),
+        conditions:req.body.conditions.split(",")
     };
   
     if(req.file){
@@ -119,7 +125,9 @@ function validateItem(item) {
       amount: Joi.string().required(),
       dice: Joi.string().valid().required(),
       type: Joi.string().valid("Acid", "Bludgeoning", "Cold", "Fire", "Force", "Lightning", "Necrotic", "Piercing", "Poision", "Psychic", "Radiant", "Slashing", "Thunder").required(),
+      description: Joi.string().min(3).required(),
       properties: Joi.allow(""),
+      conditions: Joi.allow(""),
       _id: Joi.allow(""),
     });
   
