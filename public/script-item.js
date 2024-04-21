@@ -36,7 +36,7 @@ const createItems = async() => {
 
         img.setAttribute('id',"item-image");
 
-        img.src = item.image;
+        img.src = item.item_image;
 
         const flexDiv = document.createElement("div");
         flexDiv.classList.add("flex-box")
@@ -127,6 +127,7 @@ const submitCreateItemForm = async (e) => {
 
     await response.json();
     resetForm();
+    createItems();
 }
 
 
