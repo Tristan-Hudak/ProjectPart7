@@ -57,7 +57,7 @@ app.get("/api/items/:id", async (req, res) => {
     res.send(item);
 });
 
-app.post("/api/items", upload.single("img"), async (req, res) => {
+app.post("/api/items", upload.single("image"), async (req, res) => {
     const result = validateItem(req.body);
   
     if(result.error){
@@ -72,13 +72,10 @@ app.post("/api/items", upload.single("img"), async (req, res) => {
       item_dice_type:req.body.item_dice_type,
       item_damage_type:req.body.item_damage_type,
       item_desc:req.body.item_desc,
+      item_image:req.body.item_image,
       item_properties:req.body.item_properties.split(","),
       item_conditions:req.body.item_conditions.split(",")
     });
-  
-    if(req.file){
-      item.image = "images/" + req.file.filename;
-    }
   
     const saveResult = await item.save();
     res.send(item);
@@ -99,6 +96,7 @@ app.put("/api/items/:id", upload.single("img"), async (req, res) => {
       item_dice_type:req.body.item_dice_type,
       item_damage_type:req.body.item_damage_type,
       item_desc:req.body.item_desc,
+      item_image:req.body.item_image,
       item_properties:req.body.item_properties.split(","),
       item_conditions:req.body.item_conditions.split(",")
     };
