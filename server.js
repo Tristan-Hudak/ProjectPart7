@@ -124,6 +124,7 @@ function validateItem(item) {
       item_dice_type: Joi.string().valid().required(),
       item_damage_type: Joi.string().valid("Acid", "Bludgeoning", "Cold", "Fire", "Force", "Lightning", "Necrotic", "Piercing", "Poision", "Psychic", "Radiant", "Slashing", "Thunder").required(),
       item_desc: Joi.string().min(3).required(),
+      item_image: Joi.allow(),
       item_properties: Joi.allow(""),
       item_conditions: Joi.allow(""),
       _id: Joi.allow(""),
