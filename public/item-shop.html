@@ -93,7 +93,7 @@
                     <form id="form-created-item">
                         <input type="hidden" id="_id" name="_id">
                         <div id="cat">
-                            <label class="bolden" for="Item">Item Category</label>
+                            <label class="bolden" for="item_category">Item Category</label>
                             <select name="item_category" required>
                                 <option value="">-Choose a Category-</option>
                                 <option value="Weapon">Weapons</option>
@@ -104,12 +104,12 @@
                         </div>
     
                         <p id="nm">
-                            <label class="bolden" for="name">Name</label>
+                            <label class="bolden" for="item_name">Name</label>
                             <input id="nameit" name="item_name" maxlength="50" placeholder="What would you like to name it?">
                         </p>
     
                         <p id="dmg">
-                            <label class="bolden" for="damage">Damage Type</label>
+                            <label class="bolden" for="item_damage_type">Damage Type</label>
                             <select name="item_damage_type" required>
                                 <option value="">-Choose a Damage Type-</option>
                                 <option value="Acid">Acid</option>
@@ -131,7 +131,7 @@
                         <div id="create-item" class="flex-box">
     
                             <div class="coll1of3 pad">
-                                <label class="bolden" for="properties">Properties </label>
+                                <label class="bolden" for="item_properties">Properties </label>
                                 <p id="yccm">ctrl/command click to select multiple</p>
                                 <p>
                                     <select id="item-properties" class="fit-con" name="item_properties" multiple>
@@ -155,7 +155,7 @@
                             </div>
     
                             <div class="coll1of3 pad">
-                                <label class="bolden" for="conditions">Conditions</label>
+                                <label class="bolden" for="item_conditions">Conditions</label>
                                 <p id="yccm">ctrl/command click to select multiple</p>
                                 <p>
     
@@ -181,7 +181,7 @@
                             </div>
     
                             <div class="coll1of3 pad">
-                                <label class="bolden" for="dice">Dice Value</label>
+                                <label class="bolden" for="item_dice_amount">Dice Value</label>
                                 <p>
                                     <input id="hmd" name="item_dice_amount" type="number" min="1" max="30" placeholder="The amount of Dice">
     
@@ -201,7 +201,7 @@
                         </div>
     
                         <p>
-                            <label class="bolden" for="desc">Item Description</label>
+                            <label class="bolden" for="item_desc">Item Description</label>
                         </p>
                         <p>
                             <textarea id="description" name="item_desc" maxlength="450" placeholder="Add any other infromation you believe the item would need."></textarea>
