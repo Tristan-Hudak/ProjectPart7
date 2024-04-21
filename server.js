@@ -29,7 +29,7 @@ mongoose
     console.log("couldn't connect to mongodb", error);
   });
 const itemSchema = new mongoose.Schema({
-    item_categorycategory: String,
+    item_category: String,
     item_name: String,
     image: String,
     item_dice_amount: String,
