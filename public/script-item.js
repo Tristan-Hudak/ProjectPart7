@@ -206,7 +206,7 @@ popCon = (con) => {
 }
 popDiceA = (diceA) => {
     console.log(diceA);
-    const selector = document.getElementById("dice-amount");
+    const selector = document.getElementById("hmd");
     console.log(selector)
     selector.value = diceA;
 }

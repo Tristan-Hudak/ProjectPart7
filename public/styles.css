@@ -732,7 +732,9 @@ footer {
     display: none;
 }
 
-
+#item-image {
+    width: 30px;
+}
 
 
 
