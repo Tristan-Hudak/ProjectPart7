@@ -193,13 +193,16 @@ popDT = (DT) => {
     selector.value = DT;
 }
 popProp = (props) => {
-    console.log(props);
-    const selector = document.getElementById("item-properties");
-    console.log(selector)
-
+    values = "";
     props.forEach((prop) => {
-        console.log(prop);
-        selector.value = prop;
+        console.log(values);
+        values = values + prop+",";
+    });
+
+    values = values, options = Array.from(document.querySelectorAll('#item-properties option'));
+
+    values.split(',').forEach(function(v) {
+        options.find(c => c.value == v).selected = true;
     });
 }
 popCon = (cons) => {
