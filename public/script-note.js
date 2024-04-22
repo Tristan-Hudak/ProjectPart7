@@ -41,7 +41,7 @@ const createNotes = async() => {
 
 
         const currentDate = new Date();
-        const timestamp = currentDate.getDate() + "/" + currentDate.getHours() + "/" + currentDate.getMinutes() + "." + currentDate.getSeconds();
+        const timestamp = currentDate.getDate() + "/" + currentDate.getMonth() + "/" + currentDate.getFullYear() + " " + currentDate.getHours()+ "." +currentDate.getMinutes()+ "." + currentDate.getSeconds();
         section03.append("Last edited:"+timestamp)
 
         const eLink = document.createElement("span");
@@ -173,8 +173,6 @@ const deleteNote = async(note)=> {
     resetForm();
     document.getElementById("notes-done").innerHTML = ""
     createNotes();
-    
-    
 };
 
 
