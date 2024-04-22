@@ -22,7 +22,7 @@ const sumbitUserIn = async(e) => {
         console.log(formData.get("user"), formData.get("pass"));
         console.log(user.user, user.pass);
 
-        if(formData.user == user.user && formData.pass == user.pass){
+        if(formData.get("user") == user.user && formData.get("pass") == user.pass){
             
             resetForm();
             goBack();
