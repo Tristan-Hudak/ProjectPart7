@@ -892,6 +892,11 @@ footer {
     text-align: center;
 }
 
+#notes-add{
+    text-align: center;
+    border: 3px solid var(--background-color);
+}
+
 #how-play, #how-dm {
     margin: 20px;
     padding: 8px;

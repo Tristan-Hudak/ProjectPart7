@@ -288,7 +288,7 @@ function validateUser(user) {
   return schema.validate(user);
 }
 
-function validateUser(note) {
+function validateNote(note) {
   const schema = Joi.object({
     note_name: Joi.string().min(3).required(),
     note_category: Joi.allow().required,
