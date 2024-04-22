@@ -206,7 +206,7 @@ popCon = (cons) => {
     values = "";
     cons.forEach((con) => {
         console.log(values);
-        values = values + con;
+        values = values + con+",";
     });
 
     values = values, options = Array.from(document.querySelectorAll('#item-conditions option'));
