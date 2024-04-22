@@ -23,6 +23,8 @@ const createNotes = async() => {
 
         const section01 = document.createElement("section");
         const section02 = document.createElement("section");
+        const section03 = document.createElement("section");
+        const section04 = document.createElement("section");
 
         section01.classList.add("coll2of3");
         section02.classList.add("coll1of3");
