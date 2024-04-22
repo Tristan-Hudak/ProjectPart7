@@ -20,6 +20,7 @@ const createNotes = async() => {
         const place = document.getElementById("notes-done")
 
         const div = document.createElement("div");
+        div.id = "one-note";
 
         const section01 = document.createElement("section");
         const section02 = document.createElement("section");
@@ -27,16 +28,20 @@ const createNotes = async() => {
         const section04 = document.createElement("section");
 
         section01.classList.add("coll2of3");
+        section01.id = "title";
         section02.classList.add("coll1of3");
+        section01.id = "category";
         section03.classList.add("coll1of3");
+        section01.id = "time";
         section04.classList.add("coll1of3");
+        section01.id = "ed-del";
 
-        section01.append(note.note_name)
-        section02.append(note.note_category)
+        section01.append("Title: "+note.note_name)
+        section02.append("Note Category: "+note.note_category)
 
 
         const currentDate = new Date();
-        const timestamp = currentDate.getTime();
+        const timestamp = currentDate.getDate()+"/"+currentDate.getHours+"/"+currentDate.getMinutes;
         section03.append("Last edited:"+timestamp)
 
         const eLink = document.createElement("span");
@@ -65,6 +70,7 @@ const createNotes = async() => {
         const p = document.createElement("p");
 
         p.innerHTML = note.note_desc;
+        p.id = "text-area-notes"
 
         div.append(flexDiv);
         div.append(p);
@@ -149,7 +155,7 @@ const nc = (cat) => {
 }
 
 const deleteNote = async(note)=> {
-    let response = await fetch(`/api/notes/${note._id}`, {
+    let response = await fetch(`/api/note/${note._id}`, {
       method:"DELETE",
       headers:{
         "Content-Type":"application/json;charset=utf-8"

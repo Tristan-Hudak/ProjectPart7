@@ -892,6 +892,10 @@ footer {
     text-align: center;
 }
 
+#notes-done{
+    background-color: var(--background-color-3);
+}
+
 #notes-add{
     text-align: center;
     margin: 20px;
@@ -902,6 +906,25 @@ footer {
     width: 1000px;
     width: 300px;
 }
+
+#title, #category{
+    font-weight: bold;
+    font-size: 120%;
+}
+
+#text-area-notes {
+    border: 1px solid var(--background-color-3);
+    background: var(--background-color-2);
+}
+
+#one-note {
+    border: 1px solid var(--text-color);
+    text-align: center;
+    margin: 10px;
+}
+
+
+
 
 #how-play, #how-dm {
     margin: 20px;
