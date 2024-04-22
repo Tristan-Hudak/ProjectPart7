@@ -192,17 +192,21 @@ popDT = (DT) => {
     console.log(selector)
     selector.value = DT;
 }
-popProp = (prop) => {
+popProp = (props) => {
     console.log(prop);
     const selector = document.getElementById("item-properties");
     console.log(selector)
-    selector.value = prop;
+
+    props.forEach((prop) => {
+        selector.value = prop;
+    });
 }
-popCon = (con) => {
-    console.log(con);
+popCon = (cons) => {
+    console.log(cons);
     const selector = document.getElementById("item-conditions");
-    console.log(selector)
-    selector.value = con;
+    cons.forEach((con) => {
+        selector.value = con;
+    });
 }
 popDiceA = (diceA) => {
     console.log(diceA);
