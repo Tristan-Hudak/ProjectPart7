@@ -20,14 +20,14 @@ const submitUserUp = async (e) => {
     //add request
     if (form._id.value.trim() == "") {
         console.log("in post");
-        response = await fetch("/api/items", {
+        response = await fetch("/api/users", {
             method: "POST",
             body: formData,
         });
     } else {
         //put request
         console.log("in put");
-        response = await fetch(`/api/items/${form._id.value}`,{
+        response = await fetch(`/api/users/${form._id.value}`,{
             method:"PUT",
             body:formData
         });

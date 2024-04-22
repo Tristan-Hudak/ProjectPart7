@@ -58,7 +58,7 @@ app.get("/api/items", async (req, res) => {
 });
 
 app.get("/api/users", async (req, res) => {
-  const items = await Item.find();
+  const items = await User.find();
   res.send(items);
 });
   
@@ -119,7 +119,7 @@ app.post("/api/users", upload.single("image"), async (req, res) => {
     pass:req.body.pass
   });
 
-  const saveResult = await item.save();
+  const saveResult = await user.save();
   res.send(item);
 });
 
