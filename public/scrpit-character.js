@@ -1,5 +1,5 @@
 
-const showModal = (id) => {
+const showModal = () => {
     if(id == "file"){
         console.log("in",id)
         document.getElementById("character-modal").style.display = "block";
@@ -8,13 +8,30 @@ const showModal = (id) => {
         console.log("in",id)
         document.getElementById("delete-modal").style.display = "block";
     }
-    
+    else{
+        return;
+    }    
 
 };
 
+const hideModal = () => {
+    document.getElementById("delete-modal").style.display = "none";
+    document.getElementById("character-modal").style.display = "none";
+}
 
 
-document.getElementById("file").onclick = showModal("file");
-document.getElementById("delete").onclick = showModal("delete");
-document.getElementById("rest").onclick = showModal("rest");
-document.getElementById("level-up").onclick = showModal("level-up");
+
+document.getElementById("file").onclick = function(){
+    showModal("file");
+}
+document.getElementById("delete").onclick = function(){
+    showModal("delete");
+}
+document.getElementById("rest").onclick = function(){
+    showModal("rest");
+}
+document.getElementById("level-up").onclick = function(){
+    showModal("level-up");
+}
+
+document.getElementById("close_box").onclick = hideModal();
