@@ -156,6 +156,7 @@ const nc = (cat) => {
 }
 
 const deleteNote = async(note)=> {
+    console.log(note._id);
     let response = await fetch(`/api/notes/${note._id}`, {
       method:"DELETE",
       headers:{

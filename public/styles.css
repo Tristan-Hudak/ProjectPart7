@@ -929,6 +929,14 @@ footer {
     size: 120%;
 }
 
+#note-container {
+    text-align: center;
+}
+#note-container p{
+    border: 1 solid var(--background-color);
+    background-color: var(--background-color-3);
+}
+
 
 
 
