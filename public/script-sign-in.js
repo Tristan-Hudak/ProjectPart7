@@ -19,6 +19,9 @@ const sumbitUserIn = async(e) => {
     
 
     Users.forEach((user) => {
+        console.log(formData.user, formData.pass);
+        console.log(user.user, user.pass);
+
         if(formData.user == user.user && formData.pass == user.pass){
             
             resetForm();
