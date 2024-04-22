@@ -290,10 +290,10 @@ function validateUser(user) {
 
 function validateNote(note) {
   const schema = Joi.object({
-    note_category: Joi.string().min(3).required(),
     note_name: Joi.string().min(3).required(),
+    note_category: Joi.string().required(),
     note_desc: Joi.string().required(),
-    _id: Joi.allow()
+    _id: Joi.allow(""),
   });
 
   return schema.validate(note);
