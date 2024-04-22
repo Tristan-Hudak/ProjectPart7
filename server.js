@@ -107,7 +107,7 @@ app.post("/api/items", upload.single("image"), async (req, res) => {
 });
 
 app.post("/api/users", upload.single("image"), async (req, res) => {
-  const result = validateItem(req.body);
+  const result = validateUser(req.body);
 
   if(result.error){
     res.status(400).send(result.error.details[0].message);
@@ -157,7 +157,7 @@ app.put("/api/items/:id", upload.single("img"), async (req, res) => {
 });
 
 app.put("/api/users/:id", upload.single("img"), async (req, res) => {
-  const result = validateItem(req.body);
+  const result = validateUser(req.body);
 
   if(result.error){
     res.status(400).send(result.error.details[0].message);
@@ -208,14 +208,14 @@ function validateItem(item) {
     return schema.validate(item);
 }
 
-function validateItem(user) {
+function validateUser(user) {
   const schema = Joi.object({
     user: Joi.string().min(3).required(),
-    pass: Joi.string().min(3).required(),
+    pass: Joi.string().min(6).required(),
     _id: Joi.allow(""),
   });
 
-  return schema.validate(item);
+  return schema.validate(user);
 }
 
 app.listen(3000, () => {
