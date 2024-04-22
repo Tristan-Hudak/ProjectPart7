@@ -167,7 +167,7 @@ const deleteNote = async(note)=> {
       return;
     }
   
-    let result = await response.json();
+    //let result = await response.json();
     resetForm();
     createNotes();
 };
