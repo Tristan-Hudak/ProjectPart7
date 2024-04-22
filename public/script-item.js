@@ -200,17 +200,11 @@ popProp = (props) => {
     }
 }
 popCon = (cons) => {
-    values = "";
-    cons.forEach((con) => {
-        console.log(values);
-        values = values + con+",";
-    });
-
-    values = values, options = Array.from(document.querySelectorAll('#item-conditions option'));
-
-    values.split(',').forEach(function(v) {
-        options.find(c => c.value == v).selected = true;
-    });
+    var element = document.getElementById('item-conditions');
+    var values = cons;
+    for (var i = 0; i < element.options.length; i++) {
+        element.options[i].selected = values.indexOf(element.options[i].value) >= 0;
+    }
     
 }
 popDiceA = (diceA) => {
