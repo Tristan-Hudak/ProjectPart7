@@ -118,7 +118,7 @@ const submitNotesForm = async (e) => {
 }
 
 const resetForm = () => {
-    const form = document.getElementById("form-created-item");
+    const form = document.getElementById("add-notes-form");
     form.reset();
 };
 
