@@ -893,7 +893,7 @@ footer {
 }
 
 #notes-done{
-    background-color: var(--background-color-3);
+    background-color: var(--background-color);
 }
 
 #notes-add{
@@ -913,13 +913,14 @@ footer {
 }
 
 #text-area-notes {
-    border: 1px solid var(--background-color-3);
-    background: var(--background-color-2);
+    border: 1px solid var(--background-color-2);
+    background: var(--background-);
 }
 
 #one-note {
     border: 1px solid var(--text-color);
     text-align: center;
+    padding: 5px;
     margin: 10px;
 }
 

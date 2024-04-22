@@ -41,7 +41,7 @@ const createNotes = async() => {
 
 
         const currentDate = new Date();
-        const timestamp = currentDate.getDate()+"/"+currentDate.getHours+"/"+currentDate.getMinutes;
+        const timestamp = currentDate.getDate() + "/" + currentDate.getHours() + "/" + currentDate.getMinutes() + "." + currentDate.getSeconds();
         section03.append("Last edited:"+timestamp)
 
         const eLink = document.createElement("span");
