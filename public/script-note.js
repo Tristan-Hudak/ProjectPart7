@@ -95,7 +95,7 @@ const submitNotesForm = async (e) => {
     //add request
     if (form._id.value.trim() == "") {
         console.log("in post");
-        response = await fetch("/api/notes", {
+        response = await fetch("api/notes", {
             method: "POST",
             body: formData,
         });
