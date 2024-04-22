@@ -42,13 +42,13 @@ const itemSchema = new mongoose.Schema({
 
 const userSchema = new mongoose.Schema({
   user: String,
-  pass: String
+  pass: String,
 });
 
 const noteSchema = new mongoose.Schema({
   note_name: String,
   note_category: String,
-  note_desc: String
+  note_desc: String,
 });
 
 const Item = mongoose.model("Item", itemSchema);
@@ -158,7 +158,7 @@ app.post("/api/note", upload.single("image"), async (req, res) => {
   const note = new Note({
     note_name:req.body.note_name,
     note_category:req.body.note_category,
-    note_desc:req.body.note_desc
+    note_desc:req.body.note_desc,
   });
 
   const saveResult = await note.save();
@@ -228,7 +228,7 @@ app.put("/api/note/:id", upload.single("img"), async (req, res) => {
   let fieldsToUpdate = {
     note_name:req.body.note_name,
     note_category:req.body.note_category,
-    note_desc:req.body.note_desc
+    note_desc:req.body.note_desc,
   };
 
 
@@ -292,7 +292,7 @@ function validateNote(note) {
   const schema = Joi.object({
     note_name: Joi.string().min(3).required(),
     note_category: Joi.string().required(),
-    note_desc: Joi.string().required(),
+    note_desc: Joi.string(),
     _id: Joi.allow(""),
   });
 
