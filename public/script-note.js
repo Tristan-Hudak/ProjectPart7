@@ -122,6 +122,7 @@ const submitNotesForm = async (e) => {
 
     await response.json();
     resetForm();
+    document.getElementById("notes-done").innerHTML = ""
     createNotes();
 }
 
@@ -167,7 +168,7 @@ const deleteNote = async(note)=> {
       return;
     }
   
-    let result = await response.json();
+    await response.json();
     resetForm();
     createNotes();
 };
