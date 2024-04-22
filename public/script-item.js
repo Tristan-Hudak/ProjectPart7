@@ -193,7 +193,7 @@ popDT = (DT) => {
     selector.value = DT;
 }
 popProp = (props) => {
-    /*values = "";
+    values = "";
     props.forEach((prop) => {
         console.log(values);
         values = values + prop+",";
@@ -201,7 +201,7 @@ popProp = (props) => {
 
     values = values, options = Array.from(document.querySelectorAll('#item-properties option'));
 
-    values.split(',').forEach(function(v) {
+    /*values.split(',').forEach(function(v) {
         options.find(c => c.value == v).selected = true;
     });*/
 }
