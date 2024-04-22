@@ -211,7 +211,8 @@ function validateItem(item) {
 function validateItem(user) {
   const schema = Joi.object({
     user: Joi.string().min(3).required(),
-    pass: Joi.string().min(3).required()
+    pass: Joi.string().min(3).required(),
+    _id: Joi.allow(""),
   });
 
   return schema.validate(item);
