@@ -1,5 +1,5 @@
 
-const showModal = () => {
+const showModal = (id) => {
     if(id == "file"){
         console.log("in",id)
         document.getElementById("character-modal").style.display = "block";
