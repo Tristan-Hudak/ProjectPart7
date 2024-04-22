@@ -1,6 +1,6 @@
 
 const showModal = (e) => {
-    console.log(e.target.getAttribute('id'));
+    console.log(e.target.id);
 
 };
 
