@@ -75,7 +75,7 @@ app.get("/api/users", async (req, res) => {
   res.send(users);
 });
 
-app.get("/api/note", async (req, res) => {
+app.get("/api/notes", async (req, res) => {
   const notes = await Note.find();
   res.send(notes);
 });
@@ -96,7 +96,7 @@ app.get("/api/users/:id", async (req, res) => {
   res.send(item);
 });
 
-app.get("/api/note/:id", async (req, res) => {
+app.get("/api/notes/:id", async (req, res) => {
   const id = req.params.id;
   const note = await Note.findOne({_id:id});
   res.send(note);
@@ -147,7 +147,7 @@ app.post("/api/users", upload.single("image"), async (req, res) => {
   res.send(user);
 });
 
-app.post("/api/note", upload.single("image"), async (req, res) => {
+app.post("/api/notes", upload.single("image"), async (req, res) => {
   const result = validateNote(req.body);
 
   if(result.error){
@@ -217,7 +217,7 @@ app.put("/api/users/:id", upload.single("img"), async (req, res) => {
   res.send(updateResult);
 });
 
-app.put("/api/note/:id", upload.single("img"), async (req, res) => {
+app.put("/api/notes/:id", upload.single("img"), async (req, res) => {
   const result = validateNote(req.body);
 
   if(result.error){
@@ -254,7 +254,7 @@ app.delete("/api/users/:id", async (req, res) => {
   res.send(user);
 });
 
-app.delete("/api/note/:id", async (req, res) => {
+app.delete("/api/notes/:id", async (req, res) => {
   const note = await Note.findByIdAndDelete(req.params.id)
   res.send(note);
 });
