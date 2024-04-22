@@ -193,7 +193,7 @@ popDT = (DT) => {
     selector.value = DT;
 }
 popProp = (props) => {
-    values = "";
+    /*values = "";
     props.forEach((prop) => {
         console.log(values);
         values = values + prop+",";
@@ -203,7 +203,7 @@ popProp = (props) => {
 
     values.split(',').forEach(function(v) {
         options.find(c => c.value == v).selected = true;
-    });
+    });*/
 }
 popCon = (cons) => {
     values = "";
