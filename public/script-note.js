@@ -2,7 +2,7 @@ const getNotes = async() => {
     //const url = "https://tristan-hudak.github.io/projects/part6/JSON/item-shop.json";
 
     try {
-        const response = await fetch("api/notes/");
+        const response = await fetch("api/note/");
         return await response.json();
     }
     catch(error) {
@@ -95,14 +95,14 @@ const submitNotesForm = async (e) => {
     //add request
     if (form._id.value.trim() == "") {
         console.log("in post");
-        response = await fetch("/api/notes", {
+        response = await fetch("/api/note", {
             method: "POST",
             body: formData,
         });
     } else {
         //put request
         console.log("in put");
-        response = await fetch(`/api/notes/${form._id.value}`,{
+        response = await fetch(`/api/note/${form._id.value}`,{
             method:"PUT",
             body:formData
         });
