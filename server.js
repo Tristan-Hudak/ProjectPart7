@@ -45,12 +45,25 @@ const userSchema = new mongoose.Schema({
   pass: String
 });
 
+const noteSchema = new mongoose.Schema({
+  note_name: String,
+  note_category: String,
+  note_desc: String
+});
+
 const Item = mongoose.model("Item", itemSchema);
 const User = mongoose.model("User", userSchema);
+const Note = mongoose.model("Note", noteSchema);
+
+
+
 
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/index.html");
 });
+
+
+
 
 app.get("/api/items", async (req, res) => {
     const items = await Item.find();
@@ -58,8 +71,13 @@ app.get("/api/items", async (req, res) => {
 });
 
 app.get("/api/users", async (req, res) => {
-  const items = await User.find();
-  res.send(items);
+  const users = await User.find();
+  res.send(users);
+});
+
+app.get("/api/notes", async (req, res) => {
+  const notes = await Note.find();
+  res.send(notes);
 });
   
 
@@ -76,6 +94,12 @@ app.get("/api/users/:id", async (req, res) => {
   const id = req.params.id;
   const item = await User.findOne({_id:id});
   res.send(item);
+});
+
+app.get("/api/notes/:id", async (req, res) => {
+  const id = req.params.id;
+  const note = await Note.findOne({_id:id});
+  res.send(note);
 });
 
 
@@ -123,6 +147,27 @@ app.post("/api/users", upload.single("image"), async (req, res) => {
   res.send(user);
 });
 
+app.post("/api/notes", upload.single("image"), async (req, res) => {
+  const result = validateNote(req.body);
+
+  if(result.error){
+    res.status(400).send(result.error.details[0].message);
+    return;
+  }
+
+  const note = new Note({
+    note_name:req.body.note_name,
+    note_category:req.body.note_category,
+    note_desc:req.body.note_desc
+  });
+
+  const saveResult = await note.save();
+  res.send(note);
+});
+
+
+
+
 
 
 
@@ -145,10 +190,6 @@ app.put("/api/items/:id", upload.single("img"), async (req, res) => {
       item_properties:req.body.item_properties.split(","),
       item_conditions:req.body.item_conditions.split(",")
     };
-  
-    /*if(req.file){
-      fieldsToUpdate.image = "images/" + req.file.filename;
-    }*/
   
     const id = req.params.id;
   
@@ -176,6 +217,30 @@ app.put("/api/users/:id", upload.single("img"), async (req, res) => {
   res.send(updateResult);
 });
 
+app.put("/api/notes/:id", upload.single("img"), async (req, res) => {
+  const result = validateNote(req.body);
+
+  if(result.error){
+    res.status(400).send(result.error.details[0].message);
+    return;
+  }
+
+  let fieldsToUpdate = {
+    note_name:req.body.note_name,
+    note_category:req.body.note_category,
+    note_desc:req.body.note_desc
+  };
+
+
+  const id = req.params.id;
+
+  const updateResult = await Note.updateOne({_id:id},fieldsToUpdate);
+  res.send(updateResult);
+});
+
+
+
+
 
 
 
@@ -187,6 +252,11 @@ app.delete("/api/recipes/:id", async (req, res) => {
 app.delete("/api/users/:id", async (req, res) => {
   const user = await User.findByIdAndDelete(req.params.id)
   res.send(user);
+});
+
+app.delete("/api/notes/:id", async (req, res) => {
+  const note = await Note.findByIdAndDelete(req.params.id)
+  res.send(note);
 });
 
 
@@ -217,6 +287,20 @@ function validateUser(user) {
 
   return schema.validate(user);
 }
+
+function validateUser(note) {
+  const schema = Joi.object({
+    note_name: Joi.string().min(3).required(),
+    note_category: Joi.allow().required,
+    note_desc: Joi.string().required(),
+    _id: Joi.allow(""),
+  });
+
+  return schema.validate(note);
+}
+
+
+
 
 app.listen(3000, () => {
     console.log("I'm listening");

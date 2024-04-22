@@ -38,25 +38,47 @@
 
         <main id="main-main-notes">
 
-            <div class="flex-box">
-                <section id="chn" class="coll1of3"> 
-                    <h3>Character Notes</h3>
-                    <form>
-                        <input placeholder="Type a note and hit enter to save">
-                    </form>
-                </section>
-                <section id="in" class="coll1of3"> 
-                    <h3>Item Notes</h3>
-                    <form>
-                        <input placeholder="Type a note and hit enter to save">
-                    </form>
-                </section>
-                <section id="cn" class="coll1of3"> 
-                    <h3>Campaign Notes</h3>
-                    <form>
-                        <input placeholder="Type a note and hit enter to save">
-                    </form>
-                </section>
+            <div id="notes-add">
+                <form id="add-notes-form">
+                    
+                    <input type="hidden" id="_id" name="_id">
+
+                    <div id="title-category" class="flex-box">
+
+                        <div class="coll1of2">
+                            <p id="nm">
+                                <label class="bolden" for="note_name">Title</label>
+                                <input id="note_name" name="note_name" maxlength="50" placeholder="name your note">
+                            </p>
+                        </div>
+
+                        <div class="coll1of2">
+                            <p id="nm">
+                                <label class="bolden" for="note_category">Category</label>
+                                <select id="note_category" name="note_category">
+                                    <option value="">-Choose a Category-</option>
+                                    <option value="character">Character</option>
+                                    <option value="general">General</option>
+                                    <option value="dungeon_master">Dugeoun Master</option>
+                                </select>
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <p><label for="note-desc"> Add your note here</label> </p>
+
+                    <p>
+                        <input id="note-desc" name="note-desc" placeholder="Type a note and hit enter to save" maxlength="1000">
+                    </p>
+
+                    <p>
+                        <button type="submit">Submit</button>
+                    </p>
+                    
+
+                </form>  
             </div>
 
             <div id="notes-done">
@@ -113,6 +135,6 @@
             <p id="copy"> @DungeonCraftersGuide.com</p>
         </footer>
 
-        <script src="script.js"></script>
+        <script src="script-note.js"></script>
     </body>
 </html>
