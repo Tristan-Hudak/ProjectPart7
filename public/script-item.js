@@ -203,12 +203,18 @@ popProp = (props) => {
     });
 }
 popCon = (cons) => {
-    console.log(cons);
-    const selector = document.getElementById("item-conditions");
+    value = "";
     cons.forEach((con) => {
-        console.log(con);
-        selector.value = con;
+        //console.log(con);
+        value.append(con);
     });
+
+    value = value, options = Array.from(document.querySelectorAll('#item-conditions option'));
+
+    values.split(',').forEach(function(v) {
+        options.find(c => c.value == v).selected = true;
+    });
+    
 }
 popDiceA = (diceA) => {
     console.log(diceA);
