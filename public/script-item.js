@@ -201,9 +201,9 @@ popProp = (props) => {
 
     values = values, options = Array.from(document.querySelectorAll('#item-properties option'));
 
-    /*values.split(',').forEach(function(v) {
-        options.find(c => c.value == v).selected = true;
-    });*/
+    values.split(',').forEach(function(v) {
+        options.find(c => c.value == v).selected;
+    });
 }
 popCon = (cons) => {
     values = "";
