@@ -894,7 +894,13 @@ footer {
 
 #notes-add{
     text-align: center;
+    margin: 20px;
     border: 3px solid var(--background-color);
+}
+
+#note-desc{
+    width: 1000px;
+    width: 300px;
 }
 
 #how-play, #how-dm {

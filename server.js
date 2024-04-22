@@ -291,8 +291,8 @@ function validateUser(user) {
 function validateNote(note) {
   const schema = Joi.object({
     note_name: Joi.string().min(3).required(),
-    note_category: Joi.allow().required,
-    note_desc: Joi.string().required(),
+    note_category: Joi.string().valid("character", "general", "dungeon_master").required,
+    note_desc: Joi.string().min(3).required(),
     _id: Joi.allow(""),
   });
 
