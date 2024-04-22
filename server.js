@@ -120,7 +120,7 @@ app.post("/api/users", upload.single("image"), async (req, res) => {
   });
 
   const saveResult = await user.save();
-  res.send(item);
+  res.send(user);
 });
 
 
