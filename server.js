@@ -120,9 +120,9 @@ function validateItem(item) {
     const schema = Joi.object({
       item_name: Joi.string().min(3).required(),
       item_category: Joi.string().valid("Weapon", "Spell", "Wonder", "Equipment").required(),
-      item_dice_amount: Joi.string().required(),
-      item_dice_type: Joi.string().valid().required(),
-      item_damage_type: Joi.string().valid("Acid", "Bludgeoning", "Cold", "Fire", "Force", "Lightning", "Necrotic", "Piercing", "Poision", "Psychic", "Radiant", "Slashing", "Thunder").required(),
+      item_dice_amount: Joi.string(),
+      item_dice_type: Joi.string().valid(),
+      item_damage_type: Joi.string().valid("Acid", "Bludgeoning", "Cold", "Fire", "Force", "Lightning", "Necrotic", "Piercing", "Poision", "Psychic", "Radiant", "Slashing", "Thunder", "None").required(),
       item_desc: Joi.string().min(3).required(),
       item_image: Joi.allow(),
       item_properties: Joi.allow(""),
