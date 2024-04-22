@@ -43,7 +43,7 @@ const submitUserUp = async (e) => {
 }
 
 const resetForm = () => {
-    const form = document.getElementById("form-created-item");
+    const form = document.getElementById("signup");
     form.reset();
 };
 
