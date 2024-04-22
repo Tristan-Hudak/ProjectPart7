@@ -64,7 +64,7 @@ const createNotes = async() => {
 
         const p = document.createElement("p");
 
-        p.innerHTML = notes.note_desc;
+        p.innerHTML = note.note_desc;
 
         div.append(flexDiv);
         div.append(p);
