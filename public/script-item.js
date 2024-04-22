@@ -205,8 +205,8 @@ popProp = (props) => {
 popCon = (cons) => {
     values = "";
     cons.forEach((con) => {
-        //console.log(con);
-        values.append(con);
+        console.log(values);
+        values = values + con;
     });
 
     values = values, options = Array.from(document.querySelectorAll('#item-conditions option'));
