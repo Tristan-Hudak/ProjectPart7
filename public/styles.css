@@ -919,6 +919,7 @@ footer {
 
 #one-note {
     border: 1px solid var(--text-color);
+    background-color: var(--background-color-2);
     text-align: center;
     padding: 5px;
     margin: 10px;
