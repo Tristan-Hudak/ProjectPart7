@@ -41,15 +41,50 @@
             <div id="control-section" class="flex-box">
 
                 <section id="player" class="coll3of5">
-                    <h2>Name</h2>
+                    <h2 id="replace_player_name">Player Name</h2>
                 </section>
                 <section id="file" class="coll1of5">
                     <img src="images/list-character.png">
                     <p>Characters</p>
+
+                    <div class="modal">
+                        <div class="modal-content">
+                            <span id="close_box" class="close"> &times;</span>
+
+                            <div id="character-place">
+                                <div id="one-character" class="flex-box">
+                                    <section id="name-area" class="coll1of3">Name: Tristan Hudka</section>
+                                    <section id="class-area" class="coll1of3">Class: Bard</section>
+                                    <section id="display" class="coll1of3"><button id="display_character">Dsiplay Character</button></section>
+                                </div>
+                            </div>
+
+                            <div id="create-place">
+                                <button id="create-character">Create a Character</button>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </section>
                 <section id="delete" class="coll1of5">
                     <img src="images/delete.png">
                     <p>Delete Character</p>
+
+                    <div class="modal">
+                        <div class="modal-content">
+                            <span id="close_box" class="close"> &times;</span>
+
+                            <div id="character-place">
+                                <div id="one-character" class="flex-box">
+                                    <section id="name-area" class="coll1of3">Name: Tristan Hudka</section>
+                                    <section id="class-area" class="coll1of3">Class: Bard</section>
+                                    <section id="display" class="coll1of3"><button id="delete_character">Delete Character</button></section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </section>
                 <section id="rest" class="coll1of5">
                     <img src="images/rest.png">
@@ -64,10 +99,10 @@
 
             <div id="name-lvl" class="flex-box">
                 <section id="name" class="coll2of3">
-                    <h3>Name</h3>
+                    <h3 id="replace_name">Name</h3>
                 </section>
                 <section id="level" class="coll1of3">
-                    <h3>Class #</h3>
+                    <h3 id="replace_level">Class #</h3>
                 </section>
 
             </div>
@@ -75,15 +110,15 @@
             <div id="i-hp-s" class="flex-box">
                 <section id="initiative" class="coll1of3">
                     <p>Initiative</p>
-                    <h1>0</h1>
+                    <h1 id="replace_Init">0</h1>
                 </section>
                 <section id="health" class="coll1of3">
                     <p>HP</p>
-                    <h1>0</h1>
+                    <h1 id="replace_hp">0</h1>
                 </section>
                 <section id="speed" class="coll1of3">
                     <p>Speed</p>
-                    <h1>0</h1>
+                    <h1 id="replace_speed">0</h1>
                 </section>
 
             </div>
@@ -91,15 +126,15 @@
             <div id="hd-ac-p" class="flex-box">
                 <section id="hd" class="coll1of3">
                     <h3>Hit Dice</h3>
-                    <h1>0</h1>
+                    <h1 id="replace_HD">0</h1>
                 </section>
                 <section id="ac" class="coll1of3">
                     <h3>Armor Class</h3>
-                    <h1>0</h1>
+                    <h1 id="replace_AC">0</h1>
                 </section>
                 <section id="prof" class="coll1of3">
                     <h3>Proficiency</h3>
-                    <h1>0</h1>
+                    <h1 id="replace_prof">0</h1>
                 </section>
             </div>
 
@@ -113,15 +148,15 @@
     
                                 <section id="score" class="coll1of3">
                                     <p>Score</p>
-                                    <h1>0</h1>
+                                    <h1 id="s_score">0</h1>
                                 </section>
                                 <section id="mod" class="coll1of3">
                                     <p>Modifier</p>
-                                    <h1>+0</h1>
+                                    <h1 id="s_mod">+0</h1>
                                 </section>
                                 <section id="save" class="coll1of3">
                                     <p>Save</p>
-                                    <h1>+0</h1>
+                                    <h1 id="s_save">+0</h1>
                                 </section>
     
                             </div>
@@ -133,15 +168,15 @@
     
                                 <section id="score" class="coll1of3">
                                     <p>Score</p>
-                                    <h1>0</h1>
+                                    <h1 id="d_score">0</h1>
                                 </section>
                                 <section id="mod" class="coll1of3">
                                     <p>Modifier</p>
-                                    <h1>+0</h1>
+                                    <h1 id="d_mod">+0</h1>
                                 </section>
                                 <section id="save" class="coll1of3">
                                     <p>Save</p>
-                                    <h1>+0</h1>
+                                    <h1 id="d_save">+0</h1>
                                 </section>
     
                             </div>
@@ -153,15 +188,15 @@
     
                                 <section id="score" class="coll1of3">
                                     <p>Score</p>
-                                    <h1>0</h1>
+                                    <h1 id="c_score">0</h1>
                                 </section>
                                 <section id="mod" class="coll1of3">
                                     <p>Modifier</p>
-                                    <h1>+0</h1>
+                                    <h1 id="c_mod">+0</h1>
                                 </section>
                                 <section id="save" class="coll1of3">
                                     <p>Save</p>
-                                    <h1>+0</h1>
+                                    <h1 id="c_save">+0</h1>
                                 </section>
     
                             </div>
@@ -178,15 +213,15 @@
     
                                 <section id="score" class="coll1of3">
                                     <p>Score</p>
-                                    <h1>0</h1>
+                                    <h1 id="i_score">0</h1>
                                 </section>
                                 <section id="mod" class="coll1of3">
                                     <p>Modifier</p>
-                                    <h1>+0</h1>
+                                    <h1 id="i_mod">+0</h1>
                                 </section>
                                 <section id="save" class="coll1of3">
                                     <p>Save</p>
-                                    <h1>+0</h1>
+                                    <h1 id="i_save">+0</h1>
                                 </section>
     
                             </div>
@@ -199,15 +234,15 @@
     
                                 <section id="score" class="coll1of3">
                                     <p>Score</p>
-                                    <h1>0</h1>
+                                    <h1 id="w_score">0</h1>
                                 </section>
                                 <section id="mod" class="coll1of3">
                                     <p>Modifier</p>
-                                    <h1>+0</h1>
+                                    <h1 id="w_mod">+0</h1>
                                 </section>
                                 <section id="save" class="coll1of3">
                                     <p>Save</p>
-                                    <h1>+0</h1>
+                                    <h1 id="w_save">+0</h1>
                                 </section>
     
                             </div>
@@ -220,15 +255,15 @@
     
                                 <section id="score" class="coll1of3">
                                     <p>Score</p>
-                                    <h1>0</h1>
+                                    <h1 id="cha_score">0</h1>
                                 </section>
                                 <section id="mod" class="coll1of3">
                                     <p>Modifier</p>
-                                    <h1>+0</h1>
+                                    <h1 id="cha_mod">+0</h1>
                                 </section>
                                 <section id="save" class="coll1of3">
                                     <p>Save</p>
-                                    <h1>+0</h1>
+                                    <h1 id="cha_save">+0</h1>
                                 </section>
     
                             </div>
@@ -484,6 +519,7 @@
             <p id="copy"> @DungeonCraftersGuide.com</p>
         </footer>
 
-        <script src="script.js"></script>
+        <script src="scrpit.js"></script>
+        <script src="scrpit-character.js"></script>
     </body>
 </html>
