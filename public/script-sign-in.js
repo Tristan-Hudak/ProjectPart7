@@ -44,4 +44,13 @@ const goBack = async() => {
     return;
 };
 
+const goSignUp = async() => {
+    console.log("test")
+    window.location.assign("sign-up.html");
+    return;
+};
+
+
+
 document.getElementById("btn-enter").onclick = sumbitUserIn;
+document.getElementById("btnsignup").onclick = goSignUp;
