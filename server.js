@@ -40,7 +40,13 @@ const itemSchema = new mongoose.Schema({
     item_conditions: [String]
 });
 
+const userSchema = new mongoose.Schema({
+  user: String,
+  pass: String
+});
+
 const Item = mongoose.model("Item", itemSchema);
+const User = mongoose.model("User", userSchema);
 
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/index.html");
@@ -50,12 +56,31 @@ app.get("/api/items", async (req, res) => {
     const items = await Item.find();
     res.send(items);
 });
+
+app.get("/api/users", async (req, res) => {
+  const items = await Item.find();
+  res.send(items);
+});
   
+
+
+
+
 app.get("/api/items/:id", async (req, res) => {
     const id = req.params.id;
     const item = await Item.findOne({_id:id});
     res.send(item);
 });
+
+app.get("/api/users/:id", async (req, res) => {
+  const id = req.params.id;
+  const item = await User.findOne({_id:id});
+  res.send(item);
+});
+
+
+
+
 
 app.post("/api/items", upload.single("image"), async (req, res) => {
     const result = validateItem(req.body);
@@ -80,6 +105,26 @@ app.post("/api/items", upload.single("image"), async (req, res) => {
     const saveResult = await item.save();
     res.send(item);
 });
+
+app.post("/api/users", upload.single("image"), async (req, res) => {
+  const result = validateItem(req.body);
+
+  if(result.error){
+    res.status(400).send(result.error.details[0].message);
+    return;
+  }
+
+  const user = new User({
+    user:req.body.user,
+    pass:req.body.pass
+  });
+
+  const saveResult = await item.save();
+  res.send(item);
+});
+
+
+
 
 app.put("/api/items/:id", upload.single("img"), async (req, res) => {
     const result = validateItem(req.body);
@@ -111,10 +156,40 @@ app.put("/api/items/:id", upload.single("img"), async (req, res) => {
     res.send(updateResult);
 });
 
+app.put("/api/users/:id", upload.single("img"), async (req, res) => {
+  const result = validateItem(req.body);
+
+  if(result.error){
+    res.status(400).send(result.error.details[0].message);
+    return;
+  }
+
+  let fieldsToUpdate = {
+    user:req.body.user,
+    pass:req.body.pass
+  };
+
+
+  const id = req.params.id;
+
+  const updateResult = await User.updateOne({_id:id},fieldsToUpdate);
+  res.send(updateResult);
+});
+
+
+
+
 app.delete("/api/recipes/:id", async (req, res) => {
     const item = await Item.findByIdAndDelete(req.params.id)
     res.send(item);
 });
+
+app.delete("/api/users/:id", async (req, res) => {
+  const user = await User.findByIdAndDelete(req.params.id)
+  res.send(user);
+});
+
+
 
 function validateItem(item) {
     const schema = Joi.object({
@@ -131,6 +206,15 @@ function validateItem(item) {
     });
   
     return schema.validate(item);
+}
+
+function validateItem(user) {
+  const schema = Joi.object({
+    user: Joi.string().min(3).required(),
+    pass: Joi.string().min(3).required()
+  });
+
+  return schema.validate(item);
 }
 
 app.listen(3000, () => {
