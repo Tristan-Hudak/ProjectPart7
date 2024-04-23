@@ -497,3 +497,6 @@ document.getElementById("level-up").onclick = function(){
 document.getElementById("character-form-submit").onclick = submitCharacterForm;
 
 
+window.onload = () => {
+    createCharacter();
+}
