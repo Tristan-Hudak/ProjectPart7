@@ -350,8 +350,9 @@ const deleteNote = async(character)=> {
 };
 
 const whichProf = (prof,str,dex,int,wis,cha) => {
+    console.log(prof)
     
-    if(prof = 1){
+    if(prof == 1){
         console.log(prof + str)
         return modDetect(str);
     }else if(prof <=4 && prof >=2){
