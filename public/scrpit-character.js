@@ -55,9 +55,9 @@ const createCharacter = async() => {
         console.log(div, div2)
 
         place1.append(div)
-        place2.append(div2)
+        //place2.append(div2)
 
-        console.log(place1, place2)
+        console.log(place1)
 
     });
 
