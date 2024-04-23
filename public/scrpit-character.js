@@ -311,19 +311,19 @@ const deleteNote = async(character)=> {
 const whichProf = async(prof,str,dex,int,wis,cha) => {
     
     if(prof = 1){
-        console.log(i + str)
+        console.log(prof + str)
         return modDetect(str);
     }else if(prof <=4 && prof >=2){
-        console.log(i + dex)
+        console.log(prof + dex)
         return modDetect(dex);
     }else if(prof <=9 && prof >=5){
-        console.log(i + int)
+        console.log(prof + int)
         return modDetect(int);
     }else if(prof <=14 && prof >=10){
-        console.log(i + wis)
+        console.log(prof + wis)
         return modDetect(wis);
     }else if(prof <=18 && prof >=15){
-        console.log(i + cha)
+        console.log(prof + cha)
         return modDetect(cha);
     }else{
         return 0;
