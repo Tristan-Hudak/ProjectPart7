@@ -12,15 +12,20 @@ const getCharacters = async() => {
 const createCharacter = async() => {
 
     console.log("in the div area")
+    characterInDiv(document.getElementById("character-place"));
+    characterInDiv(document.getElementById("character-delete-place"));
 
+}
+
+
+const characterInDiv = async(place) => {
     let Characters = await getCharacters();
 
     Characters.forEach((character)=>{
 
         console.log(character);
 
-        const place1 = document.getElementById("character-place")
-        const place2 = document.getElementById("character-delete-place")
+        const place1 = place
 
         const div = document.createElement("div");
         div.id = "one-character";
@@ -48,20 +53,13 @@ const createCharacter = async() => {
 
         div.append(section01);
         div.append(section02);
-        div.append(section03);
-
-        const div2 = div;
-
-        console.log(div, div2);
+        div.append(section03);=
 
         place1.append(div);
-        place2.append(div2);
-
-        console.log(place1,place2)
-
     });
 
-}
+
+};
 
 const populateCharacter = async(data) => {
     console.log("larger area where stats are displayed")
