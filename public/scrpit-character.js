@@ -14,12 +14,12 @@ const showModal = (id,clicked) => {
     
 
     document.getElementById("close_box").onclick = () => {
-        hideModal;
+        hideModal();
         return;
     };
 
     document.getElementById("create-character").onclick = () =>{
-        makeNewCharacter;
+        makeNewCharacter();
         return;
     }
 
