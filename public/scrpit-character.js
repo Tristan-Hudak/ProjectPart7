@@ -215,7 +215,7 @@ const populateFromSubmitCharacter = async() => {
                     if(myProf == prof){
                         console.log(myProf + " and "+ prof + " are a match");
                         for(let i = 1; i < profsNumArray.length+1; i++){
-                            console.log(prof, i, profsNumArray[i-1], profsArray[i-1])
+                            console.log(prof, i, profsNumArray[i-1], profsArray[i-1], char.character_prof)
                             if(prof == profsNumArray[i-1]){
                                 //console.log(profsArray[i], profsNumArray[i])
                                 profsArray[i-1].innerHTML = whichProf(i,char.character_str, char.character_dex, char.character_int, char.character_wis, char.character_cha) + char.character_prof;
