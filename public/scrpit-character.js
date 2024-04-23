@@ -72,7 +72,7 @@ const populateFromSubmitCharacter = async() => {
 
     let char_length = Characters.length;
 
-    Characters.forEach((char)=>{
+    Characters.forEach(async(char)=>{
         if (char_length == 1){
 
             const name = document.getElementById("replace_name");
@@ -82,15 +82,16 @@ const populateFromSubmitCharacter = async() => {
             const initiative = document.getElementById("replace_init");
             initiative.innerHTML = modDetect(char.character_dex);
             const hp = document.getElementById("replace_hp");
-            hp.innerHTML = char.hp
+            hp.innerHTML = char.character_hp;
             const speed = document.getElementById("replace_speed");
             speed.innerHTML = "30"
             const hd = document.getElementById("replace_hd");
-            hd.innerHTML = char.character_lvl + "d" + checkClass(char.character_class);
+            const hitDice = await checkClass(char.character_class);
+            hd.innerHTML = char.character_lvl + "d" + hitDice;
             const ac = document.getElementById("replace_ac");
             ac.innerHTML = modDetect(char.character_dex)
             const prof = document.getElementById("replace_prof");
-            prof.innerHTML = char.character_prof
+            prof.innerHTML = await checkProfLvl(char.character_lvl)
             //str
             const strScore = document.getElementById("s_score");
             strScore.innerHTML = char.character_str;
@@ -165,7 +166,7 @@ const populateFromSubmitCharacter = async() => {
             const persuasion = document.getElementById("persuasion");
 
 
-            profsArray[
+            const profsArray = [
                 athletics,
                 acrobatics,
                 slieghtOfHand,
@@ -184,7 +185,7 @@ const populateFromSubmitCharacter = async() => {
                 intimidation,
                 performance,
                 persuasion
-            ]
+            ];
 
             console.log(profsArray);
 
@@ -355,6 +356,22 @@ const checkClass = async(cls) => {
         return 0;
     }
 
+}
+
+const checkProfLvl = async(lvl) => {
+    if(lvl <= 4 && lvl >= 1){
+        return 2;
+    }else if(lvl <= 8 && lvl >= 5){
+        return 3;
+    }else if(lvl <= 12 && lvl >= 9){
+        return 4;
+    }else if(lvl <= 16 && lvl >= 13){
+        return 5;
+    }else if(lvl <= 20 && lvl >= 17){
+        return 6;
+    }else if(lvl > 20){
+        return 6;
+    }
 }
 
 
