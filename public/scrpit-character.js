@@ -10,12 +10,27 @@ const showModal = (id) => {
         console.log("in",id)
         document.getElementById("character-modal").style.display = "block";
 
-        document.getElementById("close_box").onclick = hideModal;
-        document.getElementById("create-character").onclick = makeNewCharacter;
+        if(document.getElementById("close_box").clicked == true){
+            hideModal;
+            return;
+        }
+
+        if(document.getElementById("create-character").clicked == true){
+            document.getElementById("character-modal").style.display = "none";
+            makeNewCharacter;
+        }
+
+        //document.getElementById("close_box").onclick = hideModal;
+        //document.getElementById("create-character").onclick = makeNewCharacter;
     }
     if(id == "delete"){
         console.log("in",id)
         document.getElementById("delete-modal").style.display = "block";
+
+        if(document.getElementById("close_box").clicked == true){
+            hideModal;
+            return;
+        }
     }
     else{
         return;
