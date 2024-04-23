@@ -53,6 +53,136 @@ const createCharacter = async() => {
 
 }
 
+const populateCharacter = async(id) => {
+
+    let Characters = await getCharacters();
+
+    Characters.forEach((char)=>{
+        if (char._id == id){
+
+            const name = document.getElementById("replace_name");
+            name.innerHTML = char.character_name
+            const level = document.getElementById("replace_level");
+            level.html = char.character_lvl
+            const initiative = document.getElementById("replace_init");
+            initiative.innerHTML = modDetect(char.character_dex);
+            const hp = document.getElementById("replace_hp");
+            hp.innerHTML = char.hp
+            const speed = document.getElementById("replace_speed");
+            speed.innerHTML = "30"
+            const hd = document.getElementById("replace_hd");
+            hd.innerHTML = char.character_lvl + "d" + checkClass(char.character_class);
+            const ac = document.getElementById("replace_ac");
+            ac.innerHTML = modDetect(char.character_dex)
+            const prof = document.getElementById("replace_prof");
+            prof.innerHTML = char.character_prof
+            //str
+            const strScore = document.getElementById("s_score");
+            strScore.innerHTML = char.character_str;
+            const strMod = document.getElementById("s_mod");
+            strMod.innerHTML = modDetect(char.character_str)
+            const strSave = document.getElementById("s_save");
+            strSave.innerHTML = modDetect(char.character_str);
+            const psm = document.getElementById("prof_str_mod");
+            psm.innerHTML = modDetect(char.character_str);
+            //dex
+            const dexScore = document.getElementById("d_score");
+            dexScore.innerHTML = char.character_dex;
+            const dexMod = document.getElementById("d_mod");
+            dexMod.innerHTML = modDetect(char.character_dex)
+            const dexSave = document.getElementById("d_save");
+            dexSave.innerHTML = modDetect(char.character_dex);
+            const pdm = document.getElementById("prof_dex_mod");
+            pdm.innerHTML = modDetect(char.character_dex);
+            //con
+            const conScore = document.getElementById("c_score");
+            conScore.innerHTML = char.character_con;
+            const conMod = document.getElementById("c_mod");
+            conMod.innerHTML = modDetect(char.character_con)
+            const conSave = document.getElementById("c_save");
+            conSave.innerHTML = modDetect(char.character_con);       
+            //int
+            const intScore = document.getElementById("i_score");
+            intScore.innerHTML = char.character_int;
+            const intMod = document.getElementById("i_mod");
+            intMod.innerHTML = modDetect(char.character_int)
+            const intSave = document.getElementById("i_save");
+            intSave.innerHTML = modDetect(char.character_int);
+            const pim = document.getElementById("prof_int_mod");
+            pim.innerHTML = modDetect(char.character_int);
+            //wis
+            const wisScore = document.getElementById("w_score");
+            wisScore.innerHTML = char.character_wis;
+            const wisMod = document.getElementById("w_mod");
+            wisMod.innerHTML = modDetect(char.character_wis)
+            const wisSave = document.getElementById("w_save");
+            wisSave.innerHTML = modDetect(char.character_wis);
+            const pwm = document.getElementById("prof_wis_mod");
+            pwm.innerHTML = modDetect(char.character_wis);
+            //cha
+            const chaScore = document.getElementById("cha_score");
+            chaScore.innerHTML = char.character_cha;
+            const chaMod = document.getElementById("cha_mod");
+            chaMod.innerHTML = modDetect(char.character_cha)
+            const chaSave = document.getElementById("cha_save");
+            chaSave.innerHTML = modDetect(char.character_cha);
+            const pcm = document.getElementById("prof_cha_mod");
+            pcm.innerHTML = modDetect(char.character_cha);
+            
+            //profs
+            const athletics = document.getElementById("athletics");
+            const acrobatics = document.getElementById("acrobatics");
+            const slieghtOfHand = document.getElementById("soh");
+            const stealth = document.getElementById("stealth");
+            const arcana = document.getElementById("arcana");
+            const history = document.getElementById("history");
+            const investigation = document.getElementById("invest");
+            const nature = document.getElementById("nature");
+            const religion = document.getElementById("religion");
+            const animalHandeling = document.getElementById("animal");
+            const insight = document.getElementById("insight");
+            const medicine = document.getElementById("medic");
+            const perception = document.getElementById("perception");
+            const survival = document.getElementById("survival");
+            const deception = document.getElementById("decep");
+            const intimidation = document.getElementById("intim");
+            const performance = document.getElementById("perform");
+            const persuasion = document.getElementById("persuasion");
+
+
+            profsArray[
+                athletics,
+                acrobatics,
+                slieghtOfHand,
+                stealth,
+                arcana,
+                history,
+                investigation,
+                nature,
+                religion,
+                animalHandeling,
+                insight,
+                medicine,
+                perception,
+                survival,
+                deception,
+                intimidation,
+                performance,
+                persuasion
+            ]
+
+            console.log(profsArray);
+
+
+
+
+        }else{
+            return;
+        }
+    })
+
+}
+
 
 
 const submitCharacterForm = async(e) => {
@@ -69,7 +199,7 @@ const submitCharacterForm = async(e) => {
     const lvl = 1;
     formData.delete("character_lvl");
     formData.append("character_lvl", lvl);
-    let hp =  checkClass(formData.get("character_class"), formData.get("character_con"));
+    let hp =  checkClassHp(formData.get("character_class"), formData.get("character_con"));
     formData.delete("character_hp");
     formData.append("character_hp", hp);
 
@@ -100,7 +230,7 @@ const submitCharacterForm = async(e) => {
     await response.json();
     resetForm();
     hideModal();
-    createCharacter();
+    createCharacter(formData.get(_id));
 
 
 }
@@ -173,7 +303,7 @@ const modDetect = (thing) =>{
 }
 
 
-const checkClass = async(cls, con) => {
+const checkClassHp = async(cls, con) => {
     console.log(cls, con)
 
     const value = modDetect(con)
@@ -188,6 +318,22 @@ const checkClass = async(cls, con) => {
         return 6+value;
     }else {
         return value;
+    }
+
+}
+
+const checkClass = async(cls) => {
+
+    if(cls == "fighter"){
+        return 10
+
+    }else if(cls == "cleric"){
+        return 8
+
+    }else if(cls == "wizard"){
+        return 6
+    }else {
+        return 0;
     }
 
 }

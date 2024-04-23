@@ -253,7 +253,7 @@
             <div id="i-hp-s" class="flex-box">
                 <section id="initiative" class="coll1of3">
                     <p>Initiative</p>
-                    <h1 id="replace_Init">0</h1>
+                    <h1 id="replace_init">0</h1>
                 </section>
                 <section id="health" class="coll1of3">
                     <p>HP</p>
@@ -269,11 +269,11 @@
             <div id="hd-ac-p" class="flex-box">
                 <section id="hd" class="coll1of3">
                     <h3>Hit Dice</h3>
-                    <h1 id="replace_HD">0</h1>
+                    <h1 id="replace_hd">0</h1>
                 </section>
                 <section id="ac" class="coll1of3">
                     <h3>Armor Class</h3>
-                    <h1 id="replace_AC">0</h1>
+                    <h1 id="replace_ac">0</h1>
                 </section>
                 <section id="prof" class="coll1of3">
                     <h3>Proficiency</h3>
@@ -420,7 +420,7 @@
             <div id="skills" class="flex-box">
 
                 <section id="s-str" class="coll1of5">
-                    <h3>Strength  +0</h3>
+                    <h3>Strength  +<span id="prof_str_mod">0</span></h3>
                     <div class="skill-name" class="flex-box">
                         <section class="coll1of1">
                             <div id="skill-stat" class="flex-box">
@@ -428,7 +428,7 @@
                                     <p>Athletics</p>
                                 </section>
                                 <section id="s-num" class="coll1of2">
-                                    <p>0</p>
+                                    <p id="athletics">0</p>
                                 </section>
                             </div>
                         </section>
@@ -436,7 +436,7 @@
                 </section>
 
                 <section id="s-dex" class="coll1of5">
-                    <h3>Dexterity  +0</h3>
+                    <h3>Dexterity  +<span id="prof_dex_mod">0</span></h3>
 
                     <div id="s-ass" class="flex-box">
 
@@ -446,7 +446,7 @@
                                     <p>Acrobatics</p>
                                 </section>
                                 <section id="s-num" class="coll1of2">
-                                    <p>0</p>
+                                    <p id="acrobatics">0</p>
                                 </section>
                             </div>
                         </section>
@@ -457,7 +457,7 @@
                                     <p>Sleight of Hand</p>
                                 </section>
                                 <section id="s-num" class="coll1of2">
-                                    <p>0</p>
+                                    <p id="soh">0</p>
                                 </section>
                             </div>
                         </section>
@@ -468,7 +468,7 @@
                                     <p>Stealth</p>
                                 </section>
                                 <section id="s-num" class="coll1of2">
-                                    <p>0</p>
+                                    <p id="stealth">0</p>
                                 </section>
                             </div>
                         </section>
@@ -477,7 +477,7 @@
                 </section>
 
                 <section id="s-int" class="coll1of5">
-                    <h3>Intelligence  +0</h3>
+                    <h3>Intelligence  +<span id="prof_int_mod">0</span></h3>
                     <div id="s-ahinr" class="flex-box">
 
                         <section class="skill-name" class="coll1of5">
@@ -486,7 +486,7 @@
                                     <p>Arcana</p>
                                 </section>
                                 <section id="s-num" class="coll1of2">
-                                    <p>0</p>
+                                    <p id="arcana">0</p>
                                 </section>
                             </div>
                         </section>
@@ -497,7 +497,7 @@
                                     <p>History</p>
                                 </section>
                                 <section id="s-num" class="coll1of2">
-                                    <p>0</p>
+                                    <p id="history">0</p>
                                 </section>
                             </div>
                         </section>
@@ -508,7 +508,7 @@
                                     <p>Investigation</p>
                                 </section>
                                 <section id="s-num" class="coll1of2">
-                                    <p>0</p>
+                                    <p id="invest">0</p>
                                 </section>
                             </div>
                         </section>
@@ -519,7 +519,7 @@
                                     <p>Nature</p>
                                 </section>
                                 <section id="s-num" class="coll1of2">
-                                    <p>0</p>
+                                    <p id="nature">0</p>
                                 </section>
                             </div>
                         </section>
@@ -530,7 +530,7 @@
                                     <p>Religion</p>
                                 </section>
                                 <section id="s-num" class="coll1of2">
-                                    <p>0</p>
+                                    <p id="religion">0</p>
                                 </section>
                             </div>
                         </section>
@@ -539,7 +539,7 @@
                 </section>
 
                 <section id="s-wis" class="coll1of5">
-                    <h3>Wisdom  +0</h3>
+                    <h3>Wisdom  +<span id="prof_wis_mod">0</span></h3>
                     <div id="s-ahimps" class="flex-box">
 
                         <section class="skill-name" class="coll1of5">
@@ -548,7 +548,7 @@
                                     <p>Animal Handeling</p>
                                 </section>
                                 <section id="s-num" class="coll1of2">
-                                    <p>0</p>
+                                    <p id="animal">0</p>
                                 </section>
                             </div>
                         </section>
@@ -559,7 +559,7 @@
                                     <p>Insight</p>
                                 </section>
                                 <section id="s-num" class="coll1of2">
-                                    <p>0</p>
+                                    <p id="insight">0</p>
                                 </section>
                             </div>
                         </section>
@@ -570,7 +570,7 @@
                                     <p>Medicine</p>
                                 </section>
                                 <section id="s-num" class="coll1of2">
-                                    <p>0</p>
+                                    <p id="medic">0</p>
                                 </section>
                             </div>
                         </section>
@@ -581,7 +581,7 @@
                                     <p>Perception</p>
                                 </section>
                                 <section id="s-num" class="coll1of2">
-                                    <p>0</p>
+                                    <p id="preception">0</p>
                                 </section>
                             </div>
                         </section>
@@ -592,7 +592,7 @@
                                     <p>Survival</p>
                                 </section>
                                 <section id="s-num" class="coll1of2">
-                                    <p>0</p>
+                                    <p id="survival">0</p>
                                 </section>
                             </div>
                         </section>
@@ -601,7 +601,7 @@
                 </section>
 
                 <section id="s-cha" class="coll1of5">
-                    <h3>Charisma  +0</h3>
+                    <h3>Charisma  +<span id="prof_cha_mod">0</span></h3>
                     <div id="s-dipp" class="flex-box">
 
                         <section class="skill-name" class="coll1of5">
@@ -610,7 +610,7 @@
                                     <p>Deception</p>
                                 </section>
                                 <section id="s-num" class="coll1of2">
-                                    <p>0</p>
+                                    <p id="decep">0</p>
                                 </section>
                             </div>
                         </section>
@@ -621,7 +621,7 @@
                                     <p>Intimidation</p>
                                 </section>
                                 <section id="s-num" class="coll1of2">
-                                    <p>0</p>
+                                    <p id="intim">0</p>
                                 </section>
                             </div>
                         </section>
@@ -632,7 +632,7 @@
                                     <p>Performance</p>
                                 </section>
                                 <section id="s-num" class="coll1of2">
-                                    <p>0</p>
+                                    <p id="perform">0</p>
                                 </section>
                             </div>
                         </section>
@@ -643,7 +643,7 @@
                                     <p>Persuasion</p>
                                 </section>
                                 <section id="s-num" class="coll1of2">
-                                    <p>0</p>
+                                    <p id="persuasion">0</p>
                                 </section>
                             </div>
                         </section>
