@@ -1,58 +1,49 @@
 const makeNewCharacter = () => {
     console.log("this area work for creating character")
-
-    let justClosed = true
-    return justClosed;
+    document.getElementById("character-modal").classList.remove("show-hide");
 }
 
 
-let isClosed = false;
+
 
 const showModal = (id) => {
     
-    if(id == "file" && isClosed == false){
-        console.log("in",id,isClosed)
-        document.getElementById("character-modal").style.display = "block";
+    //create
 
-        document.getElementById("close_box").onclick = () => {
-            isClosed = hideModal;
-            console.log("finished" + isClosed);
-            return;
-        };
+    console.log("in",id,isClosed)
+    document.getElementById("character-modal").classList.add("show-hide");
 
-        document.getElementById("create-character").onclick = () =>{
-            isClosed = makeNewCharacter;
-            return;
-        }
+    document.getElementById("close_box").onclick = () => {
+        hideModal;
+        return;
+    };
 
-
-
-    }else if(id == "file" && isClosed == true){
-        console.log("in",id,isClosed)
-        document.getElementById("character-modal").style.display = "none";
+    document.getElementById("create-character").onclick = () =>{
+        makeNewCharacter;
         return;
     }
 
+    //delete
 
-/*
     if(id == "delete"){
         console.log("in",id)
-        document.getElementById("delete-modal").style.display = "block";
+        document.getElementById("delete-modal").classList.add("show-hide");
+
+        document.getElementById("close_box").onclick = () => {
+            hideModal;
+            return;
+        };
     }
     else{
         return;
     }    
-*/
+
 };
 
 const hideModal = () => {
     console.log("say hello")
-    document.getElementById("delete-modal").style.display = "none";
-    document.getElementById("character-modal").style.display = "none";
-
-    let justClosed = true
-
-    return justClosed;
+    document.getElementById("delete-modal").classList.remove("show-hide");
+    document.getElementById("character-modal").classList.remove("show-hide");
 
 }
 
