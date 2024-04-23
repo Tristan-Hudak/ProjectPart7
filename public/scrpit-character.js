@@ -58,6 +58,7 @@ document.getElementById("file").onclick = function(){
         showModal("file",hasBeenClicked);
     }
     else if(hasBeenClicked == true){
+        hasBeenClicked = false;
         return;
     }
     
@@ -69,6 +70,7 @@ document.getElementById("delete").onclick = function(){
         showModal("delete",hasBeenClicked);
     }
     else if(hasBeenClicked == true){
+        hasBeenClicked = false;
         return;
     }
 }
@@ -78,6 +80,7 @@ document.getElementById("rest").onclick = function(){
         showModal("rest",hasBeenClicked);
     }
     else if(hasBeenClicked == true){
+        hasBeenClicked = false;
         return;
     }
     
@@ -88,6 +91,7 @@ document.getElementById("level-up").onclick = function(){
         showModal("level-up",hasBeenClicked);
     }
     else if(hasBeenClicked == true){
+        hasBeenClicked = false;
         return;
     }
 
