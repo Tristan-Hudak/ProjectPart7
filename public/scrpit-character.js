@@ -23,7 +23,7 @@ const characterInDiv = async(place) => {
 
     Characters.forEach((character)=>{
 
-        console.log(character);
+        //console.log(character);
 
         const place1 = place
 
@@ -158,7 +158,7 @@ const populateFromSubmitCharacter = async() => {
             const animalHandeling = document.getElementById("animal");
             const insight = document.getElementById("insight");
             const medicine = document.getElementById("medic");
-            const perception = document.getElementById("perception");
+            const perception = document.getElementById("preception");
             const survival = document.getElementById("survival");
             const deception = document.getElementById("decep");
             const intimidation = document.getElementById("intim");
@@ -189,6 +189,12 @@ const populateFromSubmitCharacter = async() => {
 
             const profsNumArray = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
 
+            const profs = char.character_prof.spilt(",");
+
+            console.log(profs);
+
+
+
 
             console.log(profsArray);
 
@@ -196,12 +202,12 @@ const populateFromSubmitCharacter = async() => {
                 console.log(myProf)
                 for(let i = 0; i < profsNumArray.length; i++){
                     if(myProf == profsNumArray[i]){
-                        console.log(char.character_prof)
+                        //console.log(char.character_prof)
                         console.log(profsArray[i]);
                         //profsArray[i].innerHTML = char.character_prof;
                         //profsNumArray.splice(i,1);
                     }else{
-                        console.log(profsArray[i]);
+                        console.log(profsArray[i].innerHTML);
                         //profsArray[i].innerHTML = 0;
                     }
                 }
