@@ -11,6 +11,8 @@ const getCharacters = async() => {
 
 const createCharacter = async() => {
 
+    console.log("in the div area")
+
     let Characters = await getCharacters();
 
     Characters.forEach((character)=>{
@@ -54,7 +56,7 @@ const createCharacter = async() => {
 }
 
 const populateCharacter = async(id) => {
-    console.log("area we in")
+    console.log("larger area where stats are displayed")
 
     let Characters = await getCharacters();
 
@@ -232,7 +234,8 @@ const submitCharacterForm = async(e) => {
     await response.json();
     resetForm();
     hideModal();
-    createCharacter(formData);
+    createCharacter();
+    populateCharacter(formData);
 
 
 }
