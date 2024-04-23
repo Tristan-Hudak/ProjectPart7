@@ -359,6 +359,10 @@ footer {
     text-decoration: underline;
 }
 
+.input-area{
+    padding: 5px;
+}
+
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
