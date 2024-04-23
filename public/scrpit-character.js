@@ -201,12 +201,14 @@ const populateFromSubmitCharacter = async() => {
                 console.log(myProf)
                 for(let i = 0; i < profsNumArray.length; i++){
                     if(myProf == profsNumArray[i]){
-                        //console.log(char.character_prof)
-                        console.log(profsArray[i] + " prof");
+                        console.log("making new prof stats")
+                        //console.log(profsArray[i].id + " prof");
                         profsArray[i].innerHTML = await whichProf(i,char.character_str, char.character_dex, char.character_int, char.character_wis, char.character_cha) + char.character_prof;
                         profsNumArray.splice(i,1);
+                        console.log(profsNumArray);
                     }else{
-                        console.log(profsArray[i] + "no prof");
+                        console.log("making stats")
+                        //console.log(profsArray[i].id + "no prof");
                         profsArray[i].innerHTML = await whichProf(i,char.character_str, char.character_dex, char.character_int, char.character_wis, char.character_cha);
                     }
                 }
