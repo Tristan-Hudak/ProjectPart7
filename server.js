@@ -52,7 +52,18 @@ const noteSchema = new mongoose.Schema({
 });
 
 const characterSchema = new mongoose.Schema({
-  
+  character_name: String,
+  character_lvl: String,
+  character_hp: String,
+  character_class: String,
+  character_race: String,
+  character_str: String,
+  character_dex: String,
+  character_con: String,
+  character_int: String,
+  character_wis: String,
+  character_cha: String,
+  character_prof: [String],
 });
 
 const Item = mongoose.model("Item", itemSchema);
@@ -181,7 +192,32 @@ app.post("/api/notes", upload.single("image"), async (req, res) => {
   res.send(note);
 });
 
+app.post("/api/characters", upload.single("image"), async (req, res) => {
+  const result = validateCharacter(req.body);
 
+  if(result.error){
+    res.status(400).send(result.error.details[0].message);
+    return;
+  }
+
+  const character = new Character({
+    character_name:req.body.character_name,
+    character_lvl:req.body.character_lvl,
+    character_hp:req.body.character_hp,
+    character_class: req.body.character_class,
+    character_race: req.body.character_race,
+    character_str: req.body.character_str,
+    character_dex: req.body.character_dex,
+    character_con: req.body.character_con,
+    character_int: req.body.character_int,
+    character_wis: req.body.character_wis,
+    character_cha: req.body.character_cha,
+    character_prof: req.body.character_prof,
+  });
+
+  const saveResult = await character.save();
+  res.send(character);
+});
 
 
 
@@ -254,6 +290,36 @@ app.put("/api/notes/:id", upload.single("img"), async (req, res) => {
   res.send(updateResult);
 });
 
+app.put("/api/characters/:id", upload.single("img"), async (req, res) => {
+  const result = validateCharacter(req.body);
+
+  if(result.error){
+    res.status(400).send(result.error.details[0].message);
+    return;
+  }
+
+  let fieldsToUpdate = {
+    character_name:req.body.character_name,
+    character_lvl:req.body.character_lvl,
+    character_hp:req.body.character_hp,
+    character_class: req.body.character_class,
+    character_race: req.body.character_race,
+    character_str: req.body.character_str,
+    character_dex: req.body.character_dex,
+    character_con: req.body.character_con,
+    character_int: req.body.character_int,
+    character_wis: req.body.character_wis,
+    character_cha: req.body.character_cha,
+    character_prof: req.body.character_prof,
+  };
+
+
+  const id = req.params.id;
+
+  const updateResult = await Character.updateOne({_id:id},fieldsToUpdate);
+  res.send(updateResult);
+});
+
 
 
 
@@ -272,6 +338,11 @@ app.delete("/api/users/:id", async (req, res) => {
 
 app.delete("/api/notes/:id", async (req, res) => {
   const note = await Note.findByIdAndDelete(req.params.id)
+  res.send(note);
+});
+
+app.delete("/api/character/:id", async (req, res) => {
+  const note = await Character.findByIdAndDelete(req.params.id)
   res.send(note);
 });
 
@@ -313,6 +384,26 @@ function validateNote(note) {
   });
 
   return schema.validate(note);
+}
+
+function validateCharacter(character) {
+  const schema = Joi.object({
+    character_name: Joi.string().min(3).required(),
+    character_class: Joi.string().required(),
+    character_race: Joi.string().required(),
+    character_str: Joi.string().required(),
+    character_dex: Joi.string().required(),
+    character_con: Joi.string().required(),
+    character_int: Joi.string().required(),
+    character_wis: Joi.string().required(),
+    character_cha: Joi.string().required(),
+    character_prof: Joi.allow().required(),
+    character_lvl: Joi.allow(""),
+    character_hp: Joi.allow(""),
+    _id: Joi.allow(""),
+  });
+
+  return schema.validate(character);
 }
 
 
