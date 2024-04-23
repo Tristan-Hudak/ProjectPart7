@@ -201,10 +201,10 @@ const submitCharacterForm = async(e) => {
     formData.append("character_lvl", lvl);
     let hp =  checkClassHp(formData.get("character_class"), formData.get("character_con"));
     formData.delete("character_hp");
-    formData.append("character_hp", hp);
+    formData.append("character_hp", hp.value);
 
 
-    console.log(hp)
+    console.log(hp.value)
 
     console.log(...formData);
 
@@ -230,7 +230,7 @@ const submitCharacterForm = async(e) => {
     await response.json();
     resetForm();
     hideModal();
-    createCharacter(formData.get(_id));
+    createCharacter(formData);
 
 
 }
