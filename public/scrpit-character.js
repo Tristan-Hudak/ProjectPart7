@@ -192,9 +192,10 @@ const populateFromSubmitCharacter = async() => {
             const profs = []
 
             console.log(char.character_prof[0]);
+            const charLen =char.character_prof[0].length
 
-            for(let i =0; i < 4; i++){
-                console.log("help")
+            for(let i =0; i < charLen; i++){
+                profs[i]=char.character_prof[0].split(",")
             }
 
             console.log(profs);
