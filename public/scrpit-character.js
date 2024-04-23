@@ -52,8 +52,12 @@ const createCharacter = async() => {
 
         const div2 = div;
 
+        console.log(div, div2)
+
         place1.append(div)
         place2.append(div2)
+
+        console.log(place1, place2)
 
     });
 
@@ -440,6 +444,7 @@ const hideModal = () => {
     document.getElementById("character-crafter-modal").classList.remove("show-hide");
     document.getElementById("lvl-modal").classList.remove("show-hide");
     document.getElementById("rest-modal").classList.remove("show-hide");
+    modalOpen = false;
 }
 
 const makeNewCharacter = () => {
@@ -448,16 +453,20 @@ const makeNewCharacter = () => {
     document.getElementById("character-crafter-modal").classList.add("show-hide");
 }
 
+let modalOpen = false;
 let hasBeenClicked = false
 
 document.getElementById("file").onclick = function(){
     
     if(hasBeenClicked == false){
         hasBeenClicked = true;
+        modalOpen = true;
         showModal("file",hasBeenClicked);
     }
-    else if(hasBeenClicked == true){
+    else if(hasBeenClicked == true && modalOpen == false){
         hasBeenClicked = false;
+        return;
+    }else if(hasBeenClicked == true && modalOpen == true){
         return;
     }
     
@@ -468,8 +477,10 @@ document.getElementById("delete").onclick = function(){
         hasBeenClicked = true;
         showModal("delete",hasBeenClicked);
     }
-    else if(hasBeenClicked == true){
+    else if(hasBeenClicked == true && modalOpen == false){
         hasBeenClicked = false;
+        return;
+    }else if(hasBeenClicked == true && modalOpen == true){
         return;
     }
 }
@@ -478,8 +489,10 @@ document.getElementById("rest").onclick = function(){
         hasBeenClicked = true;
         showModal("rest",hasBeenClicked);
     }
-    else if(hasBeenClicked == true){
+    else if(hasBeenClicked == true && modalOpen == false){
         hasBeenClicked = false;
+        return;
+    }else if(hasBeenClicked == true && modalOpen == true){
         return;
     }
     
@@ -489,8 +502,10 @@ document.getElementById("level-up").onclick = function(){
         hasBeenClicked = true;
         showModal("level-up",hasBeenClicked);
     }
-    else if(hasBeenClicked == true){
+    else if(hasBeenClicked == true && modalOpen == false){
         hasBeenClicked = false;
+        return;
+    }else if(hasBeenClicked == true && modalOpen == true){
         return;
     }
 
