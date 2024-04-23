@@ -244,7 +244,7 @@ const submitCharacterForm = async(e) => {
     resetForm();
     hideModal();
     createCharacter();
-    populateCharacter(formData);
+    populateCharacter(...formData);
 
 
 }
