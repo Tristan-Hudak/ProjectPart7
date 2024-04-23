@@ -4,8 +4,6 @@ const makeNewCharacter = () => {
 }
 
 
-
-
 const showModal = (id,clicked) => {
     
     //create
@@ -36,13 +34,13 @@ const showModal = (id,clicked) => {
         document.getElementById("delete-modal").classList.add("show-hide");
 
         document.getElementById("close_box").onclick = () => {
-            hideModal;
+            hideModal();
             return;
         };
     }
 
     //else
-    
+
     else{
         return;
     }    
