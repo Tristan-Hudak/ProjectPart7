@@ -62,12 +62,17 @@ const submitCharacterForm = async(e) => {
 
     const prof = formData.getAll("character_prof");
     formData.delete("character_prof");
-    const selectProf = collectFour(prof);
+    const selectProf = prof;
     formData.append("character_prof", selectProf);
-    let lvl = formData.get("character_lvl");
-    lvl = 1;
-    let hp = formData.get("character_hp");
-    hp = checkClass(formData.get("character_class"), formData.get("character_con"));
+    const lvl = 1;
+    formData.delete("character_lvl");
+    formData.append("character_lvl", lvl);
+    let hp =  checkClass(formData.get("character_class"), formData.get("character_con"));
+    formData.delete("character_hp");
+    formData.append("character_hp", hp);
+
+
+    console.log(hp)
 
     console.log(...formData);
 
