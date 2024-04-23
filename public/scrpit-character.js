@@ -1,7 +1,7 @@
 const makeNewCharacter = () => {
     console.log("this area work for creating character")
     document.getElementById("character-modal").classList.remove("show-hide");
-    document.getElementById("character-modal").classList.add("show-hide");
+    document.getElementById("character-crafter-modal").classList.add("show-hide");
     
 
 }
