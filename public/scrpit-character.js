@@ -15,7 +15,8 @@ const createCharacter = async() => {
 
     Characters.forEach((character)=>{
 
-        const place = document.getElementById("character-place")
+        const place1 = document.getElementById("character-place")
+        const place2 = document.getElementById("character-delete-place")
 
         const div = document.createElement("div");
         div.id = "one-character";
@@ -45,7 +46,8 @@ const createCharacter = async() => {
         div.append(section02);
         div.append(section03);
 
-        place.append(div)
+        place1.append(div)
+        place2.append(div)
 
     });
 
