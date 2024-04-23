@@ -123,6 +123,18 @@ const deleteNote = async(character)=> {
     //populateCharacter();
 };
 
+const selectProf = async(prof) => {
+    let prof4 = []
+
+    for(let i=0; i < 4; i++){
+        console.log(prof[i])
+        prof4[i] = prof[i];
+    }
+
+    return prof4;
+
+}
+
 const checkClass = async(cls, con) => {
 
     console.log(cls, con)
