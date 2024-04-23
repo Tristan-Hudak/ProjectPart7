@@ -354,6 +354,10 @@ footer {
     margin: 2px;
 }
 
+.spacer-character{
+    padding: 5px;
+    text-decoration: underline;
+}
 
 /* The Modal (background) */
 .modal {
