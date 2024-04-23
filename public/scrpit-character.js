@@ -11,7 +11,7 @@ const showModal = (id) => {
     //create
 
     console.log("in",id)
-    document.getElementById("character-modal").classList.add("show-hide");
+    
 
     document.getElementById("close_box").onclick = () => {
         hideModal;
@@ -22,6 +22,8 @@ const showModal = (id) => {
         makeNewCharacter;
         return;
     }
+
+    document.getElementById("character-modal").classList.add("show-hide");
 
     //delete
 
