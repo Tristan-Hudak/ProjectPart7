@@ -34,11 +34,40 @@ const showModal = (id,clicked) => {
         document.getElementById("delete-modal").classList.add("show-hide");
 
         document.getElementById("close_box_d").onclick = () => {
-            console.log("do i get in")
+            //console.log("do i get in")
             hideModal();
             return;
         };
-        console.log("do i get past")
+        //console.log("do i get past")
+    }
+
+    //rest
+
+    if(id == "rest"){
+        console.log("in",id, clicked)
+
+        document.getElementById("rest-modal").classList.add("show-hide");
+
+        document.getElementById("close_box_d").onclick = () => {
+            //console.log("do i get in")
+            hideModal();
+            return;
+        };
+        //console.log("do i get past")
+    }
+
+    //lvl
+
+    if(id == "level-up"){
+        console.log("in",id, clicked)
+
+        document.getElementById("lvl-modal").classList.add("show-hide");
+
+        document.getElementById("close_box_lvl").onclick = () => {
+            hideModal();
+            return;
+        };
+        //console.log("do i get past")
     }
 
     //else
@@ -53,6 +82,8 @@ const hideModal = () => {
     console.log("say hello")
     document.getElementById("delete-modal").classList.remove("show-hide");
     document.getElementById("character-modal").classList.remove("show-hide");
+    document.getElementById("lvl-modal").classList.remove("show-hide");
+    document.getElementById("rest-modal").classList.remove("show-hide");
 
 }
 
