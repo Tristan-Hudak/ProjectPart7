@@ -10,6 +10,8 @@ const showModal = (id) => {
         console.log("in",id)
         document.getElementById("character-modal").style.display = "block";
 
+        document.getElementById("close_box").onclick = hideModal;
+        document.getElementById("create-character").onclick = makeNewCharacter;
     }
     if(id == "delete"){
         console.log("in",id)
@@ -45,6 +47,5 @@ document.getElementById("level-up").onclick = function(){
     showModal("level-up");
 }
 
-document.getElementById("close_box").onclick = hideModal;
-document.getElementById("create-character").onclick = makeNewCharacter;
+
 
