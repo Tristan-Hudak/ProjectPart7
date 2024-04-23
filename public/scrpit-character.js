@@ -50,8 +50,10 @@ const createCharacter = async() => {
         div.append(section02);
         div.append(section03);
 
+        const div2 = div;
+
         place1.append(div)
-        place2.append(div)
+        place2.append(div2)
 
     });
 
