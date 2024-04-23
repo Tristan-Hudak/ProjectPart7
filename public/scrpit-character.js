@@ -191,9 +191,10 @@ const populateFromSubmitCharacter = async() => {
 
             const profs = []
 
-            for(let i =0; i < char.character_prof.length; i++){
-                profs[i] = char.character_prof.splice(",");
-                console.log(profs[i]);
+            console.log(char.character_prof[0]);
+
+            for(let i =0; i < 4; i++){
+                console.log("help")
             }
 
             console.log(profs);
