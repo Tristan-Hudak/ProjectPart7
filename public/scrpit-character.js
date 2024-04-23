@@ -53,7 +53,7 @@ const characterInDiv = async(place) => {
 
         div.append(section01);
         div.append(section02);
-        div.append(section03);=
+        div.append(section03);
 
         place1.append(div);
     });
