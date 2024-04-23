@@ -70,8 +70,10 @@ const populateFromSubmitCharacter = async() => {
     console.log(Characters.length)
     console.log(Characters[Characters.length])
 
+    let char_length = Characters.length;
+
     Characters.forEach((char)=>{
-        if (char._id == "1"){
+        if (char_length == 1){
 
             const name = document.getElementById("replace_name");
             name.innerHTML = char.character_name
@@ -190,6 +192,7 @@ const populateFromSubmitCharacter = async() => {
 
 
         }else{
+            char_length = char_length - 1;
             return;
         }
     })
