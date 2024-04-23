@@ -123,7 +123,7 @@ const deleteNote = async(character)=> {
     //populateCharacter();
 };
 
-const selectProf = async(prof) => {
+const collectFour = async(prof) => {
     let prof4 = []
 
     for(let i=0; i < 4; i++){
