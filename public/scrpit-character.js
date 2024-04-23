@@ -1,3 +1,9 @@
+const makeNewCharacter = () => {
+    console.log("this area work for creating character")
+    return;
+}
+
+
 
 const showModal = (id) => {
     if(id == "file"){
@@ -20,6 +26,8 @@ const hideModal = () => {
     document.getElementById("delete-modal").style.display = "none";
     document.getElementById("character-modal").style.display = "none";
 
+    return;
+
 }
 
 
@@ -37,5 +45,6 @@ document.getElementById("level-up").onclick = function(){
     showModal("level-up");
 }
 
-document.getElementById("create-character").onclick = hideModal;
+document.getElementById("close_box").onclick = hideModal;
+document.getElementById("create-character").onclick = makeNewCharacter;
 
