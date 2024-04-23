@@ -221,7 +221,7 @@ const populateFromSubmitCharacter = async() => {
                 })
                 for(let i = 1; i < profsNumArray.length+1; i++){
                     console.log(prof, i, profsNumArray[i-1],profsArray[i-1])
-                    if(prof == profsNumArray[i]){
+                    if(prof == profsNumArray[i-1]){
                         //console.log(profsArray[i], profsNumArray[i])
                         profsArray[i-1].innerHTML = whichProf(i,char.character_str, char.character_dex, char.character_int, char.character_wis, char.character_cha);
                     }else{
