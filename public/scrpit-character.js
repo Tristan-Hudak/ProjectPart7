@@ -189,10 +189,10 @@ const populateFromSubmitCharacter = async() => {
 
             const profsNumArray = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
 
-            const profs = []
+            let profs = []
 
             console.log(char.character_prof[0]);
-            profs = char.character_prof[0].split(",")
+            profs= char.character_prof[0].split(",")
 
             console.log(profs);
             console.log(profsArray);
@@ -206,7 +206,7 @@ const populateFromSubmitCharacter = async() => {
                         //profsArray[i].innerHTML = char.character_prof;
                         //profsNumArray.splice(i,1);
                     }else{
-                        console.log(profsArray[i].innerHTML + "no prof");
+                        console.log(profsArray[i] + "no prof");
                         //profsArray[i].innerHTML = 0;
                     }
                 }
