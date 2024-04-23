@@ -198,10 +198,11 @@ const populateFromSubmitCharacter = async() => {
                     if(myProf == profsNumArray[i]){
                         console.log(char.character_prof)
                         console.log(profsArray[i]);
-                        profsArray[i].innerHTML = char.character_prof;
-                        profsNumArray.splice(i,1);
+                        //profsArray[i].innerHTML = char.character_prof;
+                        //profsNumArray.splice(i,1);
                     }else{
-                        profsArray[i].innerHTML = 0;
+                        console.log(profsArray[i]);
+                        //profsArray[i].innerHTML = 0;
                     }
                 }
                 
