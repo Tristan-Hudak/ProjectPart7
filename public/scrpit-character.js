@@ -54,11 +54,13 @@ const createCharacter = async() => {
 }
 
 const populateCharacter = async(id) => {
+    console.log("area we in")
 
     let Characters = await getCharacters();
 
     Characters.forEach((char)=>{
         if (char._id == id){
+            console.log(char._id, id);
 
             const name = document.getElementById("replace_name");
             name.innerHTML = char.character_name
@@ -199,9 +201,9 @@ const submitCharacterForm = async(e) => {
     const lvl = 1;
     formData.delete("character_lvl");
     formData.append("character_lvl", lvl);
-    let hp =  checkClassHp(formData.get("character_class"), formData.get("character_con"));
+    let hp = await checkClassHp(formData.get("character_class"), formData.get("character_con"));
     formData.delete("character_hp");
-    formData.append("character_hp", hp.value);
+    formData.append("character_hp", hp);
 
 
     console.log(hp.value)
