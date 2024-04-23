@@ -395,7 +395,7 @@ footer {
 }
 
 .show-hide{
-    display: none;
+    display: block !important;
 }
 
 
