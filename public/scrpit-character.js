@@ -33,10 +33,12 @@ const showModal = (id,clicked) => {
 
         document.getElementById("delete-modal").classList.add("show-hide");
 
-        document.getElementById("close_box").onclick = () => {
+        document.getElementById("close_box_d").onclick = () => {
+            console.log("do i get in")
             hideModal();
             return;
         };
+        console.log("do i get past")
     }
 
     //else
