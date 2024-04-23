@@ -55,7 +55,7 @@ document.getElementById("file").onclick = function(){
     
     if(hasBeenClicked == false){
         hasBeenClicked = true;
-        showModal("file",clicked);
+        showModal("file",hasBeenClicked);
     }
     else if(hasBeenClicked == true){
         return;
@@ -66,7 +66,7 @@ document.getElementById("delete").onclick = function(){
 
     if(hasBeenClicked == false){
         hasBeenClicked = true;
-        showModal("delete",clicked);
+        showModal("delete",hasBeenClicked);
     }
     else if(hasBeenClicked == true){
         return;
@@ -75,7 +75,7 @@ document.getElementById("delete").onclick = function(){
 document.getElementById("rest").onclick = function(){
     if(hasBeenClicked == false){
         hasBeenClicked = true;
-        showModal("rest",clicked);
+        showModal("rest",hasBeenClicked);
     }
     else if(hasBeenClicked == true){
         return;
@@ -85,7 +85,7 @@ document.getElementById("rest").onclick = function(){
 document.getElementById("level-up").onclick = function(){
     if(hasBeenClicked == false){
         hasBeenClicked = true;
-        showModal("level-up",clicked);
+        showModal("level-up",hasBeenClicked);
     }
     else if(hasBeenClicked == true){
         return;
