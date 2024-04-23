@@ -140,20 +140,52 @@ const collectFour = async(prof) => {
 
 }
 
-const checkClass = async(cls, con) => {
+const modDetect = (thing) =>{
+    let value = 0;
 
+    if(thing == 0 || thing == 1){
+        value = -5;
+    }else if(thing == 2 || thing == 3){
+        value = -4;
+    }else if(thing == 4 || thing == 5){
+        value = -3;
+    }else if(thing == 6 || thing == 7){
+        value = -2;
+    }else if(thing == 8 || thing == 9){
+        value = -1;
+    }else if(thing == 10 || thing == 11){
+        value = 0;
+    }else if(thing == 12 || thing == 13){
+        value = 1;
+    }else if(thing == 14 || thing == 15){
+        value = 2;
+    }else if(thing == 16 || thing == 17){
+        value = 3;
+    }else if(thing == 18 || thing == 19){
+        value = 4;
+    }else if(thing == 20 || thing == 21){
+        value = 5;
+    }
+
+    return value;
+}
+
+
+const checkClass = async(cls, con) => {
     console.log(cls, con)
 
+    const value = modDetect(con)
+
     if(cls == "fighter"){
-        return 10+con;
+        return 10+value;
 
     }else if(cls == "cleric"){
-        return 8+con;
+        return 8+value;
 
     }else if(cls == "wizard"){
-        return 6+con;
+        return 6+value;
     }else {
-        return con;
+        return value;
     }
 
 }
