@@ -1,6 +1,9 @@
 const makeNewCharacter = () => {
     console.log("this area work for creating character")
     document.getElementById("character-modal").classList.remove("show-hide");
+    document.getElementById("character-modal").classList.add("show-hide");
+    
+
 }
 
 
@@ -16,11 +19,17 @@ const showModal = (id,clicked) => {
             hideModal();
             return;
         };
+        document.getElementById("close_box_crafter").onclick = () => {
+            hideModal();
+            return;
+        };
 
         document.getElementById("create-character").onclick = () =>{
             makeNewCharacter();
             return;
         }
+
+
 
         document.getElementById("character-modal").classList.add("show-hide");
     }
@@ -82,6 +91,7 @@ const hideModal = () => {
     console.log("say hello")
     document.getElementById("delete-modal").classList.remove("show-hide");
     document.getElementById("character-modal").classList.remove("show-hide");
+    document.getElementById("character-crafter-modal").classList.remove("show-hide");
     document.getElementById("lvl-modal").classList.remove("show-hide");
     document.getElementById("rest-modal").classList.remove("show-hide");
 
