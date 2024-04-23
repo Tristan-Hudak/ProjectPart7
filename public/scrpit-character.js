@@ -226,7 +226,7 @@ const submitCharacterForm = async(e) => {
                 console.log("this is an error you restart form");
                 return;
             }else{
-                console.log("shits good")
+                console.log("good")
             }
         }
 
