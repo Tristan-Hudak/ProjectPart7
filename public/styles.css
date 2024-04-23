@@ -363,6 +363,10 @@ footer {
     margin: 5px;
 }
 
+.space-for-exit{
+    padding-bottom: 10px;
+}
+
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */

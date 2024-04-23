@@ -61,15 +61,17 @@ const characterInDiv = async(place) => {
 
 };
 
-const populateCharacter = async(data) => {
+const populateFromSubmitCharacter = async() => {
     console.log("larger area where stats are displayed")
-    console.log(data);
-    console.log(data._id);
+    
 
     let Characters = await getCharacters();
 
+    console.log(Characters.length)
+    console.log(Characters[Characters.length])
+
     Characters.forEach((char)=>{
-        if (char._id == data._id){
+        if (char._id == "1"){
 
             const name = document.getElementById("replace_name");
             name.innerHTML = char.character_name
@@ -244,7 +246,7 @@ const submitCharacterForm = async(e) => {
     resetForm();
     hideModal();
     createCharacter();
-    populateCharacter(...formData);
+    populateFromSubmitCharacter();
 
 
 }
