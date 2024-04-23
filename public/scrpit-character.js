@@ -206,11 +206,12 @@ const populateFromSubmitCharacter = async() => {
                     if(myProf == prof){
                         console.log(myProf + " and "+ prof + " are a match");
                         for(let i = 0; i < profsNumArray.length; i++){
-                            if(prof == profsArray[i]){
+                            if(prof == profsNumArray[i]){
+                                console.log(prof, profsNumArray[i])
                                 profsArray[i].innerHTML = await whichProf(i,char.character_str, char.character_dex, char.character_int, char.character_wis, char.character_cha) + char.character_prof;
                                 return;
                             }else{
-
+                                console.log("no match for text area");
                             }
                         }
                     }else{
@@ -218,10 +219,11 @@ const populateFromSubmitCharacter = async() => {
                     }
                 })
                 for(let i = 0; i < profsNumArray.length; i++){
-                    if(prof == profsArray[i]){
+                    if(prof == profsNumArray[i]){
+                        console.log(prof, profsNumArray[i])
                         profsArray[i].innerHTML = await whichProf(i,char.character_str, char.character_dex, char.character_int, char.character_wis, char.character_cha);
                     }else{
-                        
+                        console.log("no match for text area");
                     }
                 }
 
