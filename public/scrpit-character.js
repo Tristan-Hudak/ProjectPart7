@@ -48,7 +48,7 @@ const showModal = (id,clicked) => {
 
         document.getElementById("rest-modal").classList.add("show-hide");
 
-        document.getElementById("close_box_d").onclick = () => {
+        document.getElementById("close_box_r").onclick = () => {
             //console.log("do i get in")
             hideModal();
             return;
