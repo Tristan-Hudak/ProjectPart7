@@ -10,25 +10,29 @@ const showModal = (id,clicked) => {
     
     //create
 
-    console.log("in",id, clicked)
-    
+    if(id == "file"){
+        console.log("in",id, clicked)
+        
 
-    document.getElementById("close_box").onclick = () => {
-        hideModal();
-        return;
-    };
+        document.getElementById("close_box").onclick = () => {
+            hideModal();
+            return;
+        };
 
-    document.getElementById("create-character").onclick = () =>{
-        makeNewCharacter();
-        return;
+        document.getElementById("create-character").onclick = () =>{
+            makeNewCharacter();
+            return;
+        }
+
+        document.getElementById("character-modal").classList.add("show-hide");
     }
-
-    document.getElementById("character-modal").classList.add("show-hide");
+    
 
     //delete
 
     if(id == "delete"){
-        console.log("in",id)
+        console.log("in",id, clicked)
+
         document.getElementById("delete-modal").classList.add("show-hide");
 
         document.getElementById("close_box").onclick = () => {
@@ -36,6 +40,9 @@ const showModal = (id,clicked) => {
             return;
         };
     }
+
+    //else
+    
     else{
         return;
     }    
