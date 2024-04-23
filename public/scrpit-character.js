@@ -17,6 +17,8 @@ const createCharacter = async() => {
 
     Characters.forEach((character)=>{
 
+        console.log(character);
+
         const place1 = document.getElementById("character-place")
         const place2 = document.getElementById("character-delete-place")
 
@@ -237,7 +239,7 @@ const submitCharacterForm = async(e) => {
     await response.json();
     resetForm();
     hideModal();
-    createCharacter;
+    createCharacter();
     populateCharacter(formData);
 
 
