@@ -1,23 +1,40 @@
 const makeNewCharacter = () => {
     console.log("this area work for creating character")
-    return;
+
+    let justClosed = true
+    return justClosed;
 }
 
 
+let isClosed = false;
 
 const showModal = (id) => {
-    if(id == "file"){
-        console.log("in",id)
+    
+    if(id == "file" && isClosed == false){
+        console.log("in",id,isClosed)
         document.getElementById("character-modal").style.display = "block";
 
-        document.getElementById("close_box").onclick = hideModal;
         document.getElementById("close_box").onclick = () => {
-            hideModal
-            console.log("finished")
+            isClosed = hideModal;
+            console.log("finished" + isClosed);
             return;
         };
-        document.getElementById("create-character").onclick = makeNewCharacter;
+
+        document.getElementById("create-character").onclick = () =>{
+            isClosed = makeNewCharacter;
+            return;
+        }
+
+
+
+    }else if(id == "file" && isClosed == true){
+        console.log("in",id,isClosed)
+        document.getElementById("character-modal").style.display = "none";
+        return;
     }
+
+
+/*
     if(id == "delete"){
         console.log("in",id)
         document.getElementById("delete-modal").style.display = "block";
@@ -25,7 +42,7 @@ const showModal = (id) => {
     else{
         return;
     }    
-
+*/
 };
 
 const hideModal = () => {
@@ -33,7 +50,9 @@ const hideModal = () => {
     document.getElementById("delete-modal").style.display = "none";
     document.getElementById("character-modal").style.display = "none";
 
-    return;
+    let justClosed = true
+
+    return justClosed;
 
 }
 
