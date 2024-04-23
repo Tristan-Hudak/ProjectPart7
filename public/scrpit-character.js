@@ -197,17 +197,17 @@ const populateFromSubmitCharacter = async() => {
             console.log(profs);
             console.log(profsArray);
 
-            profs.forEach((myProf)=>{
+            profs.forEach(async(myProf)=>{
                 console.log(myProf)
                 for(let i = 0; i < profsNumArray.length; i++){
                     if(myProf == profsNumArray[i]){
                         //console.log(char.character_prof)
                         console.log(profsArray[i] + " prof");
-                        //profsArray[i].innerHTML = char.character_prof;
-                        //profsNumArray.splice(i,1);
+                        profsArray[i].innerHTML = await whichProf(i,char.character_str, char.character_dex, char.character_int, char.character_wis, char.character_cha) + char.character_prof;
+                        profsNumArray.splice(i,1);
                     }else{
                         console.log(profsArray[i] + "no prof");
-                        //profsArray[i].innerHTML = 0;
+                        profsArray[i].innerHTML = await whichProf(i,char.character_str, char.character_dex, char.character_int, char.character_wis, char.character_cha);
                     }
                 }
                 
@@ -304,15 +304,21 @@ const deleteNote = async(character)=> {
     //populateCharacter();
 };
 
-const collectFour = async(prof) => {
-    let prof4 = []
-
-    for(let i=0; i < 4; i++){
-        console.log(prof[i])
-        prof4[i] = prof[i];
+const whichProf = async(prof,str,dex,int,wis,cha) => {
+    
+    if(prof = 1){
+        return modDetect(str);
+    }else if(prof <=4 && prof >=2){
+        return modDetect(dex);
+    }else if(prof <=9 && prof >=5){
+        return modDetect(int);
+    }else if(prof <=14 && prof >=10){
+        return modDetect(wis);
+    }else if(prof <=18 && prof >=15){
+        return modDetect(cha);
+    }else{
+        return 0;
     }
-
-    return prof4;
 
 }
 
