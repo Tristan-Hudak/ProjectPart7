@@ -26,7 +26,7 @@ const createCharacter = async() => {
         section01.id = "name-area";
         section01.classList.add("coll1of3");
         const section02 = document.createElement("section");
-        section02.innerHTML = "Class: " + character.character_class + character.character_lvl; 
+        section02.innerHTML = "Class: " + character.character_class + " " +character.character_lvl; 
         section02.id = "class-area";
         section02.classList.add("coll1of3");
         const section03 = document.createElement("section");
