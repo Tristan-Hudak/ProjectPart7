@@ -52,12 +52,12 @@ const createCharacter = async() => {
 
         const div2 = div;
 
-        console.log(div, div2)
+        console.log(div, div2);
 
-        place1.append(div)
-        //place2.append(div2)
+        place1.append(div);
+        place2.append(div2);
 
-        console.log(place1)
+        console.log(place1,place2)
 
     });
 
@@ -475,6 +475,7 @@ document.getElementById("delete").onclick = function(){
 
     if(hasBeenClicked == false){
         hasBeenClicked = true;
+        modalOpen = true;
         showModal("delete",hasBeenClicked);
     }
     else if(hasBeenClicked == true && modalOpen == false){
@@ -487,6 +488,7 @@ document.getElementById("delete").onclick = function(){
 document.getElementById("rest").onclick = function(){
     if(hasBeenClicked == false){
         hasBeenClicked = true;
+        modalOpen = true;
         showModal("rest",hasBeenClicked);
     }
     else if(hasBeenClicked == true && modalOpen == false){
@@ -500,6 +502,7 @@ document.getElementById("rest").onclick = function(){
 document.getElementById("level-up").onclick = function(){
     if(hasBeenClicked == false){
         hasBeenClicked = true;
+        modalOpen = true;
         showModal("level-up",hasBeenClicked);
     }
     else if(hasBeenClicked == true && modalOpen == false){
