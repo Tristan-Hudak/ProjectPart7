@@ -51,9 +51,14 @@ const noteSchema = new mongoose.Schema({
   note_desc: String,
 });
 
+const characterSchema = new mongoose.Schema({
+  
+});
+
 const Item = mongoose.model("Item", itemSchema);
 const User = mongoose.model("User", userSchema);
 const Note = mongoose.model("Note", noteSchema);
+const Character = mongoose.model("Character", characterSchema);
 
 
 
@@ -79,6 +84,11 @@ app.get("/api/notes", async (req, res) => {
   const notes = await Note.find();
   res.send(notes);
 });
+
+app.get("/api/characters", async (req, res) => {
+  const notes = await Character.find();
+  res.send(notes);
+});
   
 
 
@@ -99,6 +109,12 @@ app.get("/api/users/:id", async (req, res) => {
 app.get("/api/notes/:id", async (req, res) => {
   const id = req.params.id;
   const note = await Note.findOne({_id:id});
+  res.send(note);
+});
+
+app.get("/api/characters/:id", async (req, res) => {
+  const id = req.params.id;
+  const note = await Character.findOne({_id:id});
   res.send(note);
 });
 
