@@ -199,16 +199,16 @@ const populateFromSubmitCharacter = async() => {
 
 
 
-            profsNumArray.forEach(async(prof)=>{
+            profsNumArray.forEach((prof)=>{
                 console.log(prof);
-                profs.forEach(async(myProf)=>{
+                profs.forEach((myProf)=>{
                     console.log(myProf);
                     if(myProf == prof){
                         console.log(myProf + " and "+ prof + " are a match");
                         for(let i = 0; i < profsNumArray.length; i++){
                             if(prof == profsNumArray[i]){
-                                console.log(prof, profsNumArray[i])
-                                profsArray[i].innerHTML = await whichProf(i,char.character_str, char.character_dex, char.character_int, char.character_wis, char.character_cha) + char.character_prof;
+                                console.log(profsArray[i], profsNumArray[i])
+                                profsArray[i].innerHTML = whichProf(i,char.character_str, char.character_dex, char.character_int, char.character_wis, char.character_cha) + char.character_prof;
                                 return;
                             }else{
                                 console.log("no match for text area");
@@ -220,8 +220,8 @@ const populateFromSubmitCharacter = async() => {
                 })
                 for(let i = 0; i < profsNumArray.length; i++){
                     if(prof == profsNumArray[i]){
-                        console.log(prof, profsNumArray[i])
-                        profsArray[i].innerHTML = await whichProf(i,char.character_str, char.character_dex, char.character_int, char.character_wis, char.character_cha);
+                        console.log(profsArray[i], profsNumArray[i])
+                        profsArray[i].innerHTML = whichProf(i,char.character_str, char.character_dex, char.character_int, char.character_wis, char.character_cha);
                     }else{
                         console.log("no match for text area");
                     }
@@ -349,7 +349,7 @@ const deleteNote = async(character)=> {
     //populateCharacter();
 };
 
-const whichProf = async(prof,str,dex,int,wis,cha) => {
+const whichProf = (prof,str,dex,int,wis,cha) => {
     
     if(prof = 1){
         console.log(prof + str)
