@@ -197,7 +197,46 @@ const populateFromSubmitCharacter = async() => {
             console.log(profs);
             console.log(profsArray);
 
-            profs.forEach(async(myProf)=>{
+
+
+            profsNumArray.forEach(async(prof)=>{
+                console.log(prof);
+                profs.forEach(async(myProf)=>{
+                    console.log(myProf);
+                    if(myProf == prof){
+                        console.log(myProf + " and "+ prof + " are a match");
+                        for(let i = 0; i < profsNumArray.length; i++){
+                            if(prof == profsArray[i]){
+                                profsArray[i].innerHTML = await whichProf(i,char.character_str, char.character_dex, char.character_int, char.character_wis, char.character_cha) + char.character_prof;
+                                return;
+                            }else{
+
+                            }
+                        }
+                    }else{
+                        console.log("no match");
+                    }
+                })
+                for(let i = 0; i < profsNumArray.length; i++){
+                    if(prof == profsArray[i]){
+                        profsArray[i].innerHTML = await whichProf(i,char.character_str, char.character_dex, char.character_int, char.character_wis, char.character_cha);
+                    }else{
+                        
+                    }
+                }
+
+            })
+
+
+
+
+
+
+
+
+
+
+            /*profs.forEach(async(myProf)=>{
                 console.log(myProf)
                 for(let i = 0; i < profsNumArray.length; i++){
                     if(myProf == profsNumArray[i]){
@@ -215,7 +254,7 @@ const populateFromSubmitCharacter = async() => {
                     }
                 }
                 
-            })
+            })*/
 
 
 
