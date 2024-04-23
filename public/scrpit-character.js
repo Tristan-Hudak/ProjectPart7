@@ -214,23 +214,8 @@ const submitCharacterForm = async(e) => {
     console.log(...formData);
     console.log(formData.length);
 
-    const formLength = formData.length;
-
     if (form._id.value.trim() == "") {
-        console.log("in post");
-
-        for(let i = 0; i<formLength; i++){
-            if(formData[i] == "" && formData[i] == form._id.value){
-                console.log(formData[i])
-            }else if(formData[i] == ""){
-                console.log("this is an error you restart form");
-                return;
-            }else{
-                console.log("good")
-            }
-        }
-
-        
+        console.log("in post");        
         response = await fetch("/api/characters", {
             method: "POST",
             body: formData,
@@ -246,12 +231,13 @@ const submitCharacterForm = async(e) => {
 
     if (response.status != 200) {
         console.log("Error adding / editing data");
+        document.getElementById("character-form-submit").innerHTML = "Did you forget Something? Try Again";
     }
 
     await response.json();
     resetForm();
     hideModal();
-    createCharacter();
+    createCharacter;
     populateCharacter(formData);
 
 
