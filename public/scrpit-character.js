@@ -55,14 +55,15 @@ const createCharacter = async() => {
 
 }
 
-const populateCharacter = async(id) => {
+const populateCharacter = async(data) => {
     console.log("larger area where stats are displayed")
+    console.log(data);
+    console.log(data._id);
 
     let Characters = await getCharacters();
 
     Characters.forEach((char)=>{
-        if (char._id == id){
-            console.log(char._id, id);
+        if (char._id == data._id){
 
             const name = document.getElementById("replace_name");
             name.innerHTML = char.character_name
@@ -211,9 +212,25 @@ const submitCharacterForm = async(e) => {
     console.log(hp.value)
 
     console.log(...formData);
+    console.log(formData.length);
+
+    const formLength = formData.length;
 
     if (form._id.value.trim() == "") {
         console.log("in post");
+
+        for(let i = 0; i<formLength; i++){
+            if(formData[i] == "" && formData[i] == form._id.value){
+                console.log(formData[i])
+            }else if(formData[i] == ""){
+                console.log("this is an error you restart form");
+                return;
+            }else{
+                console.log("shits good")
+            }
+        }
+
+        
         response = await fetch("/api/characters", {
             method: "POST",
             body: formData,
