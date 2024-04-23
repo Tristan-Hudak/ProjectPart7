@@ -37,5 +37,5 @@ document.getElementById("level-up").onclick = function(){
     showModal("level-up");
 }
 
-document.getElementById("create-character").onclick = hideModal();
+document.getElementById("create-character").onclick = hideModal;
 
