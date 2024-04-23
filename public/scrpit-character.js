@@ -13,7 +13,7 @@ const createCharacter = async() => {
 
     let Characters = await getCharacters();
 
-    Characters.foreach((character)=>{
+    Characters.forEach((character)=>{
 
         const place = document.getElementById("character-place")
 

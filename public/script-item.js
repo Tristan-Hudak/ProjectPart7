@@ -127,6 +127,7 @@ const submitCreateItemForm = async (e) => {
     formData.append("item_properties", prop);
 
     console.log(...formData);
+    
 
     //add request
     if (form._id.value.trim() == "") {
