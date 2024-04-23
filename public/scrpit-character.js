@@ -10,7 +10,7 @@ const showModal = (id) => {
     
     //create
 
-    console.log("in",id,isClosed)
+    console.log("in",id)
     document.getElementById("character-modal").classList.add("show-hide");
 
     document.getElementById("close_box").onclick = () => {
