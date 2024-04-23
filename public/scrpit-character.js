@@ -210,15 +210,15 @@ const populateFromSubmitCharacter = async() => {
                         console.log("no match for text area2");
                     }
                 }
-                profs.forEach((myProf)=>{
+                profs.forEach(async(myProf)=>{
                     console.log(myProf);
                     if(myProf == prof){
                         console.log(myProf + " and "+ prof + " are a match");
                         for(let i = 1; i < profsNumArray.length+1; i++){
-                            console.log(prof, i, profsNumArray[i-1], profsArray[i-1], char.character_prof)
+                            console.log(prof, i, profsNumArray[i-1], profsArray[i-1], checkProfLvl(char.character_lvl))
                             if(prof == profsNumArray[i-1]){
                                 //console.log(profsArray[i], profsNumArray[i])
-                                profsArray[i-1].innerHTML = whichProf(i,char.character_str, char.character_dex, char.character_int, char.character_wis, char.character_cha) + char.character_prof;
+                                profsArray[i-1].innerHTML = whichProf(i,char.character_str, char.character_dex, char.character_int, char.character_wis, char.character_cha) + await checkProfLvl(char.character_lvl);
                                 return;
                             }else{
                                 console.log("no match for text area1");
