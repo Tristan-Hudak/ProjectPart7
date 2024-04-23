@@ -192,29 +192,21 @@ const populateFromSubmitCharacter = async() => {
             const profs = []
 
             console.log(char.character_prof[0]);
-            const charLen =char.character_prof[0].length
-
-            for(let i =0; i < charLen; i++){
-                profs[i]=char.character_prof[0].split(",")
-            }
+            profs = char.character_prof[0].split(",")
 
             console.log(profs);
-
-
-
-
             console.log(profsArray);
 
-            char.character_prof.forEach((myProf)=>{
+            profs.forEach((myProf)=>{
                 console.log(myProf)
                 for(let i = 0; i < profsNumArray.length; i++){
                     if(myProf == profsNumArray[i]){
                         //console.log(char.character_prof)
-                        console.log(profsArray[i]);
+                        console.log(profsArray[i] + " prof");
                         //profsArray[i].innerHTML = char.character_prof;
                         //profsNumArray.splice(i,1);
                     }else{
-                        console.log(profsArray[i].innerHTML);
+                        console.log(profsArray[i].innerHTML + "no prof");
                         //profsArray[i].innerHTML = 0;
                     }
                 }
