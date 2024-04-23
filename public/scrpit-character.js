@@ -206,12 +206,13 @@ const populateFromSubmitCharacter = async() => {
                     if(myProf == prof){
                         console.log(myProf + " and "+ prof + " are a match");
                         for(let i = 1; i < profsNumArray.length; i++){
+                            console.log(prof, profsNumArray[i], profsArray[i])
                             if(prof == profsNumArray[i]){
-                                console.log(profsArray[i], profsNumArray[i])
+                                //console.log(profsArray[i], profsNumArray[i])
                                 profsArray[i].innerHTML = whichProf(i,char.character_str, char.character_dex, char.character_int, char.character_wis, char.character_cha) + char.character_prof;
                                 return;
                             }else{
-                                console.log("no match for text area");
+                                console.log("no match for text area1");
                             }
                         }
                     }else{
@@ -219,11 +220,12 @@ const populateFromSubmitCharacter = async() => {
                     }
                 })
                 for(let i = 1; i < profsNumArray.length; i++){
+                    console.log(prof, profsNumArray[i],profsArray[i])
                     if(prof == profsNumArray[i]){
-                        console.log(profsArray[i], profsNumArray[i])
+                        //console.log(profsArray[i], profsNumArray[i])
                         profsArray[i].innerHTML = whichProf(i,char.character_str, char.character_dex, char.character_int, char.character_wis, char.character_cha);
                     }else{
-                        console.log("no match for text area");
+                        console.log("no match for text area2");
                     }
                 }
 
