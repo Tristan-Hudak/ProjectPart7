@@ -89,9 +89,9 @@ const populateFromSubmitCharacter = async() => {
             const hitDice = await checkClass(char.character_class);
             hd.innerHTML = char.character_lvl + "d" + hitDice;
             const ac = document.getElementById("replace_ac");
-            ac.innerHTML = modDetect(char.character_dex)
+            ac.innerHTML = 10 + modDetect(char.character_dex)
             const prof = document.getElementById("replace_prof");
-            prof.innerHTML = await checkProfLvl(char.character_lvl)
+            prof.innerHTML = "+ " + await checkProfLvl(char.character_lvl)
             //str
             const strScore = document.getElementById("s_score");
             strScore.innerHTML = char.character_str;
@@ -187,7 +187,24 @@ const populateFromSubmitCharacter = async() => {
                 persuasion
             ];
 
+            const profsNumArray = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
+
+
             console.log(profsArray);
+
+            char.character_prof.forEach((myProf)=>{
+                console.log(myProf)
+                for(let i = 0; i < profsNumArray.length; i++){
+                    if(myProf == profsNumArray[i]){
+                        console.log(char.character_prof)
+                        profsArray[i].innerHTML = char.character_prof;
+                        profsNumArray.splice(i,1);
+                    }else{
+                        profsArray[i].innerHTML = 0;
+                    }
+                }
+                
+            })
 
 
 
