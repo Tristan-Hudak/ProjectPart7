@@ -6,11 +6,11 @@ const makeNewCharacter = () => {
 
 
 
-const showModal = (id) => {
+const showModal = (id,clicked) => {
     
     //create
 
-    console.log("in",id)
+    console.log("in",id, clicked)
     
 
     document.getElementById("close_box").onclick = () => {
@@ -49,19 +49,48 @@ const hideModal = () => {
 
 }
 
-
+let hasBeenClicked = false
 
 document.getElementById("file").onclick = function(){
-    showModal("file");
+    
+    if(hasBeenClicked == false){
+        hasBeenClicked = true;
+        showModal("file",clicked);
+    }
+    else if(hasBeenClicked == true){
+        return;
+    }
+    
 }
 document.getElementById("delete").onclick = function(){
-    showModal("delete");
+
+    if(hasBeenClicked == false){
+        hasBeenClicked = true;
+        showModal("delete",clicked);
+    }
+    else if(hasBeenClicked == true){
+        return;
+    }
 }
 document.getElementById("rest").onclick = function(){
-    showModal("rest");
+    if(hasBeenClicked == false){
+        hasBeenClicked = true;
+        showModal("rest",clicked);
+    }
+    else if(hasBeenClicked == true){
+        return;
+    }
+    
 }
 document.getElementById("level-up").onclick = function(){
-    showModal("level-up");
+    if(hasBeenClicked == false){
+        hasBeenClicked = true;
+        showModal("level-up",clicked);
+    }
+    else if(hasBeenClicked == true){
+        return;
+    }
+
 }
 
 
