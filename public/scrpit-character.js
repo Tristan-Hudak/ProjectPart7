@@ -202,12 +202,13 @@ const populateFromSubmitCharacter = async() => {
                 for(let i = 0; i < profsNumArray.length; i++){
                     if(myProf == profsNumArray[i]){
                         console.log("making new prof stats")
-                        //console.log(profsArray[i].id + " prof");
+                        console.log(i + " prof");
                         profsArray[i].innerHTML = await whichProf(i,char.character_str, char.character_dex, char.character_int, char.character_wis, char.character_cha) + char.character_prof;
                         profsNumArray.splice(i,1);
                         console.log(profsNumArray);
                     }else{
                         console.log("making stats")
+                        console.log(i + " not prof");
                         //console.log(profsArray[i].id + "no prof");
                         profsArray[i].innerHTML = await whichProf(i,char.character_str, char.character_dex, char.character_int, char.character_wis, char.character_cha);
                     }
@@ -309,14 +310,19 @@ const deleteNote = async(character)=> {
 const whichProf = async(prof,str,dex,int,wis,cha) => {
     
     if(prof = 1){
+        console.log(i + str)
         return modDetect(str);
     }else if(prof <=4 && prof >=2){
+        console.log(i + dex)
         return modDetect(dex);
     }else if(prof <=9 && prof >=5){
+        console.log(i + int)
         return modDetect(int);
     }else if(prof <=14 && prof >=10){
+        console.log(i + wis)
         return modDetect(wis);
     }else if(prof <=18 && prof >=15){
+        console.log(i + cha)
         return modDetect(cha);
     }else{
         return 0;
