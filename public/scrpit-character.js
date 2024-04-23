@@ -211,6 +211,7 @@ const populateFromSubmitCharacter = async() => {
                         console.log(i + " not prof");
                         //console.log(profsArray[i].id + "no prof");
                         profsArray[i].innerHTML = await whichProf(i,char.character_str, char.character_dex, char.character_int, char.character_wis, char.character_cha);
+                        console.log(profsNumArray);
                     }
                 }
                 
