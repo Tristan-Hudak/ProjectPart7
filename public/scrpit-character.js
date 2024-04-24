@@ -454,10 +454,11 @@ const lvlCharacter = async(character) =>{
             form.character_cha.value = char.character_cha;
             console.log(char.character_class, char.character_con);
             value = await checkClassHp(char.character_class, char.character_con);
-            form.charcater_prof = char.character_prof;
+            console.log(popProf(char,character_prof))
+            form.charcater_prof = popProf(char.character_prof);
             console.log(value, +char.character_lvl + 1, +char.character_hp + ( value / 2))
 
-            form.character_hp.value = char.character_hp + ( value / 2);
+            form.character_hp.value = +char.character_hp + ( value / 2);
             form.character_lvl.value = +char.character_lvl + 1;
 
             makeNewCharacter();
@@ -493,7 +494,7 @@ const lvlCharacter = async(character) =>{
 }
 
 const popProf = (profs) => {
-    var element = document.getElementById('character_prof');
+    var element = document.getElementById("character_prof");
     var values = profs;
     for (var i = 0; i < element.options.length; i++) {
         element.options[i].selected = values.indexOf(element.options[i].value) >= 0;
