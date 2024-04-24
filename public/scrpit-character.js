@@ -41,11 +41,27 @@ const characterInDiv = async(place) => {
         section02.classList.add("coll1of3");
         const section03 = document.createElement("section");
         const button = document.createElement("button");
+        if(place == document.getElementById("character-place")){
+            button.id = "display_character";
+            button.innerHTML = "Display Character"
+            button.onclick = populateCharacter.bind(this, character);
+            button.setAttribute("name", character._id);
+        }
 
-        button.id = "display_character";
-        button.innerHTML = "Display Character"
-        button.onclick = populateCharacter.bind(this, character);
-        button.setAttribute("name", character._id);
+        else if(place == document.getElementById("character-delete-place")){
+            button.id = "delete_character";
+            button.innerHTML = "Delete Character"
+            button.onclick = deleteCharacter.bind(this, character);
+            button.setAttribute("name", character._id);
+        }
+
+        else if(place == document.getElementById("character-lvl-place")){
+            button.id = "lvl_character";
+            button.innerHTML = "Level Up your Character"
+            button.onclick = lvlCharacter.bind(this, character);
+            button.setAttribute("name", character._id);
+        }
+        
 
         section03.append(button);
 
@@ -412,7 +428,14 @@ const populateCharacter = async(character) => {
             return;
         }
     })
+    hideModal();
+}
 
+const lvlCharacter = async(character) =>{
+
+    character.character_lvl = character.character_lvl + 1;
+    populateCharacter(character)
+    hideModal();
 }
 
 
@@ -475,7 +498,7 @@ const resetForm = () => {
     form.reset();
 };
 
-const deleteNote = async(character)=> {
+const deleteCharacter = async(character)=> {
     console.log(character._id);
     let response = await fetch(`/api/character/${character._id}`, {
       method:"DELETE",
