@@ -97,7 +97,6 @@ const populateFromSubmitCharacter = async() => {
             name.innerHTML = char.character_name
             const cls = document.getElementById("replace_class");
             cls.innerHTML = char.character_class;
-            console.log(cls.innerHTML);
             const level = document.getElementById("replace_level");
             level.innerHTML = char.character_lvl;
             console.log(level.innerHTML);
@@ -271,9 +270,9 @@ const populateCharacter = async(character) => {
             const name = document.getElementById("replace_name");
             name.innerHTML = char.character_name
             const cls = document.getElementById("replace_class");
-            cls.html = char.character_class
+            cls.innerHTML = char.character_class;
             const level = document.getElementById("replace_level");
-            level.html = char.character_lvl
+            level.innerHTML = char.character_lvl;
             const initiative = document.getElementById("replace_init");
             initiative.innerHTML = modDetect(char.character_dex);
             const hp = document.getElementById("replace_hp");
@@ -436,10 +435,53 @@ const populateCharacter = async(character) => {
 
 const lvlCharacter = async(character) =>{
 
-    character.character_lvl = character.character_lvl + 1;
-    populateCharacter(character)
-    //createCharacter();
-    hideModal();
+    let Characters = await getCharacters();
+
+    Characters.forEach(async(char)=>{
+        if(character._id == char._id){
+            const form = document.getElementById("character-maker-form");
+
+            form._id.value = char._id;
+            form.character_name.value = char.character_name;
+            form.character_class.value = char.character_class;
+            form.character_race.value = char.character_race;
+            form.character_str.value = char.character_str;
+            form.character_dex.value = char.character_dex;
+            form.character_con.value = char.character_con;
+            form.character_int.value = char.character_int;
+            form.character_wis.value = char.character_wis;
+            form.character_cha.value = char.character_cha;
+            form.charcater_prof.value = char.character_prof;
+
+            form.character_hp.value = char.character_hp + ( checkClassHp(char.character_class, char.character_con) / 2);
+            form.character_lvl.value = char.character_lvl + 1;
+
+
+            const formData = new FormData(form);
+            let response;
+
+            console.log(...formData)
+
+            response = await fetch(`/api/characters/${form._id.value}`,{
+                method:"PUT",
+                body:formData
+            });
+
+            if (response.status != 200) {
+                console.log("Error adding / editing data");
+                document.getElementById("character-form-submit").innerHTML = "Did you forget Something? Try Again";
+            }
+
+            await response.json();
+            resetForm();
+            hideModal();
+            createCharacter();
+            populateCharacter(char._id);
+
+
+        }
+        
+    })
 }
 
 
