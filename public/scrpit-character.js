@@ -451,10 +451,10 @@ const lvlCharacter = async(character) =>{
             form.character_int.value = char.character_int;
             form.character_wis.value = char.character_wis;
             form.character_cha.value = char.character_cha;
-            console.log(char.character_prof, char.character_class[0])
-            form.charcater_prof.value = char.character_prof;
+            console.log(char.character_prof, char.character_con[0]);
+            form.charcater_prof.value = popProf(char.character_prof);
 
-            form.character_hp.value = char.character_hp + ( checkClassHp(char.character_class[0], char.character_con[0]) / 2);
+            form.character_hp.value = char.character_hp + ( checkClassHp(char.character_class, char.character_con[0]) / 2);
             form.character_lvl.value = char.character_lvl[0] + 1;
 
 
@@ -483,6 +483,14 @@ const lvlCharacter = async(character) =>{
         }
         
     })
+}
+
+const popProf = (profs) => {
+    var element = document.getElementById('character_prof');
+    var values = profs;
+    for (var i = 0; i < element.options.length; i++) {
+        element.options[i].selected = values.indexOf(element.options[i].value) >= 0;
+    }
 }
 
 
