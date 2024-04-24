@@ -228,7 +228,7 @@ const populateFromSubmitCharacter = async() => {
                         //console.log(profsArray[i], profsNumArray[i])
                         profsArray[i-1].innerHTML = whichProf(i,char.character_str, char.character_dex, char.character_int, char.character_wis, char.character_cha);
                     }else{
-                        console.log("no match for text area2");
+                        //console.log("no match for text area2");
                     }
                 }
                 profs.forEach(async(myProf)=>{
@@ -615,7 +615,7 @@ const whichProf = (prof,str,dex,int,wis,cha) => {
 
 const modDetect = (thing) =>{
     let value = 0;
-    console.log(thing)
+    //console.log(thing)
 
     if(thing == 0 || thing == 1){
         value = -5;
@@ -646,7 +646,7 @@ const modDetect = (thing) =>{
 
 
 const checkClassHp = async(cls, con) => {
-    console.log(cls, con)
+    //console.log(cls, con)
 
     const value = modDetect(con)
 
