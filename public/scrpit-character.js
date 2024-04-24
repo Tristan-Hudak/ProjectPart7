@@ -500,9 +500,9 @@ const lvlCharacter = async(character) =>{
 const popProf = (profs) => {
     var element = document.getElementById("character_prof");
     var values = profs;
-    console.log(values, element.options.length, );
+    console.log(values, element.options.length, element);
     for (var i = 0; i < element.options.length; i++) {
-        console.log(values.indexOf(element.options[i].value))
+        console.log(values.indexOf(element.options[i].value) >= 0, element.options[i])
         element.options[i].selected = values.indexOf(element.options[i].value) >= 0;
     }
 }
