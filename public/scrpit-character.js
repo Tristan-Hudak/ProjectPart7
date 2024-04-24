@@ -459,7 +459,8 @@ const lvlCharacter = async(character) =>{
             form.character_hp.value = char.character_hp + ( checkClassHp(char.character_class, char.character_con[0]) / 2);
             form.character_lvl.value = char.character_lvl[0] + 1;
 
-            makeNewCharacter;
+            makeNewCharacter();
+
 
             /*
             const formData = new FormData(form);
@@ -761,6 +762,8 @@ const showModal = (id,clicked) => {
             hideModal();
             return;
         };
+
+        
         //console.log("do i get past")
     }
 
