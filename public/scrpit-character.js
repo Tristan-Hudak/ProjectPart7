@@ -96,9 +96,9 @@ const populateFromSubmitCharacter = async() => {
             const name = document.getElementById("replace_name");
             name.innerHTML = char.character_name
             const cls = document.getElementById("replace_class");
-            cls.html = char.character_class
+            cls.innerHTML = char.character_class
             const level = document.getElementById("replace_level");
-            level.html = char.character_lvl
+            level.innerHTML = char.character_lvl
             const initiative = document.getElementById("replace_init");
             initiative.innerHTML = modDetect(char.character_dex);
             const hp = document.getElementById("replace_hp");
