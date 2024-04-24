@@ -455,7 +455,7 @@ const lvlCharacter = async(character) =>{
             console.log(char.character_class, char.character_con);
             value = checkClassHp(char.character_class, char.character_con);
             form.charcater_prof = char.character_prof;
-            console.log(char.character_hp.value + ( value / 2), char.character_lvl.value)
+            console.log(value, char.character_lvl)
 
             form.character_hp.value = char.character_hp.value + ( value / 2);
             form.character_lvl.value = char.character_lvl + 1;
