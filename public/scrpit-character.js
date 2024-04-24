@@ -435,6 +435,7 @@ const lvlCharacter = async(character) =>{
 
     character.character_lvl = character.character_lvl + 1;
     populateCharacter(character)
+    //createCharacter();
     hideModal();
 }
 
@@ -514,6 +515,7 @@ const deleteCharacter = async(character)=> {
   
     await response.json();
     resetForm();
+    createCharacter();
     hideModal();
     //populateCharacter();
 };
