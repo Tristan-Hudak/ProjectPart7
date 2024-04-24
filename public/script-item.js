@@ -196,6 +196,7 @@ popDT = (DT) => {
 popProp = (props) => {
     var element = document.getElementById('item-properties');
     var values = props;
+    console.log(values);
     for (var i = 0; i < element.options.length; i++) {
         element.options[i].selected = values.indexOf(element.options[i].value) >= 0;
     }
