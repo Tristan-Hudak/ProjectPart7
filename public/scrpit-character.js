@@ -452,13 +452,16 @@ const lvlCharacter = async(character) =>{
             form.character_wis.value = char.character_wis;
             console.log(form.character_cha.value)
             form.character_cha.value = char.character_cha;
-            console.log(form.character_prof.value, char.character_prof, char.character_con[0]);
-            form.charcater_prof.value = popProf(char.character_prof);
+            console.log(form.character_prof, char.character_prof, char.character_con[0]);
+            form.charcater_prof = popProf(char.character_prof);
+            console.log(form.character_prof)
 
             form.character_hp.value = char.character_hp + ( checkClassHp(char.character_class, char.character_con[0]) / 2);
             form.character_lvl.value = char.character_lvl[0] + 1;
 
+            makeNewCharacter;
 
+            /*
             const formData = new FormData(form);
             let response;
 
@@ -479,6 +482,7 @@ const lvlCharacter = async(character) =>{
             hideModal();
             createCharacter();
             populateCharacter(char._id);
+            */
 
 
         }
