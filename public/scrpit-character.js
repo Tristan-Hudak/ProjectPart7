@@ -466,32 +466,6 @@ const lvlCharacter = async(character) =>{
             form.character_lvl.value = +char.character_lvl + 1;
 
             makeNewCharacter();
-
-
-            /*
-            const formData = new FormData(form);
-            let response;
-
-            console.log(...formData)
-
-            response = await fetch(`/api/characters/${form._id.value}`,{
-                method:"PUT",
-                body:formData
-            });
-
-            if (response.status != 200) {
-                console.log("Error adding / editing data");
-                document.getElementById("character-form-submit").innerHTML = "Did you forget Something? Try Again";
-            }
-
-            await response.json();
-            resetForm();
-            hideModal();
-            createCharacter();
-            populateCharacter(char._id);
-            */
-
-
         }
         
     })
@@ -562,6 +536,9 @@ const submitCharacterForm = async(e) => {
     await response.json();
     resetForm();
     hideModal();
+    document.getElementById("character-place").innerHTML = ""
+    document.getElementById("character-delete-place").innerHTML = ""
+    document.getElementById("character-lvl-place").innerHTML = ""
     createCharacter();
     populateFromSubmitCharacter();
 
