@@ -766,7 +766,6 @@ const hideModal = () => {
     document.getElementById("character-modal").classList.remove("show-hide");
     document.getElementById("character-crafter-modal").classList.remove("show-hide");
     document.getElementById("lvl-modal").classList.remove("show-hide");
-    document.getElementById("rest-modal").classList.remove("show-hide");
     modalOpen = false;
 }
 
