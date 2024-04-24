@@ -14,6 +14,7 @@ const createCharacter = async() => {
     console.log("in the div area")
     characterInDiv(document.getElementById("character-place"));
     characterInDiv(document.getElementById("character-delete-place"));
+    characterInDiv(document.getElementById("character-lvl-place"));
 
 }
 
@@ -23,7 +24,7 @@ const characterInDiv = async(place) => {
 
     Characters.forEach((character)=>{
 
-        //console.log(character);
+        console.log(character);
 
         const place1 = place
 
@@ -57,7 +58,7 @@ const characterInDiv = async(place) => {
 
         else if(place == document.getElementById("character-lvl-place")){
             button.id = "lvl_character";
-            button.innerHTML = "Level Up your Character"
+            button.innerHTML = "Level Up"
             button.onclick = lvlCharacter.bind(this, character);
             button.setAttribute("name", character._id);
         }
@@ -515,6 +516,10 @@ const deleteCharacter = async(character)=> {
   
     await response.json();
     resetForm();
+    document.getElementById("character-place").innerHTML = ""
+    document.getElementById("character-delete-place").innerHTML = ""
+    document.getElementById("character-lvl-place").innerHTML = ""
+    document.getElementById("rest-place").innerHTML = ""
     createCharacter();
     hideModal();
     //populateCharacter();
