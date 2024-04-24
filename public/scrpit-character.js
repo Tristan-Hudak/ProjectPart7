@@ -24,7 +24,7 @@ const characterInDiv = async(place) => {
 
     Characters.forEach((character)=>{
 
-        console.log(character);
+        //console.log(character);
 
         const place1 = place
 
@@ -85,8 +85,8 @@ const populateFromSubmitCharacter = async() => {
 
     let Characters = await getCharacters();
 
-    console.log(Characters.length)
-    console.log(Characters[Characters.length])
+    //console.log(Characters.length)
+    //console.log(Characters[Characters.length])
 
     let char_length = Characters.length;
 
@@ -99,7 +99,7 @@ const populateFromSubmitCharacter = async() => {
             cls.innerHTML = char.character_class;
             const level = document.getElementById("replace_level");
             level.innerHTML = char.character_lvl;
-            console.log(level.innerHTML);
+            //console.log(level.innerHTML);
             const initiative = document.getElementById("replace_init");
             initiative.innerHTML = modDetect(char.character_dex);
             const hp = document.getElementById("replace_hp");
@@ -212,18 +212,18 @@ const populateFromSubmitCharacter = async() => {
 
             let profs = []
 
-            console.log(char.character_prof[0]);
+            //console.log(char.character_prof[0]);
             profs= char.character_prof[0].split(",")
 
-            console.log(profs);
-            console.log(profsArray);
+            //console.log(profs);
+            //console.log(profsArray);
 
 
 
             profsNumArray.forEach((prof)=>{
-                console.log(prof);
+                //console.log(prof);
                 for(let i = 1; i < profsNumArray.length+1; i++){
-                    console.log(prof, i, profsNumArray[i-1],profsArray[i-1])
+                    //console.log(prof, i, profsNumArray[i-1],profsArray[i-1])
                     if(prof == profsNumArray[i-1]){
                         //console.log(profsArray[i], profsNumArray[i])
                         profsArray[i-1].innerHTML = whichProf(i,char.character_str, char.character_dex, char.character_int, char.character_wis, char.character_cha);
@@ -232,21 +232,21 @@ const populateFromSubmitCharacter = async() => {
                     }
                 }
                 profs.forEach(async(myProf)=>{
-                    console.log(myProf);
+                    //console.log(myProf);
                     if(myProf == prof){
-                        console.log(myProf + " and "+ prof + " are a match");
+                        //console.log(myProf + " and "+ prof + " are a match");
                         for(let i = 1; i < profsNumArray.length+1; i++){
-                            console.log(prof, i, profsNumArray[i-1], profsArray[i-1], checkProfLvl(char.character_lvl))
+                            //console.log(prof, i, profsNumArray[i-1], profsArray[i-1], checkProfLvl(char.character_lvl))
                             if(prof == profsNumArray[i-1]){
                                 //console.log(profsArray[i], profsNumArray[i])
                                 profsArray[i-1].innerHTML = whichProf(i,char.character_str, char.character_dex, char.character_int, char.character_wis, char.character_cha) + await checkProfLvl(char.character_lvl);
                                 return;
                             }else{
-                                console.log("no match for text area1");
+                                //console.log("no match for text area1");
                             }
                         }
                     }else{
-                        console.log("no match");
+                        //console.log("no match");
                     }
                 })
                 
@@ -385,41 +385,41 @@ const populateCharacter = async(character) => {
 
             let profs = []
 
-            console.log(char.character_prof[0]);
+            //console.log(char.character_prof[0]);
             profs= char.character_prof[0].split(",")
 
-            console.log(profs);
-            console.log(profsArray);
+            //console.log(profs);
+            //console.log(profsArray);
 
 
 
             profsNumArray.forEach((prof)=>{
-                console.log(prof);
+                //console.log(prof);
                 for(let i = 1; i < profsNumArray.length+1; i++){
-                    console.log(prof, i, profsNumArray[i-1],profsArray[i-1])
+                    //console.log(prof, i, profsNumArray[i-1],profsArray[i-1])
                     if(prof == profsNumArray[i-1]){
                         //console.log(profsArray[i], profsNumArray[i])
                         profsArray[i-1].innerHTML = whichProf(i,char.character_str, char.character_dex, char.character_int, char.character_wis, char.character_cha);
                     }else{
-                        console.log("no match for text area2");
+                        //console.log("no match for text area2");
                     }
                 }
                 profs.forEach(async(myProf)=>{
-                    console.log(myProf);
+                    //console.log(myProf);
                     if(myProf == prof){
-                        console.log(myProf + " and "+ prof + " are a match");
+                       // console.log(myProf + " and "+ prof + " are a match");
                         for(let i = 1; i < profsNumArray.length+1; i++){
-                            console.log(prof, i, profsNumArray[i-1], profsArray[i-1], checkProfLvl(char.character_lvl))
+                            //console.log(prof, i, profsNumArray[i-1], profsArray[i-1], checkProfLvl(char.character_lvl))
                             if(prof == profsNumArray[i-1]){
                                 //console.log(profsArray[i], profsNumArray[i])
                                 profsArray[i-1].innerHTML = whichProf(i,char.character_str, char.character_dex, char.character_int, char.character_wis, char.character_cha) + await checkProfLvl(char.character_lvl);
                                 return;
                             }else{
-                                console.log("no match for text area1");
+                                //console.log("no match for text area1");
                             }
                         }
                     }else{
-                        console.log("no match");
+                        //console.log("no match");
                     }
                 })
                 
@@ -450,11 +450,11 @@ const lvlCharacter = async(character) =>{
             form.character_con.value = char.character_con;
             form.character_int.value = char.character_int;
             form.character_wis.value = char.character_wis;
-            console.log(form.character_cha.value)
+            //console.log(form.character_cha.value)
             form.character_cha.value = char.character_cha;
-            console.log(form.character_prof, char.character_prof, char.character_con[0]);
-            form.charcater_prof = popProf(char.character_prof);
-            console.log(form.character_prof)
+            //console.log(form.character_prof, char.character_prof, char.character_con[0]);
+            form.charcater_prof = char.character_prof
+            //console.log(form.character_prof)
 
             form.character_hp.value = char.character_hp + ( checkClassHp(char.character_class, char.character_con[0]) / 2);
             form.character_lvl.value = char.character_lvl[0] + 1;
@@ -520,10 +520,10 @@ const submitCharacterForm = async(e) => {
     formData.append("character_hp", hp);
 
 
-    console.log(hp.value)
+    //console.log(hp.value)
 
     console.log(...formData);
-    console.log(formData.length);
+    //console.log(formData.length);
 
     if (form._id.value.trim() == "") {
         console.log("in post");        
@@ -560,7 +560,7 @@ const resetForm = () => {
 };
 
 const deleteCharacter = async(character)=> {
-    console.log(character._id);
+    //console.log(character._id);
     let response = await fetch(`/api/character/${character._id}`, {
       method:"DELETE",
       headers:{
@@ -585,22 +585,22 @@ const deleteCharacter = async(character)=> {
 };
 
 const whichProf = (prof,str,dex,int,wis,cha) => {
-    console.log(prof)
+    //console.log(prof)
     
     if(prof == 1){
-        console.log(prof + str)
+        //console.log(prof + str)
         return modDetect(str);
     }else if(prof <=4 && prof >=2){
-        console.log(prof + dex)
+        //console.log(prof + dex)
         return modDetect(dex);
     }else if(prof <=9 && prof >=5){
-        console.log(prof + int)
+        //console.log(prof + int)
         return modDetect(int);
     }else if(prof <=14 && prof >=10){
-        console.log(prof + wis)
+        //console.log(prof + wis)
         return modDetect(wis);
     }else if(prof <=18 && prof >=15){
-        console.log(prof + cha)
+        //console.log(prof + cha)
         return modDetect(cha);
     }else{
         return 0;
@@ -640,7 +640,7 @@ const modDetect = (thing) =>{
 
 
 const checkClassHp = async(cls, con) => {
-    console.log(cls, con)
+    //console.log(cls, con)
 
     const value = modDetect(con)
 
@@ -698,7 +698,7 @@ const showModal = (id,clicked) => {
     //create
 
     if(id == "file"){
-        console.log("in",id, clicked)
+        //console.log("in",id, clicked)
         
 
         document.getElementById("close_box").onclick = () => {
@@ -724,7 +724,7 @@ const showModal = (id,clicked) => {
     //delete
 
     if(id == "delete"){
-        console.log("in",id, clicked)
+        //console.log("in",id, clicked)
 
         document.getElementById("delete-modal").classList.add("show-hide");
 
@@ -754,7 +754,7 @@ const showModal = (id,clicked) => {
     //lvl
 
     if(id == "level-up"){
-        console.log("in",id, clicked)
+        //console.log("in",id, clicked)
 
         document.getElementById("lvl-modal").classList.add("show-hide");
 
@@ -776,7 +776,7 @@ const showModal = (id,clicked) => {
 };
 
 const hideModal = () => {
-    console.log("say hello")
+    //console.log("say hello")
     document.getElementById("delete-modal").classList.remove("show-hide");
     document.getElementById("character-modal").classList.remove("show-hide");
     document.getElementById("character-crafter-modal").classList.remove("show-hide");
@@ -786,7 +786,7 @@ const hideModal = () => {
 }
 
 const makeNewCharacter = () => {
-    console.log("this area work for creating character")
+    //console.log("this area work for creating character")
     document.getElementById("character-modal").classList.remove("show-hide");
     document.getElementById("lvl-modal").classList.remove("show-hide");
     document.getElementById("character-crafter-modal").classList.add("show-hide");
