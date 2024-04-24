@@ -453,9 +453,9 @@ const lvlCharacter = async(character) =>{
             //console.log(form.character_cha.value)
             form.character_cha.value = char.character_cha;
             console.log(char.character_class, char.character_con);
-            value = checkClassHp(char.character_class, char.character_con);
+            value = await checkClassHp(char.character_class, char.character_con);
             form.charcater_prof = char.character_prof;
-            console.log(value, char.character_lvl)
+            console.log(value, char.character_lvl + 1)
 
             form.character_hp.value = char.character_hp.value + ( value / 2);
             form.character_lvl.value = char.character_lvl + 1;
@@ -509,16 +509,20 @@ const submitCharacterForm = async(e) => {
     const formData = new FormData(form);
     let response;
 
-    const prof = formData.getAll("character_prof");
-    formData.delete("character_prof");
-    const selectProf = prof;
-    formData.append("character_prof", selectProf);
-    const lvl = 1;
-    formData.delete("character_lvl");
-    formData.append("character_lvl", lvl);
-    let hp = await checkClassHp(formData.get("character_class"), formData.get("character_con"));
-    formData.delete("character_hp");
-    formData.append("character_hp", hp);
+    if(form._id.value.trim() == ""){
+        const prof = formData.getAll("character_prof");
+        formData.delete("character_prof");
+        const selectProf = prof;
+        formData.append("character_prof", selectProf);
+        const lvl = 1;
+        formData.delete("character_lvl");
+        formData.append("character_lvl", lvl);
+        let hp = await checkClassHp(formData.get("character_class"), formData.get("character_con"));
+        formData.delete("character_hp");
+        formData.append("character_hp", hp);
+    }
+
+    
 
 
     //console.log(hp.value)
