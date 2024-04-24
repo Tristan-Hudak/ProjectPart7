@@ -44,6 +44,7 @@ const characterInDiv = async(place) => {
 
         button.id = "display_character";
         button.innerHTML = "Display Character"
+        button.onclick = populateCharacter.bind(this, character);
         button.setAttribute("name", character._id);
 
         section03.append(button);
@@ -77,6 +78,8 @@ const populateFromSubmitCharacter = async() => {
 
             const name = document.getElementById("replace_name");
             name.innerHTML = char.character_name
+            const cls = document.getElementById("replace_class");
+            cls.html = char.character_class
             const level = document.getElementById("replace_level");
             level.html = char.character_lvl
             const initiative = document.getElementById("replace_init");
@@ -231,39 +234,179 @@ const populateFromSubmitCharacter = async() => {
                 
 
             })
+        }else{
+            char_length = char_length - 1;
+            return;
+        }
+    })
+
+}
+
+const populateCharacter = async(character) => {
+
+    let Characters = await getCharacters();
+
+    Characters.forEach(async(char)=>{
+        if (char._id == character._id){
+
+            const name = document.getElementById("replace_name");
+            name.innerHTML = char.character_name
+            const cls = document.getElementById("replace_class");
+            cls.html = char.character_class
+            const level = document.getElementById("replace_level");
+            level.html = char.character_lvl
+            const initiative = document.getElementById("replace_init");
+            initiative.innerHTML = modDetect(char.character_dex);
+            const hp = document.getElementById("replace_hp");
+            hp.innerHTML = char.character_hp;
+            const speed = document.getElementById("replace_speed");
+            speed.innerHTML = "30"
+            const hd = document.getElementById("replace_hd");
+            const hitDice = await checkClass(char.character_class);
+            hd.innerHTML = char.character_lvl + "d" + hitDice;
+            const ac = document.getElementById("replace_ac");
+            ac.innerHTML = 10 + modDetect(char.character_dex)
+            const prof = document.getElementById("replace_prof");
+            prof.innerHTML = "+ " + await checkProfLvl(char.character_lvl)
+            //str
+            const strScore = document.getElementById("s_score");
+            strScore.innerHTML = char.character_str;
+            const strMod = document.getElementById("s_mod");
+            strMod.innerHTML = modDetect(char.character_str)
+            const strSave = document.getElementById("s_save");
+            strSave.innerHTML = modDetect(char.character_str);
+            const psm = document.getElementById("prof_str_mod");
+            psm.innerHTML = modDetect(char.character_str);
+            //dex
+            const dexScore = document.getElementById("d_score");
+            dexScore.innerHTML = char.character_dex;
+            const dexMod = document.getElementById("d_mod");
+            dexMod.innerHTML = modDetect(char.character_dex)
+            const dexSave = document.getElementById("d_save");
+            dexSave.innerHTML = modDetect(char.character_dex);
+            const pdm = document.getElementById("prof_dex_mod");
+            pdm.innerHTML = modDetect(char.character_dex);
+            //con
+            const conScore = document.getElementById("c_score");
+            conScore.innerHTML = char.character_con;
+            const conMod = document.getElementById("c_mod");
+            conMod.innerHTML = modDetect(char.character_con)
+            const conSave = document.getElementById("c_save");
+            conSave.innerHTML = modDetect(char.character_con);       
+            //int
+            const intScore = document.getElementById("i_score");
+            intScore.innerHTML = char.character_int;
+            const intMod = document.getElementById("i_mod");
+            intMod.innerHTML = modDetect(char.character_int)
+            const intSave = document.getElementById("i_save");
+            intSave.innerHTML = modDetect(char.character_int);
+            const pim = document.getElementById("prof_int_mod");
+            pim.innerHTML = modDetect(char.character_int);
+            //wis
+            const wisScore = document.getElementById("w_score");
+            wisScore.innerHTML = char.character_wis;
+            const wisMod = document.getElementById("w_mod");
+            wisMod.innerHTML = modDetect(char.character_wis)
+            const wisSave = document.getElementById("w_save");
+            wisSave.innerHTML = modDetect(char.character_wis);
+            const pwm = document.getElementById("prof_wis_mod");
+            pwm.innerHTML = modDetect(char.character_wis);
+            //cha
+            const chaScore = document.getElementById("cha_score");
+            chaScore.innerHTML = char.character_cha;
+            const chaMod = document.getElementById("cha_mod");
+            chaMod.innerHTML = modDetect(char.character_cha)
+            const chaSave = document.getElementById("cha_save");
+            chaSave.innerHTML = modDetect(char.character_cha);
+            const pcm = document.getElementById("prof_cha_mod");
+            pcm.innerHTML = modDetect(char.character_cha);
+            
+            //profs
+            const athletics = document.getElementById("athletics");
+            const acrobatics = document.getElementById("acrobatics");
+            const slieghtOfHand = document.getElementById("soh");
+            const stealth = document.getElementById("stealth");
+            const arcana = document.getElementById("arcana");
+            const history = document.getElementById("history");
+            const investigation = document.getElementById("invest");
+            const nature = document.getElementById("nature");
+            const religion = document.getElementById("religion");
+            const animalHandeling = document.getElementById("animal");
+            const insight = document.getElementById("insight");
+            const medicine = document.getElementById("medic");
+            const perception = document.getElementById("preception");
+            const survival = document.getElementById("survival");
+            const deception = document.getElementById("decep");
+            const intimidation = document.getElementById("intim");
+            const performance = document.getElementById("perform");
+            const persuasion = document.getElementById("persuasion");
+
+
+            const profsArray = [
+                athletics,
+                acrobatics,
+                slieghtOfHand,
+                stealth,
+                arcana,
+                history,
+                investigation,
+                nature,
+                religion,
+                animalHandeling,
+                insight,
+                medicine,
+                perception,
+                survival,
+                deception,
+                intimidation,
+                performance,
+                persuasion
+            ];
+
+            const profsNumArray = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
+
+            let profs = []
+
+            console.log(char.character_prof[0]);
+            profs= char.character_prof[0].split(",")
+
+            console.log(profs);
+            console.log(profsArray);
 
 
 
-
-
-
-
-
-
-
-            /*profs.forEach(async(myProf)=>{
-                console.log(myProf)
-                for(let i = 0; i < profsNumArray.length; i++){
-                    if(myProf == profsNumArray[i]){
-                        console.log("making new prof stats")
-                        console.log(i + " prof");
-                        profsArray[i].innerHTML = await whichProf(i,char.character_str, char.character_dex, char.character_int, char.character_wis, char.character_cha) + char.character_prof;
-                        profsNumArray.splice(i,1);
-                        console.log(profsNumArray);
+            profsNumArray.forEach((prof)=>{
+                console.log(prof);
+                for(let i = 1; i < profsNumArray.length+1; i++){
+                    console.log(prof, i, profsNumArray[i-1],profsArray[i-1])
+                    if(prof == profsNumArray[i-1]){
+                        //console.log(profsArray[i], profsNumArray[i])
+                        profsArray[i-1].innerHTML = whichProf(i,char.character_str, char.character_dex, char.character_int, char.character_wis, char.character_cha);
                     }else{
-                        console.log("making stats")
-                        console.log(i + " not prof");
-                        //console.log(profsArray[i].id + "no prof");
-                        profsArray[i].innerHTML = await whichProf(i,char.character_str, char.character_dex, char.character_int, char.character_wis, char.character_cha);
-                        console.log(profsNumArray);
+                        console.log("no match for text area2");
                     }
                 }
+                profs.forEach(async(myProf)=>{
+                    console.log(myProf);
+                    if(myProf == prof){
+                        console.log(myProf + " and "+ prof + " are a match");
+                        for(let i = 1; i < profsNumArray.length+1; i++){
+                            console.log(prof, i, profsNumArray[i-1], profsArray[i-1], checkProfLvl(char.character_lvl))
+                            if(prof == profsNumArray[i-1]){
+                                //console.log(profsArray[i], profsNumArray[i])
+                                profsArray[i-1].innerHTML = whichProf(i,char.character_str, char.character_dex, char.character_int, char.character_wis, char.character_cha) + await checkProfLvl(char.character_lvl);
+                                return;
+                            }else{
+                                console.log("no match for text area1");
+                            }
+                        }
+                    }else{
+                        console.log("no match");
+                    }
+                })
                 
-            })*/
 
-
-
-
+            })
         }else{
             char_length = char_length - 1;
             return;
@@ -619,6 +762,7 @@ document.getElementById("level-up").onclick = function(){
 }
 
 document.getElementById("character-form-submit").onclick = submitCharacterForm;
+
 
 
 window.onload = () => {
