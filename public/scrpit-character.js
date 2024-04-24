@@ -499,7 +499,9 @@ const lvlCharacter = async(character) =>{
 
 const popProf = (profs) => {
     var element = document.getElementById("character_prof");
-    var values = profs;
+    let array = []
+    array= profs.split(",")
+    var values = array;
     console.log(values, element.options.length, element);
     for (var i = 0; i < element.options.length; i++) {
         console.log(values.indexOf(element.options[i].value) >= 0, element.options[i])
