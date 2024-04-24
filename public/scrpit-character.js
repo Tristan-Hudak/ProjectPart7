@@ -736,21 +736,6 @@ const showModal = (id,clicked) => {
         //console.log("do i get past")
     }
 
-    //rest
-
-    if(id == "rest"){
-        console.log("in",id, clicked)
-
-        document.getElementById("rest-modal").classList.add("show-hide");
-
-        document.getElementById("close_box_r").onclick = () => {
-            //console.log("do i get in")
-            hideModal();
-            return;
-        };
-        //console.log("do i get past")
-    }
-
     //lvl
 
     if(id == "level-up"){
