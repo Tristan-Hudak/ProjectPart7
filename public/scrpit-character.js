@@ -460,9 +460,9 @@ const lvlCharacter = async(character) =>{
             form.charcater_prof = popProf(char.character_prof);
 
 
-            console.log(value, +char.character_lvl + 1, +char.character_hp + ( value / 2))
+            console.log(value, +char.character_lvl + 1, +char.character_hp + value)
 
-            form.character_hp.value = +char.character_hp + ( value / 2);
+            form.character_hp.value = +char.character_hp + value;
             form.character_lvl.value = +char.character_lvl + 1;
 
             makeNewCharacter();
@@ -500,8 +500,9 @@ const lvlCharacter = async(character) =>{
 const popProf = (profs) => {
     var element = document.getElementById("character_prof");
     var values = profs;
-    console.log(values);
+    console.log(values, element.options.length, );
     for (var i = 0; i < element.options.length; i++) {
+        console.log(values.indexOf(element.options[i].value))
         element.options[i].selected = values.indexOf(element.options[i].value) >= 0;
     }
 }
@@ -589,7 +590,6 @@ const deleteCharacter = async(character)=> {
     document.getElementById("character-place").innerHTML = ""
     document.getElementById("character-delete-place").innerHTML = ""
     document.getElementById("character-lvl-place").innerHTML = ""
-    document.getElementById("rest-place").innerHTML = ""
     createCharacter();
     hideModal();
     //populateCharacter();
