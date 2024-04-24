@@ -453,10 +453,11 @@ const lvlCharacter = async(character) =>{
             //console.log(form.character_cha.value)
             form.character_cha.value = char.character_cha;
             //console.log(form.character_prof, char.character_prof, char.character_con[0]);
+            value = checkClassHp(char.character_class, char.character_con);
             form.charcater_prof = char.character_prof
-            console.log(form.character_hp, char.character_hp + ( checkClassHp(char.character_class, char.character_con) / 2), char.character_lvl + 1)
+            console.log(form.character_hp, char.character_hp.value + ( value / 2), char.character_lvl.value + 1)
 
-            form.character_hp.value = char.character_hp.value + ( checkClassHp(char.character_class, char.character_con) / 2);
+            form.character_hp.value = char.character_hp.value + ( value / 2);
             form.character_lvl.value = char.character_lvl + 1;
 
             makeNewCharacter();
@@ -610,6 +611,7 @@ const whichProf = (prof,str,dex,int,wis,cha) => {
 
 const modDetect = (thing) =>{
     let value = 0;
+    console.log(thing)
 
     if(thing == 0 || thing == 1){
         value = -5;
