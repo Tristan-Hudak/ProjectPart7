@@ -785,6 +785,7 @@ const hideModal = () => {
 const makeNewCharacter = () => {
     console.log("this area work for creating character")
     document.getElementById("character-modal").classList.remove("show-hide");
+    document.getElementById("lvl-modal").classList.remove("show-hide");
     document.getElementById("character-crafter-modal").classList.add("show-hide");
 }
 
