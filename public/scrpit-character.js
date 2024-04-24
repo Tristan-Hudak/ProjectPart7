@@ -809,20 +809,6 @@ document.getElementById("delete").onclick = function(){
         return;
     }
 }
-document.getElementById("rest").onclick = function(){
-    if(hasBeenClicked == false){
-        hasBeenClicked = true;
-        modalOpen = true;
-        showModal("rest",hasBeenClicked);
-    }
-    else if(hasBeenClicked == true && modalOpen == false){
-        hasBeenClicked = false;
-        return;
-    }else if(hasBeenClicked == true && modalOpen == true){
-        return;
-    }
-    
-}
 document.getElementById("level-up").onclick = function(){
     if(hasBeenClicked == false){
         hasBeenClicked = true;
